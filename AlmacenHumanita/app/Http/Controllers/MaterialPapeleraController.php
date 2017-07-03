@@ -5,17 +5,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class MaterialClinicaController extends Controller
+class MaterialPapeleraController extends Controller
 {
     //
 }
 
 */
-
-
-
-*/
-
 
 namespace App\Http\Controllers;
 
@@ -122,6 +117,4 @@ class ItemCRUD2Controller extends Controller
         return redirect()->route('itemCRUD2.index')
                         ->with('success','Item deleted successfully');
     }
-
 }
-
