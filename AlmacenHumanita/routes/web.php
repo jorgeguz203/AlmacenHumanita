@@ -37,9 +37,6 @@ Route::group(['middleware' => ['auth']], function() {
 	Route::delete('users/{id}',['as'=>'users.destroy','uses'=>'UserController@destroy','middleware' => ['permission:role-delete']]);
 
 	
-});
-
-	
 
 	//ADMIN MaterialClinica
 

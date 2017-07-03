@@ -20,7 +20,7 @@ class CreateMaterialPapelerasTable extends Migration
             $table->float('maximo');
             $table->float('minimo');
             $table->float('existencia');
-            $table->int('proveedor_id');
+            $table->integer('proveedor_id');
             $table->string('area');
             $table->string('unidad_medida');
             $table->bigInteger('numero_referencia');
