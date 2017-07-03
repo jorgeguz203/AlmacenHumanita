@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMaterialclinicaTable extends Migration
+class CreateMaterialPapelerasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateMaterialclinicaTable extends Migration
      */
     public function up()
     {
-        Schema::create('materialclinica', function (Blueprint $table) {
+        Schema::create('materialpapeleras', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
             $table->string('descripcion');
@@ -22,7 +22,6 @@ class CreateMaterialclinicaTable extends Migration
             $table->float('existencia');
             $table->int('proveedor_id');
             $table->string('area');
-            $table->datetime('fecha_caducidad');
             $table->string('unidad_medida');
             $table->bigInteger('numero_referencia');
             $table->string('presentacion');
@@ -37,6 +36,6 @@ class CreateMaterialclinicaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('materialclinica');
+        Schema::dropIfExists('materialpapeleras');
     }
 }

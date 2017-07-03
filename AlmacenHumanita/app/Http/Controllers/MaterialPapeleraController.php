@@ -5,13 +5,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class MaterialClinicaController extends Controller
+class MaterialPapeleraController extends Controller
 {
     //
 }
 
 */
-
 
 namespace App\Http\Controllers;
 
