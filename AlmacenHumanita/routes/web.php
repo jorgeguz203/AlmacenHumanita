@@ -36,10 +36,7 @@ Route::group(['middleware' => ['auth']], function() {
 	Route::patch('users/{id}',['as'=>'users.update','uses'=>'UserController@update','middleware' => ['permission:role-edit']]);
 	Route::delete('users/{id}',['as'=>'users.destroy','uses'=>'UserController@destroy','middleware' => ['permission:role-delete']]);
 
-	
 
-
-	
 
 	//ADMIN MaterialClinica
 
