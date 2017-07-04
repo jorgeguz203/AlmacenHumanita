@@ -20,7 +20,7 @@ class CreateMaterialclinicaTable extends Migration
             $table->float('maximo');
             $table->float('minimo');
             $table->float('existencia');
-            $table->integer('proveedor_id');
+          
             $table->string('area');
             $table->datetime('fecha_caducidad');
             $table->string('unidad_medida');

@@ -1,126 +1,92 @@
 <?php
 
-/*
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-
-class MaterialClinicaController extends Controller
-{
-    //
-}
-
-*/
-
-
-
-*/
-
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Item;
+use App\MaterialClinica;
 
-class ItemCRUD2Controller extends Controller
+class MaterialClinicaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  
     public function index(Request $request)
     {
-        $items = Item::orderBy('id','DESC')->paginate(5);
-        return view('ItemCRUD2.index',compact('items'))
+        $materiales = MaterialClinica::orderBy('id','DESC')->paginate(5);
+        return view('materialClinica.index',compact('materiales'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function create()
     {
-        return view('ItemCRUD2.create');
+        return view('materialClinica.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+   
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required',
-            'description' => 'required',
+            'nombre' => 'required',
+            'maximo' => 'required',
+            'minimo' => 'required',
+            'unidad_medida' => 'required',
+            'descripcion',
+            'existencia',
+            'area',
+            'fecha_caducidad',
+            'numero_referencia',
+            'presentacion',
+
         ]);
 
-        Item::create($request->all());
+        MaterialClinica::create($request->all());
 
-        return redirect()->route('itemCRUD2.index')
-                        ->with('success','Item created successfully');
+        return redirect()->route('materialClinica.index')
+                        ->with('Se ha creado el material con éxito!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function show($id)
     {
-        $item = Item::find($id);
-        return view('ItemCRUD2.show',compact('item'));
+        $material = MaterialClinica::find($id);
+        return view('materialClinica.show',compact('material'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function edit($id)
     {
-        $item = Item::find($id);
-        return view('ItemCRUD2.edit',compact('item'));
+        $material = MaterialClinica::find($id);
+        return view('materialClinica.edit',compact('material'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'title' => 'required',
-            'description' => 'required',
+            'nombre' => 'required',
+            'maximo' => 'required',
+            'minimo' => 'required',
+            'unidad_medida' => 'required',
+            'descripcion',
+            'existencia',
+            'area',
+            'fecha_caducidad',
+            'numero_referencia',
+            'presentacion',
         ]);
 
-        Item::find($id)->update($request->all());
+        MaterialClinica::find($id)->update($request->all());
 
-        return redirect()->route('itemCRUD2.index')
-                        ->with('success','Item updated successfully');
+        return redirect()->route('materialClinica.index')
+                        ->with('Se ha modificado el material con éxito!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy($id)
     {
-        Item::find($id)->delete();
-        return redirect()->route('itemCRUD2.index')
-                        ->with('success','Item deleted successfully');
+        MaterialClinica::find($id)->delete();
+        return redirect()->route('materialClinica.index')
+                        ->with('Se ha eliminado con éxito');
     }
 
 }

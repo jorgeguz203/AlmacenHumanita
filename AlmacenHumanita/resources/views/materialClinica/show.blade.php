@@ -1,28 +1,79 @@
 @extends('layouts.app')
  
 @section('content')
+
+<div class="container">
 	<div class="row">
 	    <div class="col-lg-12 margin-tb">
 	        <div class="pull-left">
-	            <h2> Show Item</h2>
+	            <h2> Ver Material de Clínica</h2>
 	        </div>
 	        <div class="pull-right">
-	            <a class="btn btn-primary" href="{{ route('itemCRUD2.index') }}"> Back</a>
+	            <a class="btn btn-primary" href="{{ route('materialClinica.index') }}"> Atrás</a>
 	        </div>
 	    </div>
 	</div>
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Title:</strong>
-                {{ $item->title }}
+                <strong>Nombre:</strong>
+                {{ $material->nombre }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Description:</strong>
-                {{ $item->description }}
+                <strong>Descripcion:</strong>
+                {{ $material->descripcion }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Máximo:</strong>
+                {{ $material->maximo }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Mínimo:</strong>
+                {{ $material->minimo }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Existencia:</strong>
+                {{ $material->existencia }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Área:</strong>
+                {{ $material->area }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Unidad de Medida:</strong>
+                {{ $material->unidad_medida }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Número de Referencia:</strong>
+                {{ $material->numero_referencia }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Presentación:</strong>
+                {{ $material->presentacion }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Fecha de caducidad:</strong>
+                {{ $material->fecha_caducidad }}
             </div>
         </div>
 	</div>
+    </div>
 @endsection
