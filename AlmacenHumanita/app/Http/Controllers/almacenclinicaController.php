@@ -9,7 +9,7 @@ use App\Role;
 use DB;
 use Hash;
 
-class UserController extends Controller
+class almacenclinicaController extends Controller
 {
 
     /**
@@ -20,47 +20,10 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $data = User::orderBy('id','DESC')->paginate(5);
-        return view('users.index',compact('data'))
+        return view('almacenclinica.index',compact('data'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        $roles = Role::pluck('display_name','id');
-        return view('users.create',compact('roles'));
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required|same:confirm-password',
-            'roles' => 'required'
-        ]);
-
-        $input = $request->all();
-        $input['password'] = Hash::make($input['password']);
-
-        $user = User::create($input);
-        foreach ($request->input('roles') as $key => $value) {
-            $user->attachRole($value);
-        }
-
-        return redirect()->route('users.index')
-                        ->with('Se ha creado la sucursal con éxito!');
-    }
 
     /**
      * Display the specified resource.
@@ -71,7 +34,7 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        return view('users.show',compact('user'));
+        return view('almacenclinica.show',compact('user'));
     }
 
     /**
@@ -86,7 +49,7 @@ class UserController extends Controller
         $roles = Role::pluck('display_name','id');
         $userRole = $user->roles->pluck('id','id')->toArray();
 
-        return view('users.edit',compact('user','roles','userRole'));
+        return view('almacenclinica.edit',compact('user','roles','userRole'));
     }
 
     /**
@@ -121,20 +84,7 @@ class UserController extends Controller
             $user->attachRole($value);
         }
 
-        return redirect()->route('users.index')
-                        ->with('Se ha modificado la sucursal con éxito');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        User::find($id)->delete();
-        return redirect()->route('users.index')
-                        ->with('Se ha eliminado la sucursal con éxito!');
+        return redirect()->route('almacenclinica.index')
+                        ->with('Los cambios se han guardado correctamente');
     }
 }

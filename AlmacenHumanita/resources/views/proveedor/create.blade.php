@@ -4,6 +4,7 @@
 
  
 @section('content')
+
 <div class="container">
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -55,19 +56,23 @@
             <div class="form-group">
                 <strong>RFC:</strong>
                 {!! Form::text('RFC', null, array('placeholder' => 'WIND784930','class' => 'form-control')) !!}
+
             </div>
         </div>
         
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
+
                 <strong>Dirección:</strong>
                 {!! Form::text('direccion', null, array('placeholder' => 'Calle 10 colonia Azul','class' => 'form-control')) !!}
+
             </div>
         </div>
         
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+
                 <button type="submit" class="btn btn-primary">Crear</button>
-        </div>
+
     </div>
     </div>
     {!! Form::close() !!}

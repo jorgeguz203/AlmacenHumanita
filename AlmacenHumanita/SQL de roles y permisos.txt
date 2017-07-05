@@ -1,0 +1,25 @@
+INSERT INTO `roles` (`id`, `name`, `display_name`, `description`, `created_at`, `updated_at`) VALUES
+(1, 'super-admin', 'Super Administrador', 'Administra Todo', '2017-07-05 07:31:22', '2017-07-05 07:31:22'),
+(2, 'admin-clinica', 'Administrador de clinica', 'Administra el sector de clínica', '2017-07-05 07:32:05', '2017-07-05 07:32:05'),
+(3, 'admin-papelera', 'Administrar Papeleria', 'Administra el sector de papelería', '2017-07-05 07:32:50', '2017-07-05 07:32:50'),
+(4, 'admin-sucursal', 'Administrador Sucursal', 'Administra su sucursal', '2017-07-05 07:36:32', '2017-07-05 07:36:32'),
+(5, 'admin-laboratorio', 'Administrador de Laboratorio', 'Administra su laboratorio', '2017-07-05 07:36:56', '2017-07-05 07:36:56');
+
+
+
+INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
+(1, 1),
+(2, 1),
+(3, 1),
+(3, 2),
+(4, 1),
+(4, 3),
+(5, 1),
+(5, 2),
+(6, 1),
+(6, 3),
+(7, 1),
+(7, 2),
+(7, 3),
+(8, 4),
+(9, 5);

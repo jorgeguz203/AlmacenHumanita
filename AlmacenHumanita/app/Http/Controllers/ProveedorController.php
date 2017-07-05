@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Proveedor;
@@ -13,6 +14,9 @@ class ProveedorController extends Controller
     {
         $proveedores = Proveedor::orderBy('id','DESC')->paginate(5);
         return view('proveedor.index',compact('proveedores'))
+
+
+
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
@@ -26,9 +30,11 @@ class ProveedorController extends Controller
     {
         $this->validate($request, [
             'nombre' => 'required',
+
             'nombre_contacto' => 'required',
             'email',
             'telefono' => 'required',
+
             'RFC',
             'direccion',
 
@@ -37,30 +43,39 @@ class ProveedorController extends Controller
         Proveedor::create($request->all());
 
         return redirect()->route('proveedor.index')
+
                         ->with('Se ha creado el proveedor exitosamente!');
+
+
     }
 
 
     public function show($id)
     {
+
         $proveedor = Proveedor::find($id);
         return view('proveedor.show',compact('proveedor'));
+
     }
 
   
     public function edit($id)
     {
+
         $proveedor = Proveedor::find($id);
         return view('proveedor.edit',compact('proveedor'));
+
     }
 
     public function update(Request $request, $id)
     {
         $this->validate($request, [
             'nombre' => 'required',
+
             'nombre_contacto' => 'required',
             'email',
             'telefono' => 'required',
+
             'RFC',
             'direccion',
         ]);
@@ -68,14 +83,18 @@ class ProveedorController extends Controller
         Proveedor::find($id)->update($request->all());
 
         return redirect()->route('proveedor.index')
+
                         ->with('se ha modificado exitosamente!');
+
     }
 
  
     public function destroy($id)
     {
+
         Proveedor::find($id)->delete();
         return redirect()->route('proveedor.index')
                         ->with('se ha eliminado exitosamente');
+
     }
 }

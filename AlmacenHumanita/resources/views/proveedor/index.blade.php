@@ -23,6 +23,7 @@
 		<tr>
 			<th>No</th>
 			<th>Nombre</th>
+
 			<th>Nombre del Contacto</th>
 			<th>Correo electrónico</th>
 
@@ -42,12 +43,15 @@
 			
 			{!! Form::open(['method' => 'Delete','route' => ['proveedor.destroy', $proveedor->id],'style'=>'display:inline']) !!}
             {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
+
         	{!! Form::close() !!}
         
 		</td>
 	</tr>
 	@endforeach
 	</table>
+
 	{!! $proveedores->render() !!}
 	</div>
+
 @endsection
