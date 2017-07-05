@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Proveedor extends Model
 {
 
+	protected $table = 'proveedors';
+
+	 protected $fillable = ['nombre', 'nombre_contacto', 'email', 'telefono', 'RFC', 'direccion'];
+
+
      public function materialclinica()
 {
     return $this->belongsToMany('App\MaterialClinica')

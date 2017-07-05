@@ -1,10 +1,11 @@
 @extends('layouts.app')
  
 @section('content')
+<div class="container">
 	<div class="row">
 	    <div class="col-lg-12 margin-tb">
 	        <div class="pull-left">
-	            <h2>Administrar Material Papelería</h2>
+	            <h2>Administrar Material Papeleria</h2>
 	        </div>
 	        <div class="pull-right">
 	        	
@@ -25,17 +26,17 @@
 			<th>Descripción</th>
 			<th width="280px">Acción</th>
 		</tr>
-	@foreach ($items as $key => $item)
+	@foreach ($materiales as $key => $material)
 	<tr>
 		<td>{{ ++$i }}</td>
-		<td>{{ $item->nombre }}</td>
-		<td>{{ $item->descripcion }}</td>
+		<td>{{ $material->nombre }}</td>
+		<td>{{ $material->descripcion }}</td>
 		<td>
-			<a class="btn btn-info" href="{{ route('materialPapelera.show',$item->id) }}">Ver</a>
+			<a class="btn btn-info" href="{{ route('materialPapelera.show',$material->id) }}">Ver</a>
 			
-			<a class="btn btn-primary" href="{{ route('materialPapelera.edit',$item->id) }}">Editar</a>
+			<a class="btn btn-primary" href="{{ route('materialPapelera.edit',$material->id) }}">Editar</a>
 			
-			{!! Form::open(['method' => 'DELETE','route' => ['materialPapelera.destroy', $item->id],'style'=>'display:inline']) !!}
+			{!! Form::open(['method' => 'Delete','route' => ['materialPapelera.destroy', $material->id],'style'=>'display:inline']) !!}
             {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
         	{!! Form::close() !!}
         
@@ -43,5 +44,6 @@
 	</tr>
 	@endforeach
 	</table>
-	{!! $items->render() !!}
+	{!! $materiales->render() !!}
+	</div>
 @endsection

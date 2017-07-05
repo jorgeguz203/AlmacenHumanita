@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class MaterialPapelera extends Model
 {
+
+	protected $table = 'materialpapeleras';
+
+	 protected $fillable = ['nombre', 'descripcion', 'maximo', 'minimo', 'existencia', 'area', 'unidad_medida', 'numero_referencia', 'presentacion'];
     
 	public function users()
 {

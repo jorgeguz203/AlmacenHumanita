@@ -7,6 +7,7 @@
 	    <div class="col-lg-12 margin-tb">
 	        <div class="pull-left">
 	            <h2> Ver Material de Clínica</h2>
+                <br>
 	        </div>
 	        <div class="pull-right">
 	            <a class="btn btn-primary" href="{{ route('materialClinica.index') }}"> Atrás</a>

@@ -1,43 +1,75 @@
 @extends('layouts.app')
+@include('layouts._header')
+
+
  
 @section('content')
-	<div class="row">
-	    <div class="col-lg-12 margin-tb">
-	        <div class="pull-left">
-	            <h2>Create New Item</h2>
-	        </div>
-	        <div class="pull-right">
-	            <a class="btn btn-primary" href="{{ route('itemCRUD2.index') }}"> Back</a>
-	        </div>
-	    </div>
-	</div>
-	@if (count($errors) > 0)
-		<div class="alert alert-danger">
-			<strong>Whoops!</strong> There were some problems with your input.<br><br>
-			<ul>
-				@foreach ($errors->all() as $error)
-					<li>{{ $error }}</li>
-				@endforeach
-			</ul>
-		</div>
-	@endif
-	{!! Form::open(array('route' => 'itemCRUD2.store','method'=>'POST')) !!}
-	<div class="row">
-		<div class="col-xs-12 col-sm-12 col-md-12">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 margin-tb">
+            <div class="pull-left">
+                <h2>Crear nuevo Proveedor</h2>
+            </div>
+            <div class="pull-right">
+                <a class="btn btn-primary" href="{{ route('proveedor.index') }}"> Atrás</a>
+            </div>
+        </div>
+    </div>
+    @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <strong>Whoops!</strong> Tuviste un error escribiendo algo :( .<br><br>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    {!! Form::open(array('route' => 'proveedor.store','method'=>'POST')) !!}
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Title:</strong>
-                {!! Form::text('title', null, array('placeholder' => 'Title','class' => 'form-control')) !!}
+                <strong>Nombre:</strong>
+                {!! Form::text('nombre', null, array('placeholder' => 'Microsoft','class' => 'form-control')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Description:</strong>
-                {!! Form::textarea('description', null, array('placeholder' => 'Description','class' => 'form-control','style'=>'height:100px')) !!}
+                <strong>Nombre del contacto:</strong>
+                {!! Form::text('nombre_contacto', null, array('placeholder' => 'Jane Doe','class' => 'form-control')) !!}
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-				<button type="submit" class="btn btn-primary">Submit</button>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Email:</strong>
+                {!! Form::text('email', null, array('placeholder' => 'microsoft@hotmail.com','class' => 'form-control')) !!}
+            </div>
         </div>
-	</div>
-	{!! Form::close() !!}
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Teléfono:</strong>
+                {!! Form::text('telefono', null, array('placeholder' => '4421849409','class' => 'form-control')) !!}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>RFC:</strong>
+                {!! Form::text('RFC', null, array('placeholder' => 'WIND784930','class' => 'form-control')) !!}
+            </div>
+        </div>
+        
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Dirección:</strong>
+                {!! Form::text('direccion', null, array('placeholder' => 'Calle 10 colonia Azul','class' => 'form-control')) !!}
+            </div>
+        </div>
+        
+        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                <button type="submit" class="btn btn-primary">Crear</button>
+        </div>
+    </div>
+    </div>
+    {!! Form::close() !!}
 @endsection
+@include('layouts._footer')
