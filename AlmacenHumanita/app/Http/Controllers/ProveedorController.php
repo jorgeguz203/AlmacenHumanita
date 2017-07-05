@@ -1,25 +1,12 @@
 <?php
 
-/*
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-
-class ProveedorController extends Controller
-{
-    //
-}
-
-*/
-
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Item;
 
-class ItemCRUD2Controller extends Controller
+class ProveedorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -29,7 +16,7 @@ class ItemCRUD2Controller extends Controller
     public function index(Request $request)
     {
         $items = Item::orderBy('id','DESC')->paginate(5);
-        return view('ItemCRUD2.index',compact('items'))
+        return view('proveedor.index',compact('items'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
@@ -40,7 +27,7 @@ class ItemCRUD2Controller extends Controller
      */
     public function create()
     {
-        return view('ItemCRUD2.create');
+        return view('proveedor.create');
     }
 
     /**
@@ -52,14 +39,19 @@ class ItemCRUD2Controller extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required',
-            'description' => 'required',
+            'nombre' => 'required',
+            'nombre_contacto',
+            'email',
+            'telefono',
+            'RFC',
+            'direccion',
+
         ]);
 
         Item::create($request->all());
 
-        return redirect()->route('itemCRUD2.index')
-                        ->with('success','Item created successfully');
+        return redirect()->route('proveedor.index')
+                        ->with('Se ha creado la sucursal con éxito!');
     }
 
     /**
@@ -71,7 +63,7 @@ class ItemCRUD2Controller extends Controller
     public function show($id)
     {
         $item = Item::find($id);
-        return view('ItemCRUD2.show',compact('item'));
+        return view('proveedor.show',compact('item'));
     }
 
     /**
@@ -83,7 +75,7 @@ class ItemCRUD2Controller extends Controller
     public function edit($id)
     {
         $item = Item::find($id);
-        return view('ItemCRUD2.edit',compact('item'));
+        return view('proveedor.edit',compact('item'));
     }
 
     /**
@@ -96,14 +88,18 @@ class ItemCRUD2Controller extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'title' => 'required',
-            'description' => 'required',
+            'nombre' => 'required',
+            'nombre_contacto',
+            'email',
+            'telefono',
+            'RFC',
+            'direccion',
         ]);
 
         Item::find($id)->update($request->all());
 
-        return redirect()->route('itemCRUD2.index')
-                        ->with('success','Item updated successfully');
+        return redirect()->route('proveedor.index')
+                        ->with('Se ha modificado la scucursal con éxito!');
     }
 
     /**
@@ -115,7 +111,7 @@ class ItemCRUD2Controller extends Controller
     public function destroy($id)
     {
         Item::find($id)->delete();
-        return redirect()->route('itemCRUD2.index')
-                        ->with('success','Item deleted successfully');
+        return redirect()->route('proveedor.index')
+                        ->with('Se ha eliminado la sucursal con éxito');
     }
 }
