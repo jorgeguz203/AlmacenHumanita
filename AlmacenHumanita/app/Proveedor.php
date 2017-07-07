@@ -26,6 +26,12 @@ class Proveedor extends Model
 	      ->withTimestamps();
 	}
 
+			public function scopeName($query, $name){
+			if (trim($name) != ""){
+				$query->where(\DB::raw('nombre'), 'LIKE', "%$name%");
+			}
+			
+		}
 
 
 }

@@ -14,6 +14,18 @@
 	        </div>
 	    </div>
 	</div>
+	<!-- Buscador inicia -->
+	    
+	    	
+	    	{!! Form::open(['route' => 'materialPapelera.index', 'method' => 'GET', 'class' => 'navbar-form navbar-left', 'role' => 'search']) !!}
+  <div class="form-group">
+  {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Buscador']) !!}
+
+  </div>
+  <button type="submit" class="btn btn-primary">Buscar</button>
+{!! Form ::Close() !!}
+	     <!--Buscador fin  -->
+	     <hr>
 	@if ($message = Session::get('success'))
 		<div class="alert alert-success">
 			<p>{{ $message }}</p>
@@ -36,7 +48,7 @@
 			
 			<a class="btn btn-primary" href="{{ route('materialPapelera.edit',$material->id) }}">Editar</a>
 			
-			{!! Form::open(['method' => 'Delete','route' => ['materialPapelera.destroy', $material->id],'style'=>'display:inline']) !!}
+			{!! Form::open(['method' => 'Delete','route' => ['materialPapelera.destroy', $material->id],'style'=>'display:inline','onclick'=>"return confirm('¿Estás seguro de querer eliminar este material?')"]) !!}
             {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
         	{!! Form::close() !!}
         

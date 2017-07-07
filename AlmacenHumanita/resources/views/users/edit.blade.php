@@ -39,7 +39,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Contraseña:</strong>
-                {!! Form::password('password', array('placeholder' => 'Contraseña','class' => 'form-control')) !!}
+                {!! Form::password('password', array('placeholder' => 'Contraseña: Debe contener almenos una mayúscula, un número y al menos 6 caracteres','class' => 'form-control')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

@@ -41,7 +41,7 @@
 		<td>
 			<a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Ver</a>
 			<a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Editar</a>
-			{!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
+			{!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline','onclick'=>"return confirm('¿Estás seguro de querer eliminar esta sucursal?')"]) !!}
             {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
         	{!! Form::close() !!}
 		</td>
