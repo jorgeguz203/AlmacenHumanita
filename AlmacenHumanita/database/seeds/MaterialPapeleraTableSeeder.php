@@ -47,7 +47,9 @@ class MaterialPapeleraTableSeeder extends Seeder
         		'existencia' => '300',
         		'area' => 'papeleria',
         		'unidad_medida' => 'pieza',
-        		'numero_referencia' => '43256',
+
+        		'numero_referencia' => '45574',
+
         		'presentacion' => 'paquetes de 5',
         		'created_at' => '2017-07-06 00:00:00',
         		'updated_at' => '2017-07-06 00:00:00',
@@ -60,21 +62,25 @@ class MaterialPapeleraTableSeeder extends Seeder
         		'existencia' => '8',
         		'area' => 'papeleria',
         		'unidad_medida' => 'pieza',
-        		'numero_referencia' => '3456',
+
+        		'numero_referencia' => '85475',
+
         		'presentacion' => '',
         		'created_at' => '2017-07-06 00:00:00',
         		'updated_at' => '2017-07-06 00:00:00',
             ],
             [
                 'nombre' => 'plumón',
-        		'descripcion' => '',
-        		'maximo' => '100',
-        		'minimo' => '20',
-        		'existencia' => '50',
+
+        		'descripcion' => 'pulón negro',
+        		'maximo' => '10',
+        		'minimo' => '2',
+        		'existencia' => '5',
         		'area' => 'papeleria',
         		'unidad_medida' => 'pieza',
-        		'numero_referencia' => '32456',
-        		'presentacion' => '',
+        		'numero_referencia' => '849375',
+        		'presentacion' => 'viene en paquetes de 5',
+
         		'created_at' => '2017-07-06 00:00:00',
         		'updated_at' => '2017-07-06 00:00:00',
             ],
@@ -99,7 +105,9 @@ class MaterialPapeleraTableSeeder extends Seeder
         		'existencia' => '6',
         		'area' => 'papeleria',
         		'unidad_medida' => 'pieza',
-        		'numero_referencia' => '145',
+
+        		'numero_referencia' => '77455',
+
         		'presentacion' => '',
         		'created_at' => '2017-07-06 00:00:00',
         		'updated_at' => '2017-07-06 00:00:00',
@@ -112,7 +120,9 @@ class MaterialPapeleraTableSeeder extends Seeder
         		'existencia' => '0',
         		'area' => 'papeleria',
         		'unidad_medida' => 'pieza',
-        		'numero_referencia' => '345',
+
+        		'numero_referencia' => '156455',
+
         		'presentacion' => 'paquetes de 5',
         		'created_at' => '2017-07-06 00:00:00',
         		'updated_at' => '2017-07-06 00:00:00',
@@ -125,7 +135,9 @@ class MaterialPapeleraTableSeeder extends Seeder
         		'existencia' => '120',
         		'area' => 'papeleria',
         		'unidad_medida' => 'pieza',
-        		'numero_referencia' => '145',
+
+        		'numero_referencia' => '1548665',
+
         		'presentacion' => 'paquetes de 10',
         		'created_at' => '2017-07-06 00:00:00',
         		'updated_at' => '2017-07-06 00:00:00',
@@ -138,7 +150,9 @@ class MaterialPapeleraTableSeeder extends Seeder
         		'existencia' => '300',
         		'area' => 'papeleria',
         		'unidad_medida' => 'pieza',
-        		'numero_referencia' => '324',
+
+        		'numero_referencia' => '415264',
+
         		'presentacion' => 'paquetes de 50',
         		'created_at' => '2017-07-06 00:00:00',
         		'updated_at' => '2017-07-06 00:00:00',
@@ -150,4 +164,6 @@ class MaterialPapeleraTableSeeder extends Seeder
         	MaterialPapelera::create($value);
         }
     }
+
 }
+

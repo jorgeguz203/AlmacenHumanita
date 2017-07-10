@@ -160,4 +160,6 @@ class MaterialClinicaTableSeeder extends Seeder
         	MaterialClinica::create($value);
         }
     }
+
 }
+
