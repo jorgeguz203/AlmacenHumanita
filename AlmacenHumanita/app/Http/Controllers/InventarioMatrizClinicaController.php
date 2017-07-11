@@ -12,7 +12,7 @@ class InventarioMatrizClinicaController extends Controller
 
 	public function index(Request $request)
     {
-        $materiales = MaterialClinica::orderBy('id','DESC')->paginate(5);
+        $materiales = MaterialClinica::orderBy('nombre','ASC')->paginate(100);
         return view('inventarioMatrizClinica.index',compact('materiales'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
@@ -20,7 +20,6 @@ class InventarioMatrizClinicaController extends Controller
 
         public function create()
     {
-        
         return view('inventarioMatrizClinica.create');
     }
 
@@ -74,18 +73,21 @@ class InventarioMatrizClinicaController extends Controller
 
 
 
-public function agregar($id, $existenciaAum)
+public function agregar($id)
     {
         $material = MaterialClinica::find($id);
+       return view('inventarioMatrizClinica.agregar', compact('material'));
+    }
+
+public function storeinv ($id, $existenciaAum )
+    {
+         $material = MaterialClinica::find($id);
         $existencia = $material->pluck('existencia');
 
         $nuevaExistencia = $existencia + $existenciaAum;
 
          DB::table('materialclinica')->where('id',$id)->update(['existencia' => $nuevaExistencia]);
-
-       return view('inventarioMatrizClinica.index');
-    }
-
+    }   
 
 
 public function reducir($id, $existenciaRed)

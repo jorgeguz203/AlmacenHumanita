@@ -9,7 +9,7 @@ class InventarioMatrizClinica extends Model
 {
     protected $table = 'materialclinica_proveedors';
 
-	protected $fillable = ['cantidad', 'presentacion', 'observaciones'];
+	protected $fillable = ['Proveedor_id','cantidad', 'presentacion', 'observaciones'];
 
 
 
