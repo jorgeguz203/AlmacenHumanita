@@ -57,55 +57,35 @@
             </div>
         </div>
         
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Área:</strong>
-                {!! Form::text('area', null, array('placeholder' => 'Cardeología','class' => 'form-control')) !!}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Unidad de Medida:</strong>
-                
-
-                    <div class="form-check">
-
-            <label class="form-check-label">
-
-                <input class="form-check-input" type="radio" name="unidad_medida" id="unidadmedida" value="pieza" checked>
-
-                Pieza
-
-            </label>
-
+         <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+      <label for="sel1">Área:</label>
+        
+      <select class="selectpicker" id=area name="area">
+        <option value='limpieza'>Limpieza</option>
+        <option value='cafeteria'>Cafetería</option>
+        <option value='impresos'>Impresos</option>
+        <option value='rayos_x'>Rayos X</option>
+        <option value='otros'>Otros</option>
+      </select>
+      </div>
         </div>
 
-        <div class="form-check">
 
-            <label class="form-check-label">
-
-                <input class="form-check-input" type="radio" name="unidad_medida" id="unidadmedida2" value="ml">
-
-                Ml (mililítros)
-
-            </label>
-
+       <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+          <label for="sel1">Unidad de Medida:</label>
+          <select class="selectpicker" id=unidad_medida name="unidad_medida">
+            <option value='pieza'>Pieza</option>
+            <option value='kg'>Kilográmos</option>
+            <option value='gr'>Gramos</option>
+            <option value='gl'>Galón</option>
+            <option value='li'>Lítros</option>
+            <option value='ml'>Mililítros</option>
+          </select>
+      </div>
         </div>
-
-         <div class="form-check">
-
-            <label class="form-check-label">
-
-                <input class="form-check-input" type="radio" name="unidad_medida" id="unidadmedida3" value="kg">
-
-                Kg (kilogramos)
-
-            </label>
-
-        </div>
-
-            </div>
-        </div>
+        
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Número de Referencia:</strong>

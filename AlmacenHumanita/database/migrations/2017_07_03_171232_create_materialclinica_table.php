@@ -20,9 +20,7 @@ class CreateMaterialclinicaTable extends Migration
             $table->float('maximo');
             $table->float('minimo');
             $table->float('existencia');
-          
             $table->string('area');
-            $table->datetime('fecha_caducidad');
             $table->string('unidad_medida');
             $table->bigInteger('numero_referencia');
             $table->string('presentacion');

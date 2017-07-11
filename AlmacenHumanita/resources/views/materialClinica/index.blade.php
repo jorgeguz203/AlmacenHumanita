@@ -40,6 +40,7 @@
 			<th>Descripción</th>
 			<th width="280px">Acción</th>
 		</tr>
+
 	@foreach ($materiales as $key => $material)
 	<tr>
 		<td>{{ ++$i }}</td>

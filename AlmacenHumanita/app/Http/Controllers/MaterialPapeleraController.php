@@ -29,12 +29,12 @@ class MaterialPapeleraController extends Controller
             'nombre' => 'required',
             'maximo' => 'required',
             'minimo' => 'required',
-            'unidad_medida' => 'required',
+            'unidad_medida',
             'descripcion',
-            'existencia',
-            'area',
+            'existencia'=> 'required',
+            'area'=> 'required',
             'numero_referencia',
-            'presentacion',
+            'presentacion'=> 'required',
 
         ]);
 

@@ -24,6 +24,7 @@
 			<th>Existencia</th>
 			<th width="280px">Acción</th>
 		</tr>
+		
 	@foreach ($materiales as $key => $material)
 	<tr>
 		<td>{{ $material->nombre }}</td>
@@ -38,6 +39,7 @@
 
 	</tr>
 	@endforeach
+	
 	</table>
 	{!! $materiales->render() !!}
 	</div>

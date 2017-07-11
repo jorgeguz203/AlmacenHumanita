@@ -24,6 +24,7 @@ class CreateMaterialclinicaProveedorsTable extends Migration
             ->on('proveedors')->onDelete('cascade');
 
     $table->float('cantidad');
+    $table->datetime('fecha_caducidad');
     $table->float('presentacion');
     $table->float('observaciones');
 
