@@ -21,6 +21,7 @@ class CreateProveedorsTable extends Migration
             $table->bigInteger('telefono');
             $table->string('RFC');
             $table->string('direccion');
+            $table->string('horario');
             $table->timestamps();
         });
     }

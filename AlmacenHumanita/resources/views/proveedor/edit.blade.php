@@ -63,6 +63,12 @@
                 {!! Form::text('direccion', null, array('placeholder' => 'Calle 10 colonia Azul','class' => 'form-control')) !!}
             </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Horario:</strong>
+                {!! Form::text('horario', null, array('placeholder' => 'De 9 de la mañana a 6 de la tarde','class' => 'form-control')) !!}
+            </div>
+        </div>
         
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Modificar</button>

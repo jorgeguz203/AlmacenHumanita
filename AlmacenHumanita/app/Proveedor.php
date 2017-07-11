@@ -9,7 +9,7 @@ class Proveedor extends Model
 
 	protected $table = 'proveedors';
 
-	 protected $fillable = ['nombre', 'nombre_contacto', 'email', 'telefono', 'RFC', 'direccion'];
+	 protected $fillable = ['nombre', 'nombre_contacto', 'email', 'telefono', 'RFC', 'direccion', 'horario'];
 
 
      public function materialclinica()

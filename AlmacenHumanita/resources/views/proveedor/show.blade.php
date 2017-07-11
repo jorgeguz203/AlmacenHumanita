@@ -10,7 +10,7 @@
 	            <br>
 	        </div>
 	        <div class="pull-right">
-	            <a class="btn btn-primary" href="{{ route('proveedor.index') }}"> Back</a>
+	            <a class="btn btn-primary" href="{{ route('proveedor.index') }}"> Atrás</a>
 
 	        </div>
 	    </div>
@@ -61,6 +61,15 @@
 
                 <strong>Dirección:</strong>
                 {{ $proveedor->direccion }}
+
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+
+                <strong>Horario:</strong>
+                {{ $proveedor->horario }}
 
             </div>
         </div>

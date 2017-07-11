@@ -11,7 +11,7 @@ class MaterialPapeleraController extends Controller
 
     public function index(Request $request)
     {
-        $materiales = MaterialPapelera::name($request->get('name'))->orderBy('nombre','ASC')->paginate(10);
+        $materiales = MaterialPapelera::name($request->get('name'))->orderBy('nombre','ASC')->paginate(150);
         return view('materialPapelera.index',compact('materiales'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }

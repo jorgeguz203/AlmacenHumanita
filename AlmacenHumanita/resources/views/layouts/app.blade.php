@@ -103,6 +103,11 @@
                                             Almacenista de Papelería  
                                         </a> 
                                         @endif
+                                        @if (Auth::user()->can('admin-laboratorio'))
+                                        <a href="{{ route('adminlab.index') }}">
+                                            Adminstrar Laboratorio  
+                                        </a> 
+                                        @endif
 
                                     </li>
                                     

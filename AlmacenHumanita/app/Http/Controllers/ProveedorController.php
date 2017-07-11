@@ -12,7 +12,7 @@ class ProveedorController extends Controller
 
     public function index(Request $request)
     {
-        $proveedores = Proveedor::name($request->get('name'))->orderBy('nombre','ASC')->paginate(10);
+        $proveedores = Proveedor::name($request->get('name'))->orderBy('nombre','ASC')->paginate(100);
         return view('proveedor.index',compact('proveedores'))
 
 
@@ -30,13 +30,12 @@ class ProveedorController extends Controller
     {
         $this->validate($request, [
             'nombre' => 'required',
-
             'nombre_contacto' => 'required',
-            'email',
+            'email' => 'required',
             'telefono' => 'required',
-
-            'RFC',
-            'direccion',
+            'RFC' => 'required',
+            'direccion' => 'required',
+            'horario',
 
         ]);
 
@@ -73,11 +72,11 @@ class ProveedorController extends Controller
             'nombre' => 'required',
 
             'nombre_contacto' => 'required',
-            'email',
+            'email' => 'required',
             'telefono' => 'required',
-
-            'RFC',
-            'direccion',
+            'RFC' => 'required',
+            'direccion' => 'required',
+            'horario',
         ]);
 
         Proveedor::find($id)->update($request->all());

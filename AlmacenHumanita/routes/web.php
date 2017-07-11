@@ -59,7 +59,11 @@ Route::group(['middleware' => ['auth']], function() {
 	Route::get('almacenpapeleria/{id}/edit',['as'=>'almacenpapeleria.edit','uses'=>'almacenpapeController@edit','middleware' => ['permission:admin-admin-papelera']]);
 	Route::patch('almacenpapeleria/{id}',['as'=>'almacenpapeleria.update','uses'=>'almacenpapeController@update','middleware' => ['permission:admin-admin-papelera']]);
 
-
+	//admin laboratorio
+	Route::get('adminlab',['as'=>'adminlab.index','uses'=>'adminlaboratorioController@index','middleware' => ['permission:admin-laboratorio']]);
+	Route::get('adminlab/{id}',['as'=>'adminlab.show','uses'=>'adminlaboratorioController@show']);
+	Route::get('adminlab/{id}/edit',['as'=>'adminlab.edit','uses'=>'adminlaboratorioController@edit','middleware' => ['permission:admin-laboratorio']]);
+	Route::patch('adminlab/{id}',['as'=>'adminlab.update','uses'=>'adminlaboratorioController@update','middleware' => ['permission:admin-laboratorio']]);
 
 	//Roles
 	Route::get('roles',['as'=>'roles.index','uses'=>'RoleController@index']);

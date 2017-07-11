@@ -9,10 +9,9 @@ use App\Role;
 use DB;
 use Hash;
 
-class RootController extends Controller
+class adminlaboratorioController extends Controller
 {
-
-    /**
+     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -20,7 +19,7 @@ class RootController extends Controller
     public function index(Request $request)
     {
         $data = User::orderBy('id','DESC')->paginate(100);
-        return view('root.index',compact('data'))
+        return view('adminlab.index',compact('data'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
@@ -34,7 +33,7 @@ class RootController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        return view('root.show',compact('user'));
+        return view('adminlab.show',compact('user'));
     }
 
     /**
@@ -49,7 +48,7 @@ class RootController extends Controller
         $roles = Role::pluck('display_name','id');
         $userRole = $user->roles->pluck('id','id')->toArray();
 
-        return view('root.edit',compact('user','roles','userRole'));
+        return view('adminlab.edit',compact('user','roles','userRole'));
     }
 
     /**
@@ -84,7 +83,7 @@ class RootController extends Controller
             $user->attachRole($value);
         }
 
-        return redirect()->route('root.index')
+        return redirect()->route('adminlab.index')
                         ->with('Los cambios se han guardado correctamente');
     }
 }

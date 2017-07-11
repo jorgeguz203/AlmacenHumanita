@@ -2,8 +2,8 @@ INSERT INTO `roles` (`id`, `name`, `display_name`, `description`, `created_at`, 
 (1, 'super-admin', 'Super Administrador', 'Administra Todo', '2017-07-05 07:31:22', '2017-07-05 07:31:22'),
 (2, 'admin-clinica', 'Administrador de clinica', 'Administra el sector de clínica', '2017-07-05 07:32:05', '2017-07-05 07:32:05'),
 (3, 'admin-papelera', 'Administrar Papeleria', 'Administra el sector de papelería', '2017-07-05 07:32:50', '2017-07-05 07:32:50'),
-(4, 'admin-sucursal', 'Administrador Sucursal', 'Administra su sucursal', '2017-07-05 07:36:32', '2017-07-05 07:36:32'),
-(5, 'admin-laboratorio', 'Administrador de Laboratorio', 'Administra su laboratorio', '2017-07-05 07:36:56', '2017-07-05 07:36:56');
+(4, 'admin-laboratorio', 'Administrador de Laboratorio', 'Administra su laboratorio', '2017-07-05 07:36:56', '2017-07-05 07:36:56'),
+(5, 'admin-sucursal', 'Administrador Sucursal', 'Administra su sucursal', '2017-07-05 07:36:32', '2017-07-05 07:36:32');
 
 
 
