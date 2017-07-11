@@ -12,7 +12,7 @@
 */
 
 
-Route::resource('users','UserController');
+//Route::resource('users','UserController');
 
 Auth::routes();
 
@@ -31,7 +31,7 @@ Route::group(['middleware' => ['auth']], function() {
 	
 
 
-	/*Admin Usuarios
+	/*Admin Usuarios*/
 
 	Route::get('users',['as'=>'users.index','uses'=>'UserController@index']);
 
@@ -42,7 +42,7 @@ Route::group(['middleware' => ['auth']], function() {
 	Route::patch('users/{id}',['as'=>'users.update','uses'=>'UserController@update']);
 	Route::delete('users/{id}',['as'=>'users.destroy','uses'=>'UserController@destroy']);
 
-	*/
+	
 
 	//admin root
 	Route::get('root',['as'=>'root.index','uses'=>'RootController@index','middleware' => ['permission:admin-admin']]);
