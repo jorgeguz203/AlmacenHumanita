@@ -70,7 +70,6 @@ class ProveedorController extends Controller
     {
         $this->validate($request, [
             'nombre' => 'required',
-
             'nombre_contacto' => 'required',
             'email' => 'required',
             'telefono' => 'required',
