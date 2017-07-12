@@ -46,7 +46,31 @@
                             <li><a href="{{ route('login') }}">Iniciar Sesión</a></li>
                             
                         @elseif(Auth::user())
+                        @if (Auth::user()->can('admin-admin-clinica'))
+                        <li class="dropdown">
+                      
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    Inventario Clínica <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                    <li>
+
+                                        <a href="{{ route('inventarioMatrizClinica.index') }}">
+                                            Toma de Muestras  
+                                        </a>
+
+                                        <a href="{{ route('inventarioMatrizClinica.indexclinicos') }}">
+                                            Clínicos   
+                                        </a>
+
+                                    </li>
+
+                            </ul>
+                        </li>
+                        @endif
                         @if (Auth::user()->can('drop-admin'))
+
                         <li class="dropdown">
                       
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

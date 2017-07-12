@@ -26,6 +26,12 @@ class Proveedor extends Model
 	      ->withTimestamps();
 	}
 
+	public function entrada_matrizs()
+		{
+	    return $this->belongsToMany('App\EntradaMatris')
+	      ->withTimestamps();
+		}
+
 			public function scopeName($query, $name){
 			if (trim($name) != ""){
 				$query->where(\DB::raw('nombre'), 'LIKE', "%$name%");

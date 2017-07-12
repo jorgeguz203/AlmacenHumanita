@@ -28,8 +28,6 @@ class CreateMaterialclinicaProveedorsTable extends Migration
     $table->float('presentacion');
     $table->float('observaciones');
 
-
-
       $table->timestamps();
   });
 }

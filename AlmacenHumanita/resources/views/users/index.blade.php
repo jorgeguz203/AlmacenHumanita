@@ -26,7 +26,7 @@
 			<th width="280px">Acción</th>
 		</tr>
 	@foreach ($data as $key => $user)
-	@if ($user->id!=1 AND $user->id!=2 AND $user->id!=3 AND $user->id!=4)
+	@if ($user->id>=5)
 	<tr>
 		<td>{{ ++$i }}</td>
 		<td>{{ $user->name }}</td>

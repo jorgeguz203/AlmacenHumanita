@@ -119,17 +119,17 @@ Route::group(['middleware' => ['auth']], function() {
 	
 	
 	Route::get('inventarioMatrizClinica',['as'=>'inventarioMatrizClinica.index','uses'=>'InventarioMatrizClinicaController@index']);
-	Route::get('inventarioMatrizClinica/create/{id}',['as'=>'inventarioMatrizClinica.create','uses'=>'InventarioMatrizClinicaController@create']);
+	Route::get('inventarioMatrizClinicaClinicos',['as'=>'inventarioMatrizClinica.indexclinicos','uses'=>'InventarioMatrizClinicaController@indexclinicos']);
 
-	Route::post('inventarioMatrizClinica/create',['as'=>'inventarioMatrizClinica.store','uses'=>'InventarioMatrizClinicaController@store']);	
-	
-	Route::get('inventarioMatrizClinica/{id}',['as'=>'inventarioMatrizClinica.show','uses'=>'InventarioMatrizClinicaController@show']);
-	Route::get('inventarioMatrizClinica/{id}/edit',['as'=>'inventarioMatrizClinica.edit','uses'=>'InventarioMatrizClinicaController@edit']);
-	Route::patch('inventarioMatrizClinica/{id}',['as'=>'inventarioMatrizClinica.update','uses'=>'InventarioMatrizClinicaController@update']);
+	Route::get('inventarioMatrizClinica/{id}',['as'=>'inventarioMatrizClinica.agregar','uses'=>'EntradaMatrizController@agregar']);
+	Route::get('inventarioMatrizClinicaClinicos/{id}',['as'=>'inventarioMatrizClinica.agregarclinicos','uses'=>'EntradaMatrizController@agregarclinicos']);
 
-	Route::get('inventarioMatrizClinica/{id}',['as'=>'inventarioMatrizClinica.agregar','uses'=>'InventarioMatrizClinicaController@agregar']);
+	Route::post('inventarioMatrizClinica/{id}',['as'=>'EntradaMatriz.updateinventrada','uses'=>'EntradaMatrizController@updateinventrada']);
+	Route::post('inventarioMatrizClinicaClinicos/{id}',['as'=>'EntradaMatriz.updateinventradaclinicos','uses'=>'EntradaMatrizController@updateinventradaclinicos']);
 
-	Route::post('inventarioMatrizClinica/{id}',['as'=>'inventarioMatrizClinica.reducir','uses'=>'InventarioMatrizClinicaController@reducir']);
+	Route::get('inventarioMatrizClinicaHistorial/{id}',['as'=>'inventarioMatrizClinica.historialEn','uses'=>'EntradaMatrizController@show']);
+
+	Route::post('inventarioMatrizClinicas/{id}',['as'=>'inventarioMatrizClinica.reducir','uses'=>'InventarioMatrizClinicaController@reducir']);
 	
 
 });

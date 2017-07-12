@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\MaterialClinica;
-use App\InventarioMatrizClinica;
 
 class InventarioMatrizClinicaController extends Controller
 {
@@ -14,6 +13,13 @@ class InventarioMatrizClinicaController extends Controller
     {
         $materiales = MaterialClinica::orderBy('nombre','ASC')->paginate(100);
         return view('inventarioMatrizClinica.index',compact('materiales'))
+            ->with('i', ($request->input('page', 1) - 1) * 5);
+    }
+
+    public function indexclinicos(Request $request)
+    {
+        $materiales = MaterialClinica::orderBy('nombre','ASC')->paginate(100);
+        return view('inventarioMatrizClinica.indexclinicos',compact('materiales'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
@@ -41,11 +47,6 @@ class InventarioMatrizClinicaController extends Controller
 
 
 
-    public function show($id)
-    {
-        $material = InventarioMatrizClinica::find($id);
-        return view('inventarioMatrizClinica.show',compact('material'));
-    }
 
    
     public function edit($id)
@@ -73,21 +74,7 @@ class InventarioMatrizClinicaController extends Controller
 
 
 
-public function agregar($id)
-    {
-        $material = MaterialClinica::find($id);
-       return view('inventarioMatrizClinica.agregar', compact('material'));
-    }
-
-public function storeinv ($id, $existenciaAum )
-    {
-         $material = MaterialClinica::find($id);
-        $existencia = $material->pluck('existencia');
-
-        $nuevaExistencia = $existencia + $existenciaAum;
-
-         DB::table('materialclinica')->where('id',$id)->update(['existencia' => $nuevaExistencia]);
-    }   
+ 
 
 
 public function reducir($id, $existenciaRed)

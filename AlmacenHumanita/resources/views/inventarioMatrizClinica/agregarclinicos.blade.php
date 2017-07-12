@@ -9,7 +9,7 @@
                 <h2>Cotización</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('inventarioMatrizClinica.index') }}"> Atrás</a>
+                <a class="btn btn-primary" href="{{ route('inventarioMatrizClinica.indexclinicos') }}"> Atrás</a>
             </div>
         </div>
     </div>
@@ -24,7 +24,7 @@
         </div>
     @endif
     <hr>
-    {!! Form::open(array('route' => ['EntradaMatriz.updateinventrada', $material->id],'method'=>'POST')) !!}
+    {!! Form::open(array('route' => ['EntradaMatriz.updateinventradaclinicos', $material->id],'method'=>'POST')) !!}
     <div class="row">
 
         <div class="col-xs-12 col-sm-12 col-md-12">
