@@ -52,8 +52,15 @@
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Cantidad:</strong>
+                <strong>Cantidad:</strong><small><font color="red">(obligatorio)</font></small>
                 {!! Form::text('cantidad', null, array('placeholder' => '0','class' => 'form-control')) !!}
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Precio:</strong><small><font color="red">(obligatorio)</font></small>
+                {!! Form::text('precio', null, array('placeholder' => '100','class' => 'form-control')) !!}
             </div>
         </div>
        

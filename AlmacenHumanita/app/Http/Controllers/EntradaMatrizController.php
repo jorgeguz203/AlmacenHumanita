@@ -13,14 +13,14 @@ class EntradaMatrizController extends Controller
     public function agregar($id)
     {
         $material = MaterialClinica::find($id);
-        $proveedors = Proveedor::all();
+        $proveedors = Proveedor::all()->sortBy('nombre');
        	return view('inventarioMatrizClinica.agregar', compact('material', 'proveedors'));
     }
 
     public function agregarclinicos($id)
     {
         $material = MaterialClinica::find($id);
-        $proveedors = Proveedor::all();
+        $proveedors = Proveedor::all()->sortBy('nombre');
        	return view('inventarioMatrizClinica.agregarclinicos', compact('material', 'proveedors'));
     }
 
@@ -30,6 +30,7 @@ public function updateinventrada (Request $request, $id)
     	    'materialclinica_id' => 'required',
     	    'Proveedor_id' => 'required',
             'cantidad'=> 'required',
+            'precio'=> 'required',
             'fecha_caducidad',
             'presentacion',
             'observaciones',
@@ -43,6 +44,7 @@ public function updateinventrada (Request $request, $id)
         $entrada->proveedor_id = request('Proveedor_id');
         $entrada->nombre_proveedor = $proveedor->nombre;
         $entrada->cantidad = request('cantidad');
+        $entrada->precio = request('precio');
         $entrada->fecha_caducidad = request('fecha_caducidad');
         $entrada->presentacion = request('presentacion');
         $entrada->observaciones = request('observaciones');
@@ -63,6 +65,7 @@ public function updateinventrada (Request $request, $id)
     	    'materialclinica_id' => 'required',
     	    'Proveedor_id' => 'required',
             'cantidad'=> 'required',
+            'precio'=> 'required',
             'fecha_caducidad',
             'presentacion',
             'observaciones',
@@ -76,6 +79,7 @@ public function updateinventrada (Request $request, $id)
         $entrada->proveedor_id = request('Proveedor_id');
         $entrada->nombre_proveedor = $proveedor->nombre;
         $entrada->cantidad = request('cantidad');
+        $entrada->precio = request('precio');
         $entrada->fecha_caducidad = request('fecha_caducidad');
         $entrada->presentacion = request('presentacion');
         $entrada->observaciones = request('observaciones');

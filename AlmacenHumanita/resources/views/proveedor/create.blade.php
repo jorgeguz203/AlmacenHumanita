@@ -30,7 +30,7 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Nombre:</strong>
+                <strong>Nombre:</strong><small><font color="red">(obligatorio)</font></small>
                 {!! Form::text('nombre', null, array('placeholder' => 'Microsoft','class' => 'form-control')) !!}
             </div>
         </div>

@@ -23,9 +23,10 @@ class CreateEntradaMatrizsTable extends Migration
                     ->on('proveedors')->onDelete('cascade');
             $table->string('nombre_proveedor');
             $table->float('cantidad');
-            $table->string('fecha_caducidad');
-            $table->string('presentacion');
-            $table->string('observaciones');
+            $table->float('precio');
+            $table->string('fecha_caducidad')->nullable();
+            $table->string('presentacion')->nullable();
+            $table->string('observaciones')->nullable();
             $table->timestamps();
         });
     }
