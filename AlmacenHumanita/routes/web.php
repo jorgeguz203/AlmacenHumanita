@@ -141,8 +141,9 @@ Route::group(['middleware' => ['auth']], function() {
 
 	Route::get('inventarioMatrizClinicasHistorialClinicos/{id}',['as'=>'inventarioMatrizClinica.historialSaclinicos','uses'=>'SalidaMatrizController@showclinicos']);
 
+//almacenMatrizClinica	
 
-	
+		Route::get('inventarioMatrizPapeleria',['as'=>'inventarioMatrizPapeleria.index1','uses'=>'InventarioMatrizPapeleriaController@index1']);
 
 });
 

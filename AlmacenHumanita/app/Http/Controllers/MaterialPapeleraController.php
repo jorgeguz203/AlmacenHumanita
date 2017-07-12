@@ -34,7 +34,7 @@ class MaterialPapeleraController extends Controller
             'existencia'=> 'required',
             'area'=> 'required',
             'numero_referencia',
-            'presentacion'=> 'required',
+            'presentacion',
 
         ]);
 

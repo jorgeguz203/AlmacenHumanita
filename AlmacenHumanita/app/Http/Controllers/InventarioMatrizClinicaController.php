@@ -24,59 +24,6 @@ class InventarioMatrizClinicaController extends Controller
     }
 
 
-        public function create()
-    {
-        return view('inventarioMatrizClinica.create');
-    }
-
-   
-    public function store(Request $request)
-    {
-        $this->validate($request, [
-            'cantidad' => 'required',
-            'presentacion' => 'required',
-            'observaciones' ,
-            
-        ]);
-
-        InventarioMatrizClinica::create($request->all());
-
-        return redirect()->route('inventarioMatrizClinica.index')
-                        ->with('Se ha creado el material con éxito!');
-    }
-
-
-
-
-   
-    public function edit($id)
-    {
-        $material = MaterialClinica::find($id);
-        return view('inventarioMatrizClinica.edit',compact('material'));
-    }
-
-    
-
-   
-    public function update(Request $request, $id)
-    {
-        $this->validate($request, [
-            
-            'existencia',
-           
-        ]);
-
-        MaterialClinica::find($id)->update($request->all());
-
-        return redirect()->route('materialClinica.index')
-                        ->with('Se ha modificado el material con éxito!');
-    }
-
-
-
- 
-
-
 public function reducir($id, $existenciaRed)
     {
         $material = MaterialClinica::find($id);
