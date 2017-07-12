@@ -17,7 +17,7 @@ class CreateSalidaMatrizsTable extends Migration
              $table->foreign('user_id')->references('id')
                     ->on('users')->onDelete('cascade');
             $table->float('cantidad');
-            $table->text('descripcion');
+            $table->text('descripcion')->nullable();
             $table->string('nombre_user');
             $table->timestamps();
         });
