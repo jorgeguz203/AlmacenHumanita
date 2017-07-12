@@ -8,7 +8,7 @@ class EntradaMatriz extends Model
 {
         protected $table = 'entrada_matrizs';
 
-	protected $fillable = ['materialclinica_id','Proveedor_id','cantidad', 'nombre_proveedor','fecha_caducidad', 'presentacion', 'observaciones'];
+	protected $fillable = ['materialclinica_id','Proveedor_id','cantidad', 'precio', 'nombre_proveedor','fecha_caducidad', 'presentacion', 'observaciones'];
 
 		public function materialclinica()
 		{

@@ -6,19 +6,20 @@
 
 <div class="col-lg-12 margin-tb">
 	        <div class="pull-left">
-	            <h2>Historial de entrega de {{ $material->nombre }}</h2>
+	            <h2>Historial de salida de {{ $material->nombre }}</h2>
 	        </div>      
 	    </div>
 
 	    <div class="pull-right">
 	            <a class="btn btn-primary" href="{{ route('inventarioMatrizClinica.index') }}"> Atrás</a>
+	              <hr>
 	        </div>
 
 	<table class="table table-bordered">
 		<tr>
-			<th>Sucursal entregada:</th>
-			<th>Fecha de entrega:</th>
-			<th>Cantidad entregada:</th>
+			<th>Sucursal salida:</th>
+			<th>Fecha de salida:</th>
+			<th>Cantidad salida:</th>
 			<th>Descripción: </th>
 		</tr>
 		

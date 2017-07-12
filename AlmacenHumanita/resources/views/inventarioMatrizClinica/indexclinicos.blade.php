@@ -53,7 +53,7 @@
 
 			<br>
 
-			<a class="btn btn-info" href="{{ route('inventarioMatrizClinica.historialEn',$material->id) }}">Historial</a>
+			<a class="btn btn-info" href="{{ route('inventarioMatrizClinica.historialEnclinicos',$material->id) }}">Historial</a>
 
 			<a class="btn btn-info" href="{{ route('inventarioMatrizClinica.historialSaclinicos',$material->id) }}">Historial</a>
 		</td>
