@@ -129,7 +129,10 @@ Route::group(['middleware' => ['auth']], function() {
 
 	Route::get('inventarioMatrizClinica/{id}',['as'=>'inventarioMatrizClinica.agregar','uses'=>'InventarioMatrizClinicaController@agregar']);
 
-	Route::post('inventarioMatrizClinica/{id}',['as'=>'inventarioMatrizClinica.reducir','uses'=>'InventarioMatrizClinicaController@reducir']);
+	Route::get('AgregaSalida/{id}',['as'=>'inventarioMatrizClinica.reducir','uses'=>'SalidaMatrizController@reducir']);
+	//Route::get('AgregaSalida/{id}',['as'=>'inventarioMatrizClinica.reducir','uses'=>'SalidaMatrizController@reducir']);
+
+
 	
 
 });

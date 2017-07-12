@@ -90,7 +90,15 @@ public function storeinv ($id, $existenciaAum )
     }   
 
 
-public function reducir($id, $existenciaRed)
+    
+
+public function reducir($id){
+
+    $material = MaterialClinica::find($id);
+       return view('inventarioMatrizClinica.reducir', compact('material'));
+}
+
+public function reducirinv($id, $existenciaRed)
     {
         $material = MaterialClinica::find($id);
         $existencia = $material->pluck('existencia');
