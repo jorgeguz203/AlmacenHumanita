@@ -129,7 +129,19 @@ Route::group(['middleware' => ['auth']], function() {
 
 	Route::get('inventarioMatrizClinicaHistorial/{id}',['as'=>'inventarioMatrizClinica.historialEn','uses'=>'EntradaMatrizController@show']);
 
-	Route::post('inventarioMatrizClinicas/{id}',['as'=>'inventarioMatrizClinica.reducir','uses'=>'InventarioMatrizClinicaController@reducir']);
+	//salidas
+	Route::get('inventarioMatrizClinicas/{id}',['as'=>'inventarioMatrizClinica.reducir','uses'=>'SalidaMatrizController@reducir']);
+	Route::get('inventarioMatrizClinicasClinicos/{id}',['as'=>'inventarioMatrizClinica.reducirclinicos','uses'=>'SalidaMatrizController@reducirclinicos']);
+	Route::post('inventarioMatrizClinicas/{id}',['as'=>'SalidaMatriz.updateinvsalida','uses'=>'SalidaMatrizController@updateinvsalida']);
+
+	Route::post('inventarioMatrizClinicaClinicoss/{id}',['as'=>'SalidaMatriz.updateinvsalidaclinicos','uses'=>'SalidaMatrizController@updateinvsalidaclinicos']);
+
+
+	Route::get('inventarioMatrizClinicasHistorial/{id}',['as'=>'inventarioMatrizClinica.historialSa','uses'=>'SalidaMatrizController@show']);
+
+	Route::get('inventarioMatrizClinicasHistorialClinicos/{id}',['as'=>'inventarioMatrizClinica.historialSaclinicos','uses'=>'SalidaMatrizController@showclinicos']);
+
+
 	
 
 });

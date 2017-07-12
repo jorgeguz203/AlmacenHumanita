@@ -89,6 +89,18 @@ public function reducir($id, $existenciaRed)
        return view('inventarioMatrizClinica.index');
     }
 
+    public function reducirclinicos($id, $existenciaRed)
+    {
+        $material = MaterialClinica::find($id);
+        $existencia = $material->pluck('existencia');
+
+        $nuevaExistencia = $existencia - $existenciaRed;
+
+         DB::table('materialclinica')->where('id',$id)->update(['existencia' => $nuevaExistencia]);
+
+       return view('inventarioMatrizClinica.indexclinicos');
+    }
+
 
     
 
