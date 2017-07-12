@@ -95,10 +95,18 @@ public function updateinventrada (Request $request, $id)
                         
     } 
 
-        public function show($id)
+         public function show($id)
     {
         $material = MaterialClinica::find($id);
-        return view('inventarioMatrizClinica.historialEn',compact('material'));
+        $historiales = EntradaMatriz::all();
+        return view('inventarioMatrizClinica.historialEn',compact('material','historiales'));
+    }
+
+    public function showclinicos($id)
+    {
+        $material = MaterialClinica::find($id);
+        $historiales = EntradaMatriz::all();
+        return view('inventarioMatrizClinica.historialEnclinicos',compact('material','historiales'));
     }
 
 

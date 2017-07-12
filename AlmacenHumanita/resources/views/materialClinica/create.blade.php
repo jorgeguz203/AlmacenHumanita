@@ -64,8 +64,8 @@
       <label for="sel1">Área:</label>
         
       <select class="selectpicker" id=area name="area">
-        <option value='clinico'>Clínicos</option>
-        <option value='toma_muestra'>Toma de Muestras</option>
+        <option value='Clinicos'>Clínicos</option>
+        <option value='Toma_de_muestras'>Toma de Muestras</option>
       </select>
       </div>
         </div>

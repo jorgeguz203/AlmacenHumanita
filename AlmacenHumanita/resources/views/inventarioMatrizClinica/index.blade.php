@@ -38,7 +38,7 @@
 		</tr>
 		
 	@foreach ($materiales as $key => $material)
-	@if( $material->area  == 'Toma de muestras')
+	@if( $material->area  == 'Toma_de_muestras')
 	<tr>
 		<td>{{ $material->nombre }}</td>
 		<td>{{ $material->descripcion }}</td>
