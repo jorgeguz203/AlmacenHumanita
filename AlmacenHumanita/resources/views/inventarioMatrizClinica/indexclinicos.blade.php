@@ -49,9 +49,13 @@
 		<td>
 			<a class="btn btn-success" href="{{ route('inventarioMatrizClinica.agregarclinicos',$material->id) }}">Entrada</a>
 			
-			<a class="btn btn-danger" href="{{ route('inventarioMatrizClinica.reducir',$material->id) }}">Salida</a>
+			<a class="btn btn-danger" href="{{ route('inventarioMatrizClinica.reducirclinicos',$material->id) }}">Salida</a>
 
-			<a class="btn btn-info" href="{{ route('materialClinica.edit',$material->id) }}">Historial</a>
+			<br>
+
+			<a class="btn btn-info" href="{{ route('inventarioMatrizClinica.historialEn',$material->id) }}">Historial</a>
+
+			<a class="btn btn-info" href="{{ route('inventarioMatrizClinica.historialSaclinicos',$material->id) }}">Historial</a>
 		</td>
 
 	</tr>
