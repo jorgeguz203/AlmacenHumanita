@@ -12,24 +12,17 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/colores.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
+
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
 
-                    <!-- Collapsed Hamburger 
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    -->
-                    <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        Almacén Humanitá
+                         <img src = "/images/logo.jpg" class = "img-rounded" width="150" height="55">
                     </a>
                 </div>
 
