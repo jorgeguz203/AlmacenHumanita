@@ -23,34 +23,6 @@ class InventarioMatrizClinicaController extends Controller
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
-
-public function reducir($id, $existenciaRed)
-    {
-        $material = MaterialClinica::find($id);
-        $existencia = $material->pluck('existencia');
-
-        $nuevaExistencia = $existencia - $existenciaRed;
-
-         DB::table('materialclinica')->where('id',$id)->update(['existencia' => $nuevaExistencia]);
-
-       return view('inventarioMatrizClinica.index');
-    }
-
-    public function reducirclinicos($id, $existenciaRed)
-    {
-        $material = MaterialClinica::find($id);
-        $existencia = $material->pluck('existencia');
-
-        $nuevaExistencia = $existencia - $existenciaRed;
-
-         DB::table('materialclinica')->where('id',$id)->update(['existencia' => $nuevaExistencia]);
-
-       return view('inventarioMatrizClinica.indexclinicos');
-    }
-
-
-    
-
     
     
 }

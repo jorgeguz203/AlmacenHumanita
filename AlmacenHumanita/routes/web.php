@@ -141,6 +141,89 @@ Route::group(['middleware' => ['auth']], function() {
 
 		Route::get('inventarioMatrizPapeleria',['as'=>'inventarioMatrizPapeleria.index1','uses'=>'InventarioMatrizPapeleriaController@index1']);
 
+		Route::get('inventarioMatrizPapeleria2',['as'=>'inventarioMatrizPapeleria.index2','uses'=>'InventarioMatrizPapeleriaController@index2']);
+
+		Route::get('inventarioMatrizPapeleria3',['as'=>'inventarioMatrizPapeleria.index3','uses'=>'InventarioMatrizPapeleriaController@index3']);
+
+		Route::get('inventarioMatrizPapeleria4',['as'=>'inventarioMatrizPapeleria.index4','uses'=>'InventarioMatrizPapeleriaController@index4']);
+
+		Route::get('inventarioMatrizPapeleria5',['as'=>'inventarioMatrizPapeleria.index5','uses'=>'InventarioMatrizPapeleriaController@index5']);
+
+		Route::get('inventarioMatrizPapeleria6',['as'=>'inventarioMatrizPapeleria.index6','uses'=>'InventarioMatrizPapeleriaController@index6']);
+
+		Route::get('inventarioMatrizPapeleria1/{id}',['as'=>'EntradaPapeleria.agregar1','uses'=>'EntradaPapeleriaController@agregar1']);
+
+		Route::get('inventarioMatrizPapeleria2/{id}',['as'=>'EntradaPapeleria.agregar2','uses'=>'EntradaPapeleriaController@agregar2']);
+
+		Route::get('inventarioMatrizPapeleria3/{id}',['as'=>'EntradaPapeleria.agregar3','uses'=>'EntradaPapeleriaController@agregar3']);
+
+		Route::get('inventarioMatrizPapeleria4/{id}',['as'=>'EntradaPapeleria.agregar4','uses'=>'EntradaPapeleriaController@agregar4']);
+
+		Route::get('inventarioMatrizPapeleria5/{id}',['as'=>'EntradaPapeleria.agregar5','uses'=>'EntradaPapeleriaController@agregar5']);
+
+		Route::get('inventarioMatrizPapeleria6/{id}',['as'=>'EntradaPapeleria.agregar6','uses'=>'EntradaPapeleriaController@agregar6']);
+
+		Route::post('inventarioMatrizPapeleria1/{id}',['as'=>'EntradaPapeleria.update1','uses'=>'EntradaPapeleriaController@update1']);
+
+		Route::post('inventarioMatrizPapeleria2/{id}',['as'=>'EntradaPapeleria.update2','uses'=>'EntradaPapeleriaController@update2']);
+
+		Route::post('inventarioMatrizPapeleria3/{id}',['as'=>'EntradaPapeleria.update3','uses'=>'EntradaPapeleriaController@update3']);
+
+		Route::post('inventarioMatrizPapeleria4/{id}',['as'=>'EntradaPapeleria.update4','uses'=>'EntradaPapeleriaController@update4']);
+
+		Route::post('inventarioMatrizPapeleria5/{id}',['as'=>'EntradaPapeleria.update5','uses'=>'EntradaPapeleriaController@update5']);
+
+		Route::post('inventarioMatrizPapeleria6/{id}',['as'=>'EntradaPapeleria.update6','uses'=>'EntradaPapeleriaController@update6']);
+
+		Route::get('inventarioMatrizPapelerias1/{id}',['as'=>'SalidaPapeleria.reducir1','uses'=>'SalidaPapeleriaController@reducir1']);
+
+		Route::get('inventarioMatrizPapelerias2/{id}',['as'=>'SalidaPapeleria.reducir2','uses'=>'SalidaPapeleriaController@reducir2']);
+
+		Route::get('inventarioMatrizPapelerias3/{id}',['as'=>'SalidaPapeleria.reducir3','uses'=>'SalidaPapeleriaController@reducir3']);
+
+		Route::get('inventarioMatrizPapelerias4/{id}',['as'=>'SalidaPapeleria.reducir4','uses'=>'SalidaPapeleriaController@reducir4']);
+
+		Route::get('inventarioMatrizPapelerias5/{id}',['as'=>'SalidaPapeleria.reducir5','uses'=>'SalidaPapeleriaController@reducir5']);
+
+		Route::get('inventarioMatrizPapelerias6/{id}',['as'=>'SalidaPapeleria.reducir6','uses'=>'SalidaPapeleriaController@reducir6']);
+
+		Route::post('inventarioMatrizPapelerias1/{id}',['as'=>'SalidaPapeleria.updateinvsalida1','uses'=>'SalidaPapeleriaController@updateinvsalida1']);
+
+		Route::post('inventarioMatrizPapelerias2/{id}',['as'=>'SalidaPapeleria.updateinvsalida2','uses'=>'SalidaPapeleriaController@updateinvsalida2']);
+
+		Route::post('inventarioMatrizPapelerias3/{id}',['as'=>'SalidaPapeleria.updateinvsalida3','uses'=>'SalidaPapeleriaController@updateinvsalida3']);
+
+		Route::post('inventarioMatrizPapelerias4/{id}',['as'=>'SalidaPapeleria.updateinvsalida4','uses'=>'SalidaPapeleriaController@updateinvsalida4']);
+
+		Route::post('inventarioMatrizPapelerias5/{id}',['as'=>'SalidaPapeleria.updateinvsalida5','uses'=>'SalidaPapeleriaController@updateinvsalida5']);
+
+		Route::post('inventarioMatrizPapelerias6/{id}',['as'=>'SalidaPapeleria.updateinvsalida6','uses'=>'SalidaPapeleriaController@updateinvsalida6']);
+
+		Route::get('inventarioMatrizPapeleraHistorial1/{id}',['as'=>'EntradaPapeleria.historialEn1','uses'=>'EntradaPapeleriaController@show1']);
+
+		Route::get('inventarioMatrizPapeleraHistorial2/{id}',['as'=>'EntradaPapeleria.historialEn2','uses'=>'EntradaPapeleriaController@show2']);
+
+		Route::get('inventarioMatrizPapeleraHistorial3/{id}',['as'=>'EntradaPapeleria.historialEn3','uses'=>'EntradaPapeleriaController@show3']);
+
+		Route::get('inventarioMatrizPapeleraHistorial4/{id}',['as'=>'EntradaPapeleria.historialEn4','uses'=>'EntradaPapeleriaController@show4']);
+
+		Route::get('inventarioMatrizPapeleraHistorial5/{id}',['as'=>'EntradaPapeleria.historialEn5','uses'=>'EntradaPapeleriaController@show5']);
+
+		Route::get('inventarioMatrizPapeleraHistorial6/{id}',['as'=>'EntradaPapeleria.historialEn6','uses'=>'EntradaPapeleriaController@show6']);
+
+		Route::get('inventarioMatrizPapelerasHistorial1/{id}',['as'=>'SalidaPapeleria.historialSa1','uses'=>'SalidaPapeleriaController@shows1']);
+
+		Route::get('inventarioMatrizPapelerasHistorial2/{id}',['as'=>'SalidaPapeleria.historialSa2','uses'=>'SalidaPapeleriaController@shows2']);
+
+		Route::get('inventarioMatrizPapelerasHistorial3/{id}',['as'=>'SalidaPapeleria.historialSa3','uses'=>'SalidaPapeleriaController@shows3']);
+
+		Route::get('inventarioMatrizPapelerasHistorial4/{id}',['as'=>'SalidaPapeleria.historialSa4','uses'=>'SalidaPapeleriaController@shows4']);
+
+		Route::get('inventarioMatrizPapelerasHistorial5/{id}',['as'=>'SalidaPapeleria.historialSa5','uses'=>'SalidaPapeleriaController@shows5']);
+
+		Route::get('inventarioMatrizPapelerasHistorial6/{id}',['as'=>'SalidaPapeleria.historialSa6','uses'=>'SalidaPapeleriaController@shows6']);
+
+
 });
 
 

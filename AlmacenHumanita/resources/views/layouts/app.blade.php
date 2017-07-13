@@ -61,6 +61,26 @@
                                             Papeleria  
                                         </a>
 
+                                        <a href="{{ route('inventarioMatrizPapeleria.index2') }}">
+                                            Limpieza  
+                                        </a>
+
+                                        <a href="{{ route('inventarioMatrizPapeleria.index3') }}">
+                                            Cafetería  
+                                        </a>
+
+                                        <a href="{{ route('inventarioMatrizPapeleria.index4') }}">
+                                            Impresos  
+                                        </a>
+
+                                        <a href="{{ route('inventarioMatrizPapeleria.index5') }}">
+                                            Rayos X  
+                                        </a>
+
+                                        <a href="{{ route('inventarioMatrizPapeleria.index6') }}">
+                                            Otros  
+                                        </a>
+
 
                                     </li>
 

@@ -5,7 +5,7 @@
 	<div class="row">
 	    <div class="col-lg-12 margin-tb">
 	        <div class="pull-left">
-	            <h2>Almacén Papelería</h2>
+	            <h2>Almacén Limpieza</h2>
 	        </div>
 	       
 	    </div>
@@ -38,7 +38,7 @@
 		</tr>
 		
 	@foreach ($materiales as $key => $material)
-	@if( $material->area  == 'papeleria')
+	@if( $material->area  == 'limpieza')
 	<tr>
 		<td>{{ $material->nombre }}</td>
 		<td>{{ $material->descripcion }}</td>
@@ -47,16 +47,16 @@
 		<td>{{ $material->existencia }}</td>
 
 		<td>
-			<a class="btn btn-success" href="{{ route('EntradaPapeleria.agregar1',$material->id) }}">Entrada</a>
+					<a class="btn btn-success" href="{{ route('EntradaPapeleria.agregar2',$material->id) }}">Entrada</a>
 			
-			<a class="btn btn-danger" href="{{ route('SalidaPapeleria.reducir1',$material->id) }}">
+			<a class="btn btn-danger" href="{{ route('SalidaPapeleria.reducir2',$material->id) }}">
 			Salida</a>
 
 			<br>
 
-			<a class="btn btn-info" href="{{ route('EntradaPapeleria.historialEn1',$material->id) }}">Historial</a>
+			<a class="btn btn-info" href="{{ route('EntradaPapeleria.historialEn2',$material->id) }}">Historial</a>
 
-			<a class="btn btn-info" href="{{ route('SalidaPapeleria.historialSa1',$material->id) }}">Historial</a>
+			<a class="btn btn-info" href="{{ route('SalidaPapeleria.historialSa2',$material->id) }}">Historial</a>
 
 		</td>
 

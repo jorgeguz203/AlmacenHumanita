@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class EntradaPapeleria extends Model
 {
-       protected $table = 'entrada_papeleria';
+       protected $table = 'entrada_papelerias';
 
 	protected $fillable = ['materialpapeleras_id','Proveedor_id','cantidad', 'nombre_proveedor', 'presentacion', 'observaciones'];
 
