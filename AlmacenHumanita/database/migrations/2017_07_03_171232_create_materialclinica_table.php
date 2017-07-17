@@ -21,6 +21,7 @@ class CreateMaterialclinicaTable extends Migration
             $table->float('minimo');
             $table->float('existencia');
             $table->string('area')->nullable();
+            $table->string('seccion')->nullable();
             $table->string('unidad_medida')->nullable();
             $table->bigInteger('numero_referencia')->nullable();
             $table->string('presentacion')->nullable();

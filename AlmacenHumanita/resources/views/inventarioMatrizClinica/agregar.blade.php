@@ -52,6 +52,13 @@
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
+                <strong>Número de Factura:</strong><small><font color="red">(obligatorio)</font></small>
+                {!! Form::text('numero_factura', null, array('placeholder' => '4001','class' => 'form-control')) !!}
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
                 <strong>Cantidad:</strong><small><font color="red">(obligatorio)</font></small>
                 {!! Form::text('cantidad', null, array('placeholder' => '0','class' => 'form-control')) !!}
             </div>

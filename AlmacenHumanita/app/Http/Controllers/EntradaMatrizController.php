@@ -29,6 +29,7 @@ public function updateinventrada (Request $request, $id)
     	    $this->validate($request, [
     	    'materialclinica_id' => 'required',
     	    'Proveedor_id' => 'required',
+            'numero_factura' => 'required',
             'cantidad'=> 'required',
             'precio'=> 'required',
             'fecha_caducidad',
@@ -43,6 +44,7 @@ public function updateinventrada (Request $request, $id)
     	$entrada->materialclinica_id = request('materialclinica_id');
         $entrada->proveedor_id = request('Proveedor_id');
         $entrada->nombre_proveedor = $proveedor->nombre;
+        $entrada->numero_factura = request('numero_factura');
         $entrada->cantidad = request('cantidad');
         $entrada->precio = request('precio');
         $entrada->fecha_caducidad = request('fecha_caducidad');
@@ -64,6 +66,7 @@ public function updateinventrada (Request $request, $id)
     	    $this->validate($request, [
     	    'materialclinica_id' => 'required',
     	    'Proveedor_id' => 'required',
+            'numero_factura' => 'required',
             'cantidad'=> 'required',
             'precio'=> 'required',
             'fecha_caducidad',
@@ -78,6 +81,7 @@ public function updateinventrada (Request $request, $id)
     	$entrada->materialclinica_id = request('materialclinica_id');
         $entrada->proveedor_id = request('Proveedor_id');
         $entrada->nombre_proveedor = $proveedor->nombre;
+        $entrada->numero_factura = request('numero_factura');
         $entrada->cantidad = request('cantidad');
         $entrada->precio = request('precio');
         $entrada->fecha_caducidad = request('fecha_caducidad');

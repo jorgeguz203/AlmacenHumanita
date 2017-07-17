@@ -46,7 +46,7 @@
                             <li><a href="{{ route('login') }}">Iniciar Sesión</a></li>
                             
                         @elseif(Auth::user())
-                        @if (Auth::user()->can('admin-admin-clinica'))
+                        @if (Auth::user()->can('admin-admin-papelera'))
 
                             <li class="dropdown">
                       
@@ -86,7 +86,8 @@
 
                             </ul>
                         </li>
-
+                         @endif
+                        @if (Auth::user()->can('admin-admin-clinica'))
                         <li class="dropdown">
                       
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

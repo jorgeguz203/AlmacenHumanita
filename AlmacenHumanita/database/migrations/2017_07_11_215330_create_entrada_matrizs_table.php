@@ -18,6 +18,7 @@ class CreateEntradaMatrizsTable extends Migration
              $table->foreign('Proveedor_id')->references('id')
                     ->on('proveedors')->onDelete('cascade');
             $table->string('nombre_proveedor');
+            $table->bigInteger('numero_factura');
             $table->float('cantidad');
             $table->float('precio');
             $table->string('fecha_caducidad')->nullable();

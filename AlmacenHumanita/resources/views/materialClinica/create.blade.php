@@ -70,6 +70,21 @@
       </div>
         </div>
 
+        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+        <div class="container">
+            
+              <input type="checkbox" name="seccion" value="inmunologia"> Inmunología<br>
+              <input type="checkbox" name="seccion" value="uroanalisis"> Uroanálisis<br>
+              <input type="checkbox" name="seccion" value="hematologia"> Hematología<br>
+              <input type="checkbox" name="seccion" value="bacteriologia"> Bactereología<br>
+              <input type="checkbox" name="seccion" value="bioquimica"> Bioquímica<br>
+              <input type="checkbox" name="seccion" value="hormonas"> Hormonas<br>
+          
+          </div>
+      </div>
+        </div>
+
 
        <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">

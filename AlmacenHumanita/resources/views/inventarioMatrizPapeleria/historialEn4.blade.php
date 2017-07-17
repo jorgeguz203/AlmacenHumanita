@@ -19,6 +19,7 @@
 		<tr>
 			<th>Nombre de Proveedor:</th>
 			<th>Fecha de entrada:</th>
+			<th>No. Factura:</th>
 			<th>Cantidad entrada:</th>
 			<th>Precio:</th>
 			<th>Presentación:</th>
@@ -30,6 +31,7 @@
 	<tr>
 		<td>{{ $historial->nombre_proveedor }}</td>
 		<td>{{ $historial->created_at }}</td>
+		<td>{{ $historial->numero_factura }}</td>
 		<td>{{ $historial->cantidad }}</td>
 		<td>{{ $historial->precio }}</td>
 		<td>{{ $historial->presentacion }}</td>

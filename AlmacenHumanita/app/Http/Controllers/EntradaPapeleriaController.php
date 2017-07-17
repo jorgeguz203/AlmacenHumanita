@@ -57,6 +57,7 @@ class EntradaPapeleriaController extends Controller
             $this->validate($request, [
             'materialpapelera_id' => 'required',
             'Proveedor_id' => 'required',
+            'numero_factura' => 'required',
             'cantidad'=> 'required',
             'precio'=> 'required',
             'presentacion',
@@ -70,6 +71,7 @@ class EntradaPapeleriaController extends Controller
         $entrada->materialpapelera_id = request('materialpapelera_id');
         $entrada->proveedor_id = request('Proveedor_id');
         $entrada->nombre_proveedor = $proveedor->nombre;
+        $entrada->numero_factura = request('numero_factura');
         $entrada->cantidad = request('cantidad');
         $entrada->precio = request('precio');
         $entrada->presentacion = request('presentacion');
@@ -90,6 +92,7 @@ class EntradaPapeleriaController extends Controller
             $this->validate($request, [
             'materialpapelera_id' => 'required',
             'Proveedor_id' => 'required',
+            'numero_factura' => 'required',
             'cantidad'=> 'required',
             'precio'=> 'required',
             'presentacion',
@@ -103,6 +106,7 @@ class EntradaPapeleriaController extends Controller
         $entrada->materialpapelera_id = request('materialpapelera_id');
         $entrada->proveedor_id = request('Proveedor_id');
         $entrada->nombre_proveedor = $proveedor->nombre;
+        $entrada->numero_factura = request('numero_factura');
         $entrada->cantidad = request('cantidad');
         $entrada->precio = request('precio');
         $entrada->presentacion = request('presentacion');
@@ -123,6 +127,7 @@ class EntradaPapeleriaController extends Controller
             $this->validate($request, [
             'materialpapelera_id' => 'required',
             'Proveedor_id' => 'required',
+            'numero_factura' => 'required',
             'cantidad'=> 'required',
             'precio'=> 'required',
             'presentacion',
@@ -136,6 +141,7 @@ class EntradaPapeleriaController extends Controller
         $entrada->materialpapelera_id = request('materialpapelera_id');
         $entrada->proveedor_id = request('Proveedor_id');
         $entrada->nombre_proveedor = $proveedor->nombre;
+        $entrada->numero_factura = request('numero_factura');
         $entrada->cantidad = request('cantidad');
         $entrada->precio = request('precio');
         $entrada->presentacion = request('presentacion');
@@ -156,6 +162,7 @@ class EntradaPapeleriaController extends Controller
             $this->validate($request, [
             'materialpapelera_id' => 'required',
             'Proveedor_id' => 'required',
+            'numero_factura' => 'required',
             'cantidad'=> 'required',
             'precio'=> 'required',
             'presentacion',
@@ -169,6 +176,7 @@ class EntradaPapeleriaController extends Controller
         $entrada->materialpapelera_id = request('materialpapelera_id');
         $entrada->proveedor_id = request('Proveedor_id');
         $entrada->nombre_proveedor = $proveedor->nombre;
+        $entrada->numero_factura = request('numero_factura');
         $entrada->cantidad = request('cantidad');
         $entrada->precio = request('precio');
         $entrada->presentacion = request('presentacion');
@@ -189,6 +197,7 @@ class EntradaPapeleriaController extends Controller
             $this->validate($request, [
             'materialpapelera_id' => 'required',
             'Proveedor_id' => 'required',
+            'numero_factura' => 'required',
             'cantidad'=> 'required',
             'precio'=> 'required',
             'presentacion',
@@ -202,6 +211,7 @@ class EntradaPapeleriaController extends Controller
         $entrada->materialpapelera_id = request('materialpapelera_id');
         $entrada->proveedor_id = request('Proveedor_id');
         $entrada->nombre_proveedor = $proveedor->nombre;
+        $entrada->numero_factura = request('numero_factura');
         $entrada->cantidad = request('cantidad');
         $entrada->precio = request('precio');
         $entrada->presentacion = request('presentacion');
@@ -222,6 +232,7 @@ class EntradaPapeleriaController extends Controller
             $this->validate($request, [
             'materialpapelera_id' => 'required',
             'Proveedor_id' => 'required',
+            'numero_factura' => 'required',
             'cantidad'=> 'required',
             'precio'=> 'required',
             'presentacion',
@@ -235,6 +246,7 @@ class EntradaPapeleriaController extends Controller
         $entrada->materialpapelera_id = request('materialpapelera_id');
         $entrada->proveedor_id = request('Proveedor_id');
         $entrada->nombre_proveedor = $proveedor->nombre;
+        $entrada->numero_factura = request('numero_factura');
         $entrada->cantidad = request('cantidad');
         $entrada->precio = request('precio');
         $entrada->presentacion = request('presentacion');
