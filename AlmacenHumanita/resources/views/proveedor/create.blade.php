@@ -36,19 +36,19 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Nombre del contacto:</strong>
+                <strong>Nombre del contacto:</strong><small><font color="red">(obligatorio)</font></small>
                 {!! Form::text('nombre_contacto', null, array('placeholder' => 'Jane Doe','class' => 'form-control')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Email:</strong>
+                <strong>Email:</strong><small><font color="red">(obligatorio)</font></small>
                 {!! Form::text('email', null, array('placeholder' => 'microsoft@hotmail.com','class' => 'form-control')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Teléfono:</strong>
+                <strong>Teléfono:</strong><small><font color="red">(obligatorio)</font></small>
                 {!! Form::text('telefono', null, array('placeholder' => '4421849409','class' => 'form-control')) !!}
             </div>
         </div>
@@ -63,7 +63,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
 
-                <strong>Dirección:</strong>
+                <strong>Dirección:</strong><small><font color="red">(obligatorio)</font></small>
                 {!! Form::text('direccion', null, array('placeholder' => 'Calle 10 colonia Azul','class' => 'form-control')) !!}
 
             </div>

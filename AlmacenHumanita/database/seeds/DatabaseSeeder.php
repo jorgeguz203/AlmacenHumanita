@@ -14,9 +14,9 @@ class DatabaseSeeder extends Seeder
     {
 
         $this->call(PermissionTableSeeder::class);
-        $this->call(MaterialPapeleraTableSeeder::class);
-        $this->call(MaterialClinicaTableSeeder::class);
-        $this->call(ProveedorTableSeeder::class);
+        //$this->call(MaterialPapeleraTableSeeder::class);
+        //$this->call(MaterialClinicaTableSeeder::class);
+        //$this->call(ProveedorTableSeeder::class);
 
     }
 }

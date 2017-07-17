@@ -18,7 +18,7 @@ class CreateProveedorsTable extends Migration
             $table->string('nombre');
             $table->string('nombre_contacto')->nullable();
             $table->string('email')->nullable();
-            $table->bigInteger('telefono')->nullable();
+            $table->string('telefono')->nullable();
             $table->string('RFC')->nullable();
             $table->string('direccion')->nullable();
             $table->string('horario')->nullable();

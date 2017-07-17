@@ -33,7 +33,7 @@ class ProveedorController extends Controller
             'nombre_contacto' => 'required',
             'email' => 'required',
             'telefono' => 'required',
-            'RFC' => 'required',
+            'RFC',
             'direccion' => 'required',
             'horario',
 
@@ -73,7 +73,7 @@ class ProveedorController extends Controller
             'nombre_contacto' => 'required',
             'email' => 'required',
             'telefono' => 'required',
-            'RFC' => 'required',
+            'RFC',
             'direccion' => 'required',
             'horario',
         ]);
