@@ -16,7 +16,7 @@
 @if (Auth::user()->can('admin-admin-clinica'))
 <strong>Materiales Clínicos</strong>
     <table class="table table-bordered">
-     <tr>
+     <tr class="tabla">
             <th>Nombre</th>
             <th>Descripción</th>
             <th>Máximo</th>
@@ -43,7 +43,7 @@
 @if (Auth::user()->can('admin-admin-papelera'))
 <strong>Materiales de Papelería</strong>
     <table class="table table-bordered">
-     <tr>
+     <tr class="tabla">
             <th>Nombre</th>
             <th>Descripción</th>
             <th>Máximo</th>
