@@ -15,7 +15,7 @@
 		</div>
 	@endif
 	<table class="table table-bordered">
-		<tr>
+		<tr class="tabla1">
 
 			<th>Nombre</th>
 			<th>Email</th>

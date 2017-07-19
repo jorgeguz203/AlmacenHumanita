@@ -28,13 +28,14 @@
 		</div>
 	@endif
 	<table class="table table-bordered">
-		<tr>
+		<tr class="tabla1">
 			<th>Nombre</th>
 			<th>Descripción</th>
 			<th>Máximo</th>
 			<th>Mínimo</th>
 			<th>Existencia</th>
-			<th width="280px">Acción</th>
+			<th>Entradas</th>
+			<th>Salidas</th>
 		</tr>
 		
 	@foreach ($materiales as $key => $material)
@@ -50,15 +51,21 @@
 
 					<a class="btn btn-success" href="{{ route('EntradaPapeleria.agregar3',$material->id) }}">Entrada</a>
 			
-			<a class="btn btn-danger" href="{{ route('SalidaPapeleria.reducir3',$material->id) }}">
-			Salida</a>
-
+			
 			<br>
 
 			<a class="btn btn-info" href="{{ route('EntradaPapeleria.historialEn3',$material->id) }}">Historial</a>
 
-			<a class="btn btn-info" href="{{ route('SalidaPapeleria.historialSa3',$material->id) }}">Historial</a>
+		</td>
 
+		<td>
+
+		<a class="btn btn-danger" href="{{ route('SalidaPapeleria.reducir3',$material->id) }}">
+			Salida</a>
+
+			<br>
+
+			<a class="btn btn-info" href="{{ route('SalidaPapeleria.historialSa3',$material->id) }}">Historial</a>
 		</td>
 
 	</tr>
