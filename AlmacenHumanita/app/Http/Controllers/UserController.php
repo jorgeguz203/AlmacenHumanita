@@ -8,6 +8,11 @@ use App\User;
 use App\Role;
 use DB;
 use Hash;
+use App\MaterialClinica;
+use App\InventarioSucursal;
+use App\MaterialPapelera;
+use App\InventarioSucursalpapeleria;
+
 
 class UserController extends Controller
 {
@@ -56,6 +61,16 @@ class UserController extends Controller
         $user = User::create($input);
         foreach ($request->input('roles') as $key => $value) {
             $user->attachRole($value);
+        }
+
+        $invcli = MaterialClinica::all();
+        foreach ($invcli as $invc){
+            InventarioSucursal::insert(array('materialclinica_id' => $invc->id, 'User_id' => $user->id,            'existencia' => 0));
+        }
+
+                $invpap = MaterialPapelera::all();
+        foreach ($invpap as $invp){
+            InventarioSucursalpapeleria::insert(array('materialpapelera_id' => $invp->id, 'User_id' => $user->id,            'existencia' => 0));
         }
 
         return redirect()->route('users.index')

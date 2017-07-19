@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+@if (Auth::user()->can('admin-admin-clinica', 'admin-admin-papelera'))
     <div class="row">
         <div class="col-md-6">          
                 <div class="panel-body dag" align="center">
@@ -72,5 +73,30 @@
         </div>
             
     </div>
+@endif
+
+
+
+<!--                  sucursales               -->
+
+
+@if (Auth::user()->can('admin-sucrusal'))
+    <div class="row">
+        <div class="col-md-6">          
+                <div class="panel-body war" align="center">
+                <h3>Materiales de Tomas de Muestra por debajo del ménimo</h3>
+        </div>
+    </div>
+
+<div class="col-md-6">
+    <div class="panel-body war" align="center">
+                    <h3>Materiales de Papelería por debajo del ménimo</h3>
+                    </div>
+                    <br>
+
+        </div>
+            
+    </div>
+@endif
 </div>
 @endsection

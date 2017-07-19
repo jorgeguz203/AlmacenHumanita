@@ -20,6 +20,18 @@ class User extends Authenticatable
 public function roles(){
         return $this->belongsToMany('App\Role');
     }
+
+    public function InventarioSucursal()
+{
+    return $this->belongsToMany('App\InventarioSucursal')
+      ->withTimestamps();
+}
+
+    public function InventarioSucursalpapeleria()
+{
+    return $this->belongsToMany('App\InventarioSucursalpapeleria')
+      ->withTimestamps();
+}
     /**
      * The attributes that are mass assignable.
      *

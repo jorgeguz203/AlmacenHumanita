@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\MaterialClinica;
+use App\User;
+use App\InventarioSucursal;
 
 class MaterialClinicaController extends Controller
 {
@@ -41,7 +43,16 @@ class MaterialClinicaController extends Controller
 
         ]);
 
-        MaterialClinica::create($request->all());
+
+        $input = $request->all();
+
+        $material = MaterialClinica::create($input);
+
+        $user = User::all();
+        foreach ($user as $us){
+            InventarioSucursal::insert(array('materialclinica_id' => $material->id, 'User_id' => $us->id,
+                'existencia' => 0));
+        }
 
         return redirect()->route('materialClinica.index')
                         ->with('Se ha creado el material con éxito!');

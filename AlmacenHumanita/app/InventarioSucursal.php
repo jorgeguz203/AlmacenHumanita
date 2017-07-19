@@ -1,0 +1,25 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class InventarioSucursal extends Model
+{
+    protected $table = 'inventario_sucursals';
+    protected $fillable = ['materialclinica_id','User_id','existencia'];
+
+
+		public function materialclinica()
+		{
+	    return $this->belongsToMany('App\materialclinica')
+	      ->withTimestamps();
+		}
+
+	 public function users()
+		{
+	    return $this->belongsToMany('App\User')
+	      ->withTimestamps();
+		}
+
+}

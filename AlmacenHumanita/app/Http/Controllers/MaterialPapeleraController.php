@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\MaterialPapelera;
+use App\User;
+use App\InventarioSucursalpapeleria;
 
 class MaterialPapeleraController extends Controller
 {
@@ -38,7 +40,17 @@ class MaterialPapeleraController extends Controller
 
         ]);
 
-        MaterialPapelera::create($request->all());
+
+
+        $input = $request->all();
+
+        $material = MaterialPapelera::create($input);
+
+        $user = User::all();
+        foreach ($user as $us){
+            InventarioSucursalpapeleria::insert(array('materialpapelera_id' => $material->id, 'User_id' => $us->id,
+                'existencia' => 0));
+        }
 
         return redirect()->route('materialPapelera.index')
                         ->with('Se ha creado el material con éxito!');
