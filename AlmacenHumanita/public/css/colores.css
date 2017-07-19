@@ -1,8 +1,83 @@
 
-.tabla {
-    background-color:#FF7209 ;
+
+.log1 {
+	background-color:#00B398 !important;
 }
 
-.tabla2 {
-    background-color:black ;
+.log2 {
+	background-color:#0033A0 !important;
 }
+
+.navVK {
+	background-color: #00B398;
+}
+
+.tabla1 {
+    background-color:#00B398;
+    color: white;
+    }
+
+tr:nth-child(even){
+	background-color: #f2f2f2
+}
+
+table, td, th {
+    border: 1px solid black;
+}
+
+.registro {
+	background-color: #A6EADA;
+
+}
+
+
+body {
+	background-color:#D7EBE5;
+
+}
+
+h1 {
+    color: black;
+    font-style: ;
+    font-size: 45px;
+}
+
+p {
+	color: black;
+}
+
+.dropd{
+	background-color:#00B398;
+}
+
+.war {
+	background-color:#FA8744;
+	color: black;
+}
+.dag {
+	background-color:#F9F971;
+	color: black;
+}
+
+.efecto-drop:hover {
+  background-color: #B3EEDC !important;
+}
+
+.click:focus {
+    background-color: #B3EEDC !important;
+}
+
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+	background-color: #B3EEDC !important;
+}
+
+.text-white, .text-white a, .text-white a:active {
+	color: black !important;
+}
+
+
+
+
+
+
+

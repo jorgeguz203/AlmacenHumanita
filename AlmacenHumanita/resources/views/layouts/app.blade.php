@@ -14,15 +14,15 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/colores.css') }}" rel="stylesheet">
 </head>
-<body>
+<body bgcolor="#C5F2E7">
     <div id="app">
 
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-default navbar-static-top navVK">
             <div class="container">
                 <div class="navbar-header">
 
                     <a class="navbar-brand" href="{{ url('/') }}">
-                         <img src = "/images/logo.jpg" class = "img-rounded" width="150" height="55">
+                         <img src = "/images/logotrans.png" class = "img-rounded" width="120" height="59">
                     </a>
                 </div>
 
@@ -36,42 +36,43 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Iniciar Sesión</a></li>
+                            <li><a href="{{ route('login') }}" class="efecto-drop"><p> Iniciar Sesión </p></a></li>
                             
                         @elseif(Auth::user())
                         @if (Auth::user()->can('admin-admin-papelera'))
 
                             <li class="dropdown">
                       
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    Inventario Papelería <span class="caret"></span>
+                            <a href="#" class="dropdown-toggle click" data-toggle="dropdown" role="button" aria-expanded="false">   
+                            
+                                   <p> Inventario Papelería <span class="caret"></p></span>
                             </a>
 
-                            <ul class="dropdown-menu" role="menu">
+                            <ul class="dropdown-menu dropd" role="menu">
                                     <li>
 
-                                        <a href="{{ route('inventarioMatrizPapeleria.index1') }}">
-                                            Papeleria  
+                                        <a href="{{ route('inventarioMatrizPapeleria.index1') }}" class="efecto-drop">
+                                           <p> Papeleria  </p>
                                         </a>
 
-                                        <a href="{{ route('inventarioMatrizPapeleria.index2') }}">
-                                            Limpieza  
+                                        <a href="{{ route('inventarioMatrizPapeleria.index2') }}" class="efecto-drop">
+                                         <p>   Limpieza  </p>
                                         </a>
 
-                                        <a href="{{ route('inventarioMatrizPapeleria.index3') }}">
-                                            Cafetería  
+                                        <a href="{{ route('inventarioMatrizPapeleria.index3') }}" class="efecto-drop">
+                                          <p>  Cafetería </p> 
                                         </a>
 
-                                        <a href="{{ route('inventarioMatrizPapeleria.index4') }}">
-                                            Impresos  
+                                        <a href="{{ route('inventarioMatrizPapeleria.index4') }}" class="efecto-drop">
+                                          <p>  Impresos  </p>
                                         </a>
 
-                                        <a href="{{ route('inventarioMatrizPapeleria.index5') }}">
-                                            Rayos X  
+                                        <a href="{{ route('inventarioMatrizPapeleria.index5') }}" class="efecto-drop">
+                                          <p>  Rayos X </p>
                                         </a>
 
-                                        <a href="{{ route('inventarioMatrizPapeleria.index6') }}">
-                                            Otros  
+                                        <a href="{{ route('inventarioMatrizPapeleria.index6') }}" class="efecto-drop">
+                                          <p>  Otros  </p>
                                         </a>
 
 
@@ -79,23 +80,25 @@
 
                             </ul>
                         </li>
+
                          @endif
                         @if (Auth::user()->can('admin-admin-clinica'))
                         <li class="dropdown">
+
                       
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    Inventario Clínica <span class="caret"></span>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" >
+                                  <p>  Inventario Clínica <span class="caret"></p></span>
                             </a>
 
-                            <ul class="dropdown-menu" role="menu">
+                            <ul class="dropdown-menu dropd" role="menu">
                                     <li>
 
-                                        <a href="{{ route('inventarioMatrizClinica.index') }}">
-                                            Toma de Muestras  
+                                        <a href="{{ route('inventarioMatrizClinica.index') }}" class="efecto-drop">
+                                         <p>   Toma de Muestras  </p>
                                         </a>
 
-                                        <a href="{{ route('inventarioMatrizClinica.indexclinicos') }}">
-                                            Clínicos   
+                                        <a href="{{ route('inventarioMatrizClinica.indexclinicos') }}" class="efecto-drop">
+                                          <p>  Clínicos   </p>
                                         </a>
 
                                     </li>
@@ -108,29 +111,29 @@
                         <li class="dropdown">
                       
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    Administración <span class="caret"></span>
+                                 <p>   Administración <span class="caret"> </p></span>
                             </a>
 
-                            <ul class="dropdown-menu" role="menu">
+                            <ul class="dropdown-menu dropd" role="menu">
                                     <li>
                                         @if (Auth::user()->can('admin-users'))
-                                        <a href="{{ route('users.index') }}">
-                                            Administrar Sucursales   
+                                        <a href="{{ route('users.index') }}" class="efecto-drop">
+                                          <p>  Administrar Sucursales  </p> 
                                         </a>
                                         @endif
                                         @if (Auth::user()->can('admin-clinica'))
-                                        <a href="{{ route('materialClinica.index') }}">
-                                            Administrar Materiales Clínica   
+                                        <a href="{{ route('materialClinica.index') }}" class="efecto-drop">
+                                          <p>  Administrar Materiales Clínica  </p> 
                                         </a>
                                         @endif
                                         @if (Auth::user()->can('admin-papelera'))
-                                        <a href="{{ route('materialPapelera.index') }}">
-                                            Administrar Materiales Papelería  
+                                        <a href="{{ route('materialPapelera.index') }}" class="efecto-drop">
+                                          <p>  Administrar Materiales Papelería  </p>
                                         </a>
                                         @endif 
                                         @if (Auth::user()->can('admin-proveedores'))
-                                        <a href="{{ route('proveedor.index') }}">
-                                            Administrar Proveedores  
+                                        <a href="{{ route('proveedor.index') }}" class="efecto-drop">
+                                          <p>  Administrar Proveedores  </p>
                                         </a>
                                         @endif
                                     </li>
@@ -141,29 +144,29 @@
                         @if (Auth::user()->can('drop-admin'))
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    Administración De Cuentas<span class="caret"></span>
+                                <p>    Administración De Cuentas<span class="caret"> </p></span>
                             </a>
 
-                            <ul class="dropdown-menu" role="menu">
+                            <ul class="dropdown-menu dropd" role="menu">
                                     <li>
                                         @if (Auth::user()->can('admin-admin'))
-                                        <a href="{{ route('root.index') }}">
-                                            Cuenta Administrador   
+                                        <a href="{{ route('root.index') }}" class="efecto-drop">
+                                          <p>  Cuenta Administrador </p>  
                                         </a>  
                                         @endif
                                         @if (Auth::user()->can('admin-admin-clinica'))
-                                        <a href="{{ route('almacenclinica.index') }}">
-                                            Almacenista de Clínica   
+                                        <a href="{{ route('almacenclinica.index') }}" class="efecto-drop">
+                                          <p>  Almacenista de Clínica   </p>
                                         </a> 
                                         @endif
                                         @if (Auth::user()->can('admin-admin-papelera'))
-                                        <a href="{{ route('almacenpapeleria.index') }}">
-                                            Almacenista de Papelería  
+                                        <a href="{{ route('almacenpapeleria.index') }}" class="efecto-drop">
+                                          <p>  Almacenista de Papelería  </p>
                                         </a> 
                                         @endif
                                         @if (Auth::user()->can('admin-laboratorio'))
-                                        <a href="{{ route('adminlab.index') }}">
-                                            Adminstrar Laboratorio  
+                                        <a href="{{ route('adminlab.index') }}" class="efecto-drop">
+                                         <p>   Adminstrar Laboratorio  </p>
                                         </a> 
                                         @endif
 
@@ -174,15 +177,17 @@
                         @endif
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                   <p> {{ Auth::user()->name }} <span class="caret"> </p></span>
                                 </a>
 
-                                <ul class="dropdown-menu" role="menu">
+                                <ul class="dropdown-menu dropd" role="menu">
                                     <li>
-                                        <a href="{{ route('logout') }}"
+                                        <a class="efecto-drop" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Cerrar Sesión   
+
+                                         <p>   Cerrar Sesión   </p>
+
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

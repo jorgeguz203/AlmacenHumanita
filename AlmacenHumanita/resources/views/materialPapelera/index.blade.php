@@ -32,7 +32,7 @@
 		</div>
 	@endif
 	<table class="table table-bordered">
-		<tr>
+		<tr class="tabla1">
 			<th>No</th>
 			<th>Nombre</th>
 			<th>Descripción</th>

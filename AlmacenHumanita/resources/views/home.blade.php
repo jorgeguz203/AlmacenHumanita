@@ -3,20 +3,24 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Pedidos Faltantes</div>
+        <div class="col-md-6">          
+                <div class="panel-body dag" align="center">
+                <h3>Pedidos Pendientes</h3>
+        </div>
+    </div>
 
-                <div class="panel-body">
+<div class="col-md-6">
+    <div class="panel-body war" align="center">
                     <h3>Material por debajo del mínimo</h3>
-                    <Br>
+                    </div>
+                    <br>
 
 <!--tabla clinicos-->
 
 @if (Auth::user()->can('admin-admin-clinica'))
 <strong>Materiales Clínicos</strong>
     <table class="table table-bordered">
-     <tr class="tabla">
+     <tr class="tabla1">
             <th>Nombre</th>
             <th>Descripción</th>
             <th>Máximo</th>
@@ -43,7 +47,7 @@
 @if (Auth::user()->can('admin-admin-papelera'))
 <strong>Materiales de Papelería</strong>
     <table class="table table-bordered">
-     <tr class="tabla">
+     <tr class="tabla1">
             <th>Nombre</th>
             <th>Descripción</th>
             <th>Máximo</th>
@@ -65,9 +69,8 @@
     </table>
 @endif
 <!--tabla clinicos-->
-                </div>
-            </div>
         </div>
+            
     </div>
 </div>
 @endsection
