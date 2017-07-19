@@ -43,7 +43,8 @@
 
                             <li class="dropdown">
                       
-                            <a href="#" class="dropdown-toggle click" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <a href="#" class="dropdown-toggle click" data-toggle="dropdown" role="button" aria-expanded="false">   
+                            
                                    <p> Inventario Papelería <span class="caret"></p></span>
                             </a>
 
@@ -181,7 +182,9 @@
                                         <a class="efecto-drop" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
+
                                          <p>   Cerrar Sesión   </p>
+
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
