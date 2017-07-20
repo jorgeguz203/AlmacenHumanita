@@ -8,7 +8,7 @@
                 <h2>Editar</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('users.editinvpap') }}"> Atrás</a>
+
             </div>
         </div>
     </div>
@@ -22,8 +22,31 @@
             </ul>
         </div>
     @endif
-    {!! Form::model($mats, ['method' => 'PATCH','route' => ['users.editinvpap2', $mats->id]]) !!}
+    {!! Form::model($mats, ['method' => 'PATCH','route' => ['users.editinvsucpap2', $mats->id]]) !!}
     <div class="row">
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Material:</strong>
+                <select id="nombre_material" name="nombre_material">
+                <option value='{{ $mats->nombre_material }}'>{{ $mats->nombre_material }}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Sucursal:</strong>
+                <select id="nombre_user" name="nombre_user">
+                <option value='{{ $mats->nombre_user }}'>{{ $mats->nombre_user }}</option>
+                </select>
+            </div>
+        </div>
+
+        <select class="trans"  id="user" name="User_id">
+                <option value='{{ $mats->User_id }}'></option>
+                </select>
+
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Máximo:</strong><small><font color="red">(obligatorio)</font></small>

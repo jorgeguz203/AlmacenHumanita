@@ -189,12 +189,12 @@ class UserController extends Controller
 
 
 
-     public function editinvPap2($id)
+     public function editinvPap2(Request $request,$user, $id)
     {
-     
+        $user = User::find($id);
         $mats = InventarioSucursalpapeleria::find($id);
      
-        return view('users.editinvpap2',compact('mats'));
+        return view('users.editinvpap2',compact('user','mats'));
     }
 
 
@@ -220,17 +220,20 @@ class UserController extends Controller
 
     public function updatePap(Request $request, $id)
     {
-        $this->validate($request, [
+            $this->validate($request, [
+            'User_id' => 'required',
             'nombre_user' => 'required',
             'nombre_material' => 'required',
             'maximo' => 'required',
             'minimo' => 'required',
             'existencia' => 'required',
+  
         ]);
-
         InventarioSucursalpapeleria::find($id)->update($request->all());
 
-        return redirect()->route('users.editinvpap')
+        $h = request('User_id');
+   
+        return redirect()->route('users.editinvpap',$h)
                         ->with('Se ha modificado el material con éxito!');
     }
 

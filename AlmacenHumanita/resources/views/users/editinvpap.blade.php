@@ -31,7 +31,8 @@
 		<td>{{ $mat->existencia }}</td>
 		<td>
 			
-			<a class="btn btn-primary" href="{{ route('users.editinvpap2',$mat->id) }}">Editar</a>
+			<a class="btn btn-primary" href="{{ route('users.editinvpap2',[$user,$mat]) }}">Editar</a>
+			
 			
 		</td>
 	</tr>
