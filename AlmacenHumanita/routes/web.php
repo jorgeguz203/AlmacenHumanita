@@ -40,6 +40,15 @@ Route::group(['middleware' => ['auth']], function() {
 	Route::patch('users/{id}',['as'=>'users.update','uses'=>'UserController@update']);
 	Route::delete('users/{id}',['as'=>'users.destroy','uses'=>'UserController@destroy']);
 
+	Route::get('userInventarioClinica/{id}',['as'=>'users.editinv','uses'=>'UserController@editinvSuc']);
+	Route::get('userInventarioClinicas/{user}/{id}',['as'=>'users.editinv2','uses'=>'UserController@editinvSuc2']);
+	Route::patch('userInventarioClinicas/{user}',['as'=>'users.editinvsuc2','uses'=>'UserController@updateSuc']);
+
+
+	Route::get('userInventarioPapeleria/{id}',['as'=>'users.editinvpap','uses'=>'UserController@editinvPap']);
+	Route::get('userInventarioPapelerias/{id}',['as'=>'users.editinvpap2','uses'=>'UserController@editinvPap2']);
+	Route::patch('userInventarioPapelerias/{user}/{id}',['as'=>'users.editinvpap2','uses'=>'UserController@updatePap']);
+
 	
 
 	//admin root
@@ -111,6 +120,8 @@ Route::group(['middleware' => ['auth']], function() {
 	Route::get('proveedor/{id}/edit',['as'=>'proveedor.edit','uses'=>'ProveedorController@edit']);
 	Route::patch('proveedor/{id}',['as'=>'proveedor.update','uses'=>'ProveedorController@update']);
 	Route::delete('proveedor/{id}',['as'=>'proveedor.destroy','uses'=>'ProveedorController@destroy']);
+	
+
 
 
 	//almacenMatrizClinica	

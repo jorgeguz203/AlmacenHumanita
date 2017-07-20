@@ -50,7 +50,9 @@ class MaterialClinicaController extends Controller
 
         $user = User::all();
         foreach ($user as $us){
-            InventarioSucursal::insert(array('materialclinica_id' => $material->id, 'User_id' => $us->id,
+            InventarioSucursal::insert(array('materialclinica_id' => $material->id, 'User_id' => $us->id, 
+                'nombre_material' => $material->nombre,
+                'nombre_user' => $us->name,
                 'existencia' => 0));
         }
 

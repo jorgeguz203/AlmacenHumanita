@@ -14,6 +14,7 @@ use App\MaterialPapelera;
 use App\InventarioSucursalpapeleria;
 
 
+
 class UserController extends Controller
 {
 
@@ -65,12 +66,16 @@ class UserController extends Controller
 
         $invcli = MaterialClinica::all();
         foreach ($invcli as $invc){
-            InventarioSucursal::insert(array('materialclinica_id' => $invc->id, 'User_id' => $user->id,            'existencia' => 0));
+            InventarioSucursal::insert(array('materialclinica_id' => $invc->id, 'User_id' => $user->id, 
+                'nombre_material' => $invc->nombre,
+                'nombre_user' => $user->name,
+                'existencia' => 0));
         }
 
                 $invpap = MaterialPapelera::all();
         foreach ($invpap as $invp){
-            InventarioSucursalpapeleria::insert(array('materialpapelera_id' => $invp->id, 'User_id' => $user->id,            'existencia' => 0));
+            InventarioSucursalpapeleria::insert(array('materialpapelera_id' => $invp->id, 'User_id' => $user->id, 'nombre_material' => $invp->nombre,
+                'nombre_user' => $user->name, 'existencia' => 0));
         }
 
         return redirect()->route('users.index')
@@ -152,4 +157,82 @@ class UserController extends Controller
         return redirect()->route('users.index')
                         ->with('Se ha eliminado la sucursal con éxito!');
     }
+
+
+    public function editinvSuc(Request $request, $id)
+    {
+        $user = User::find($id);
+        $mats = InventarioSucursal::all();
+    
+        return view('users.editinv',compact('mats','user'));
+    }
+
+    public function editinvPap(Request $request, $id)
+    {
+        $user = User::find($id);
+        $mats = InventarioSucursalpapeleria::all();
+     
+        return view('users.editinvpap',compact('mats','user'));
+    }
+
+
+
+     public function editinvSuc2(Request $request,$user, $id)
+    {
+       
+        $user = User::find($id);
+        $mats = InventarioSucursal::find($id);
+
+     
+        return view('users.editinv2',compact('user','mats'));
+    }
+
+
+
+     public function editinvPap2($id)
+    {
+     
+        $mats = InventarioSucursalpapeleria::find($id);
+     
+        return view('users.editinvpap2',compact('mats'));
+    }
+
+
+    public function updateSuc(Request $request, $id)
+    {
+        $this->validate($request, [
+            'User_id' => 'required',
+            'nombre_user' => 'required',
+            'nombre_material' => 'required',
+            'maximo' => 'required',
+            'minimo' => 'required',
+            'existencia' => 'required',
+  
+        ]);
+        InventarioSucursal::find($id)->update($request->all());
+
+        $h = request('User_id');
+   
+        return redirect()->route('users.editinv',$h)
+                        ->with('Se ha modificado el material con éxito!');
+    }
+
+
+    public function updatePap(Request $request, $id)
+    {
+        $this->validate($request, [
+            'nombre_user' => 'required',
+            'nombre_material' => 'required',
+            'maximo' => 'required',
+            'minimo' => 'required',
+            'existencia' => 'required',
+        ]);
+
+        InventarioSucursalpapeleria::find($id)->update($request->all());
+
+        return redirect()->route('users.editinvpap')
+                        ->with('Se ha modificado el material con éxito!');
+    }
+
+
 }

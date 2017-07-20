@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class InventarioSucursalpapeleria extends Model
 {
         protected $table = 'inventario_sucursalpapelerias';
-    protected $fillable = ['materialpapelera_id','User_id','existencia'];
+    protected $fillable = ['materialclinica_id','User_id', 'nombre_user', 'nombre_material', 'existencia','maximo','minimo'];
 
 
     	public function materialpapelera()

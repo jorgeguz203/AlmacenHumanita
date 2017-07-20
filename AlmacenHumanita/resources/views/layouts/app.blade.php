@@ -45,7 +45,7 @@
                       
                             <a href="#" class="dropdown-toggle click" data-toggle="dropdown" role="button" aria-expanded="false">   
                             
-                                   <p> Inventario Papelería <span class="caret"></p></span>
+                                   <p><strong> Inventario Papelería </strong> <span class="caret"></p></span>
                             </a>
 
                             <ul class="dropdown-menu dropd" role="menu">
@@ -87,7 +87,7 @@
 
                       
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" >
-                                  <p>  Inventario Clínica <span class="caret"></p></span>
+                                  <p> <strong> Inventario Clínica</strong> <span class="caret"></p></span>
                             </a>
 
                             <ul class="dropdown-menu dropd" role="menu">
@@ -111,7 +111,7 @@
                         <li class="dropdown">
                       
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                 <p>   Administración <span class="caret"> </p></span>
+                                 <p> <strong>  Administración </strong> <span class="caret"> </p></span>
                             </a>
 
                             <ul class="dropdown-menu dropd" role="menu">
@@ -144,7 +144,7 @@
                         @if (Auth::user()->can('drop-admin'))
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                <p>    Administración De Cuentas<span class="caret"> </p></span>
+                                <p> <strong>   Administración De Cuentas </strong><span class="caret"> </p></span>
                             </a>
 
                             <ul class="dropdown-menu dropd" role="menu">
@@ -177,7 +177,7 @@
                         @endif
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                   <p> {{ Auth::user()->name }} <span class="caret"> </p></span>
+                                   <strong><p> {{ Auth::user()->name }} <span class="caret"> </p> </strong>
                                 </a>
 
                                 <ul class="dropdown-menu dropd" role="menu">
@@ -186,7 +186,7 @@
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
 
-                                         <p>   Cerrar Sesión   </p>
+                                         <p> <strong>  Cerrar Sesión </strong>  </p>
 
                                         </a>
 

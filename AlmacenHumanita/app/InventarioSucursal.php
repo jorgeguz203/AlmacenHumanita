@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class InventarioSucursal extends Model
 {
     protected $table = 'inventario_sucursals';
-    protected $fillable = ['materialclinica_id','User_id','existencia'];
+    protected $fillable = ['materialclinica_id','User_id', 'nombre_user', 'nombre_material', 'existencia','maximo','minimo'];
 
 
 		public function materialclinica()

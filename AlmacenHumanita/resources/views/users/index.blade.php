@@ -24,6 +24,7 @@
 			<th>Email</th>
 			<th>Roles</th>
 			<th width="280px">Acción</th>
+			<th>Administrar Inventario</th>
 		</tr>
 	@foreach ($data as $key => $user)
 	@if ($user->id>=5)
@@ -45,7 +46,15 @@
             {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
         	{!! Form::close() !!}
 		</td>
+
+		<td>
+		<a class="btn btn-primary" href="{{ route('users.editinv',$user->id) }}">Editar Clinica</a>
+		<a class="btn btn-primary" href="{{ route('users.editinvpap',$user->id) }}">Editar Papelería</a>
+
+		</td>
 	</tr>
+
+	
 	@endif
 	@endforeach
 	</table>

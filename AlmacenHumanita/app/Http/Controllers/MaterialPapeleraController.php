@@ -48,7 +48,9 @@ class MaterialPapeleraController extends Controller
 
         $user = User::all();
         foreach ($user as $us){
-            InventarioSucursalpapeleria::insert(array('materialpapelera_id' => $material->id, 'User_id' => $us->id,
+            InventarioSucursalpapeleria::insert(array('materialpapelera_id' => $material->id,  'User_id' => $us->id,
+                'nombre_material' => $material->nombre,
+                'nombre_user' => $us->name,
                 'existencia' => 0));
         }
 

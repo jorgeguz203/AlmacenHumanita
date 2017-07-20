@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Proveedor;
 
+
+
 class ProveedorController extends Controller
 {
 
@@ -95,4 +97,6 @@ class ProveedorController extends Controller
                         ->with('se ha eliminado exitosamente');
 
     }
+
+
 }
