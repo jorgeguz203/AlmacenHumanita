@@ -36,13 +36,17 @@ class MaterialClinicaController extends Controller
             'descripcion',
             'existencia'=> 'required',
             'area',
-            'seccion',
+              'inmunologia',
+              'uroanalisis',
+              'hematologia',
+              'bacteriologia',
+              'bioquimica',
+              'hormonas',
             'fecha_caducidad',
             'numero_referencia',
             'presentacion',
 
         ]);
-
 
         $input = $request->all();
 

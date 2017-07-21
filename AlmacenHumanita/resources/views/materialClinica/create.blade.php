@@ -72,16 +72,17 @@
 
         <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-        <div class="container">
-            
-              <input type="checkbox" name="seccion[]" value="inmunologia"> Inmunología<br>
-              <input type="checkbox" name="seccion[]" value="uroanalisis"> Uroanálisis<br>
-              <input type="checkbox" name="seccion[]" value="hematologia"> Hematología<br>
-              <input type="checkbox" name="seccion[]" value="bacteriologia"> Bactereología<br>
-              <input type="checkbox" name="seccion[]" value="bioquimica"> Bioquímica<br>
-              <input type="checkbox" name="seccion[]" value="hormonas"> Hormonas<br>
+        
+                  <label for="sel1">Sección:</label>
+                  <br>
+              <input type="checkbox" name="inmunologia" value="inmunologia"> Inmunología<br>
+              <input type="checkbox" name="uroanalisis" value="uroanalisis"> Uroanálisis<br>
+              <input type="checkbox" name="hematologia" value="hematologia"> Hematología<br>
+              <input type="checkbox" name="bacteriologia" value="bacteriologia"> Bactereología<br>
+              <input type="checkbox" name="bioquimica" value="bioquimica"> Bioquímica<br>
+              <input type="checkbox" name="hormonas" value="hormonas"> Hormonas<br>
           
-          </div>
+         
       </div>
         </div>
 

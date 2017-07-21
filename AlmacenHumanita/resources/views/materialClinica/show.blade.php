@@ -63,6 +63,18 @@
                 {{ $material->numero_referencia }}
             </div>
         </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Sección:</strong>
+                {{ $material->inmunologia }}
+                {{ $material->uroanalisis }}
+                {{ $material->hematologia }}
+                {{ $material->bacteriologia }}
+                {{ $material->bioquimica }}
+                {{ $material->hormonas }}
+            </div>
+        </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Presentación:</strong>

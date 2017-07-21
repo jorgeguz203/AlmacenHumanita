@@ -21,7 +21,12 @@ class CreateMaterialclinicaTable extends Migration
             $table->float('minimo');
             $table->float('existencia');
             $table->string('area')->nullable();
-            $table->enum('seccion', ['inmunologia', 'uroanalisis', 'hematologia', 'bacteriologia', 'bioquimica', 'hormonas'])->nullable();
+            $table->string('inmunologia')->nullable();
+            $table->string('uroanalisis')->nullable();
+            $table->string('hematologia')->nullable();
+            $table->string('bacteriologia')->nullable();
+            $table->string('bioquimica')->nullable();
+            $table->string('hormonas')->nullable();
             $table->string('unidad_medida')->nullable();
             $table->bigInteger('numero_referencia')->nullable();
             $table->string('presentacion')->nullable();

@@ -66,6 +66,21 @@
       </div>
         </div>
 
+        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+        
+                  <label for="sel1">Sección:</label>
+                  <br>
+
+        {{ Form::checkbox('inmunologia','inmunologia') }} Inmunología<br>
+        {{ Form::checkbox('uroanalisis','uroanalisis') }} Uroanálisis<br>
+        {{ Form::checkbox('hematologia','hematologia') }} Hematología<br>
+        {{ Form::checkbox('bacteriologia','bacteriologia') }} Bactereología<br>
+        {{ Form::checkbox('bioquimica','bioquimica') }} Bioquímica<br>
+        {{ Form::checkbox('hormonas','hormonas') }} Hormonas<br>
+
+ </div>
+        </div>
 
        <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">

@@ -11,7 +11,8 @@ class MaterialClinica extends Model
 
 	protected $primaryKey = 'id';
 
-	 protected $fillable = ['nombre', 'descripcion', 'maximo', 'minimo', 'existencia', 'fecha_caducidad', 'area', 'seccion', 'unidad_medida', 'numero_referencia', 'presentacion'];
+	 protected $fillable = ['nombre', 'descripcion', 'maximo', 'minimo', 'existencia', 'fecha_caducidad', 'area', 
+	 'inmunologia', 'uroanalisis','hematologia','bacteriologia','bioquimica','hormonas','unidad_medida', 'numero_referencia', 'presentacion'];
 
 	public function users()
 		{
