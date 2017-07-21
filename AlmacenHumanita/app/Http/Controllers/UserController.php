@@ -12,6 +12,7 @@ use App\MaterialClinica;
 use App\InventarioSucursal;
 use App\MaterialPapelera;
 use App\InventarioSucursalpapeleria;
+use Auth;   
 
 
 
@@ -66,15 +67,18 @@ class UserController extends Controller
 
         $invcli = MaterialClinica::all();
         foreach ($invcli as $invc){
-            InventarioSucursal::insert(array('materialclinica_id' => $invc->id, 'User_id' => $user->id, 
+            if($invc->area=='Toma_de_muestras'){
+            InventarioSucursal::insert(array('materialclinica_id' => $invc->id, 'user_id' => $user->id, 
                 'nombre_material' => $invc->nombre,
                 'nombre_user' => $user->name,
+                'area' => $invc->area,
                 'existencia' => 0));
         }
+    }
 
                 $invpap = MaterialPapelera::all();
         foreach ($invpap as $invp){
-            InventarioSucursalpapeleria::insert(array('materialpapelera_id' => $invp->id, 'User_id' => $user->id, 'nombre_material' => $invp->nombre,
+            InventarioSucursalpapeleria::insert(array('materialpapelera_id' => $invp->id, 'user_id' => $user->id, 'nombre_material' => $invp->nombre,
                 'nombre_user' => $user->name, 'existencia' => 0));
         }
 
@@ -201,9 +205,10 @@ class UserController extends Controller
     public function updateSuc(Request $request, $id)
     {
         $this->validate($request, [
-            'User_id' => 'required',
+            'user_id' => 'required',
             'nombre_user' => 'required',
             'nombre_material' => 'required',
+            'area' => 'required',
             'maximo' => 'required',
             'minimo' => 'required',
             'existencia' => 'required',
@@ -211,7 +216,7 @@ class UserController extends Controller
         ]);
         InventarioSucursal::find($id)->update($request->all());
 
-        $h = request('User_id');
+        $h = request('user_id');
    
         return redirect()->route('users.editinv',$h)
                         ->with('Se ha modificado el material con éxito!');
@@ -221,7 +226,7 @@ class UserController extends Controller
     public function updatePap(Request $request, $id)
     {
             $this->validate($request, [
-            'User_id' => 'required',
+            'user_id' => 'required',
             'nombre_user' => 'required',
             'nombre_material' => 'required',
             'maximo' => 'required',
@@ -231,10 +236,17 @@ class UserController extends Controller
         ]);
         InventarioSucursalpapeleria::find($id)->update($request->all());
 
-        $h = request('User_id');
+        $h = request('user_id');
    
         return redirect()->route('users.editinvpap',$h)
                         ->with('Se ha modificado el material con éxito!');
+    }
+
+        public function inventariopape(){
+
+        $user = Auth::User()->find('id');
+        $materialpapeleria = InventarioSucursalpapeleria::all();
+        return view('inventarios.inventariopape', compact('materialpapeleria', 'user'));
     }
 
 

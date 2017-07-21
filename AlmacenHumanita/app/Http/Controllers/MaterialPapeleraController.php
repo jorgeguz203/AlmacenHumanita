@@ -48,11 +48,13 @@ class MaterialPapeleraController extends Controller
 
         $user = User::all();
         foreach ($user as $us){
-            InventarioSucursalpapeleria::insert(array('materialpapelera_id' => $material->id,  'User_id' => $us->id,
+            if($us->id > 4){
+            InventarioSucursalpapeleria::insert(array('materialpapelera_id' => $material->id,  'user_id' => $us->id,
                 'nombre_material' => $material->nombre,
                 'nombre_user' => $us->name,
                 'existencia' => 0));
         }
+    }
 
         return redirect()->route('materialPapelera.index')
                         ->with('Se ha creado el material con éxito!');

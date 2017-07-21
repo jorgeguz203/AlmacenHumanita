@@ -43,8 +43,8 @@
             </div>
         </div>
 
-        <select class="trans"  id="user" name="User_id">
-                <option value='{{ $mats->User_id }}'></option>
+        <select class="trans"  id="user" name="user_id">
+                <option value='{{ $mats->user_id }}'></option>
                 </select>
 
         <div class="col-xs-12 col-sm-12 col-md-12">

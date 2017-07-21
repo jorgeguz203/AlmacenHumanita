@@ -29,7 +29,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Cantidad:</strong>
-                {!! Form::text('cantidad', null, array('placeholder' => '10','class' => 'form-control')) !!}
+                {!! Form::number('cantidad', null, array('placeholder' => '10','class' => 'form-control')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

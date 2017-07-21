@@ -52,6 +52,9 @@ Route::group(['middleware' => ['auth']], function() {
 
 	Route::patch('userInventarioPapelerias/{user}',['as'=>'users.editinvsucpap2','uses'=>'UserController@updatePap']);
 
+	Route::get('inventario',['as'=>'inventarios.inventario','uses'=>'InventarioSucursalController@inventario']);
+	Route::get('inventariopapeleria',['as'=>'inventarios.inventariopape','uses'=>'InventarioSucursalpapeleriaController@inventariopape']);
+
 	
 
 	//admin root

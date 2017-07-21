@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\MaterialClinica;
 use App\MaterialPapelera;
+use App\InventarioSucursal;
+use App\InventarioSucursalpapeleria;
+use App\User;
+use Auth;
 
 
 class HomeController extends Controller
@@ -19,9 +23,12 @@ class HomeController extends Controller
 
     public function index()
     {
-
+        $user = Auth::User()->find('id');
         $materiales = MaterialClinica::all();
         $materialess = MaterialPapelera::all();
-        return view('home',compact('materiales', 'materialess'));
+        $materialclinico = InventarioSucursal::all();
+        $materialpapeleria = InventarioSucursalpapeleria::all();
+        return view('home',compact('materiales', 'materialess', 'materialclinico', 'materialpapeleria', 'user'));
     }
 }
+

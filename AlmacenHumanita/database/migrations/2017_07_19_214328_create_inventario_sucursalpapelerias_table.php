@@ -20,8 +20,8 @@ class CreateInventarioSucursalpapeleriasTable extends Migration
       $table->foreign('materialpapelera_id')->references('id')
             ->on('materialpapeleras')->onDelete('cascade');
 
-      $table->integer('User_id')->unsigned()->nullable();
-      $table->foreign('User_id')->references('id')
+      $table->integer('user_id')->unsigned()->nullable();
+      $table->foreign('user_id')->references('id')
             ->on('users')->onDelete('cascade');
             $table->string('nombre_user');
       $table->string('nombre_material');

@@ -41,19 +41,19 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Máximo:</strong><small><font color="red">(obligatorio)</font></small>
-                {!! Form::text('maximo', null, array('placeholder' => '50','class' => 'form-control')) !!}
+                {!! Form::number('maximo', null, array('placeholder' => '50','class' => 'form-control')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Mínimo:</strong><small><font color="red">(obligatorio)</font></small>
-                {!! Form::text('minimo', null, array('placeholder' => '10','class' => 'form-control')) !!}
+                {!! Form::number('minimo', null, array('placeholder' => '10','class' => 'form-control')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Existecia:</strong><small><font color="red">(obligatorio)</font></small>
-                {!! Form::text('existencia', null, array('placeholder' => '0','class' => 'form-control')) !!}
+                {!! Form::number('existencia', null, array('placeholder' => '0','class' => 'form-control')) !!}
             </div>
         </div>
        
@@ -88,7 +88,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Número de Referencia:</strong>
-                {!! Form::text('numero_referencia', null, array('placeholder' => '859641','class' => 'form-control')) !!}
+                {!! Form::number('numero_referencia', null, array('placeholder' => '859641','class' => 'form-control')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

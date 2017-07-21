@@ -5,10 +5,15 @@
 	<div class="row">
 	    <div class="col-lg-12 margin-tb">
 	        <div class="pull-left">
-	            <h2>Aministración de Inventario de Sucursales Papelería</h2>
+	            <h2>Aministración de Inventario Papelería {{ $user->name }}</h2>
+	        </div>
+
+	        	        	        <div class="pull-right">
+	            <a class="btn btn-primary" href="{{ route('users.index') }}"> Atrás</a>
 	        </div>
 	    </div>
 	</div>
+	<hr>
 	@if ($message = Session::get('success'))
 		<div class="alert alert-success">
 			<p>{{ $message }}</p>
@@ -23,7 +28,7 @@
 			<th>Acción</th>
 		</tr>
 	@foreach ($mats as $key => $mat)
-	@if($user->id == $mat->User_id)
+	@if($user->id == $mat->user_id)
 	<tr>
 		<td>{{ $mat->nombre_material }}</td>
 		<td>{{ $mat->maximo }}</td>

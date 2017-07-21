@@ -50,11 +50,14 @@ class MaterialClinicaController extends Controller
 
         $user = User::all();
         foreach ($user as $us){
-            InventarioSucursal::insert(array('materialclinica_id' => $material->id, 'User_id' => $us->id, 
+            if($us->id > 4){
+            InventarioSucursal::insert(array('materialclinica_id' => $material->id, 'user_id' => $us->id, 
                 'nombre_material' => $material->nombre,
                 'nombre_user' => $us->name,
+                'area' => $material->area,
                 'existencia' => 0));
         }
+    }
 
         return redirect()->route('materialClinica.index')
                         ->with('Se ha creado el material con éxito!');

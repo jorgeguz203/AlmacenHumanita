@@ -36,9 +36,38 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
+
+
                             <li><a href="{{ route('login') }}" class="efecto-drop"><p> Iniciar Sesión </p></a></li>
                             
                         @elseif(Auth::user())
+
+                        @if (Auth::user()->can('admin-sucrusal'))
+
+                                                <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <p> <strong>   Inventarios </strong><span class="caret"> </p></span>
+                            </a>
+
+                            <ul class="dropdown-menu dropd" role="menu">
+                                    <li>
+
+                                        <a href="{{ route('inventarios.inventario') }}" class="efecto-drop">
+                                          <p>  Tomas de Muestra </p>  
+                                        </a>  
+
+                                        <a href="{{ route('inventarios.inventariopape') }}" class="efecto-drop">
+                                          <p>  Papelería   </p>
+                                        </a> 
+
+
+
+                                    </li>
+                                    
+                            </ul>
+                        </li>
+                        @endif
+
                         @if (Auth::user()->can('admin-admin-papelera'))
 
                             <li class="dropdown">
