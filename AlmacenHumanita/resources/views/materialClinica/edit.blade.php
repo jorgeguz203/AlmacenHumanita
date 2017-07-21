@@ -60,11 +60,9 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
       <label for="sel1">Área:</label>
+
+      {!! Form::select('area', array('clinico' => 'Clínico', 'toma_muestra' => 'Toma de Muestras')); !!}
         
-      <select class="selectpicker" id=area name="area">
-        <option value='clinico'>Clínicos</option>
-        <option value='toma_muestra'>Toma de Muestras</option>
-      </select>
       </div>
         </div>
 
@@ -72,15 +70,16 @@
        <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
           <label for="sel1">Unidad de Medida:</label>
-          <select class="selectpicker" id=unidad_medida name="unidad_medida">
-            <option value='kg'>Kilográmos</option>
-            <option value='gr'>Gramos</option>
-            <option value='gl'>Galón</option>
-            <option value='li'>Lítros</option>
-            <option value='ml'>Mililítros</option>
-            <option value='caja'>Caja</option>
 
-          </select>
+          {!! Form::select('unidad_medida', array('pieza' => 'Pieza', 
+          'caja' => 'Caja',
+          'paquete' => 'Paquete',
+          'Kg' => 'Kilográmos',
+          'gr' => 'Gramos',
+          'al' => 'Galón',
+          'L' => 'Lítros',
+          'mL' => 'Mililítros',
+          )); !!}
       </div>
         </div>
 

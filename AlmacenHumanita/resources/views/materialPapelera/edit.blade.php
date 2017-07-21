@@ -60,14 +60,16 @@
          <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
       <label for="sel1">Área:</label>
+
+      {!! Form::select('area', array('papeleria' => 'Papelería', 
+      'limpieza' => 'Limpieza',
+      'cafeteria' => 'Cafetería',
+      'impresos' => 'Impresos',
+      'rayos_x' => 'Rayos X',
+      'Otros' => 'Otros',
+
+      )); !!}
         
-      <select class="selectpicker" id=area name="area">
-        <option value='limpieza'>Limpieza</option>
-        <option value='cafeteria'>Cafetería</option>
-        <option value='impresos'>Impresos</option>
-        <option value='rayos_x'>Rayos X</option>
-        <option value='otros'>Otros</option>
-      </select>
       </div>
         </div>
 
@@ -75,14 +77,15 @@
        <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
           <label for="sel1">Unidad de Medida:</label>
-          <select class="selectpicker" id=unidad_medida name="unidad_medida">
-            <option value='pieza'>Pieza</option>
-            <option value='kg'>Kilográmos</option>
-            <option value='gr'>Gramos</option>
-            <option value='gl'>Galón</option>
-            <option value='li'>Lítros</option>
-            <option value='ml'>Mililítros</option>
-          </select>
+
+          {!! Form::select('unidad_medida', array('pieza' => 'Pieza', 
+          'Kg' => 'Kilográmos',
+          'gr' => 'Gramos',
+          'gal' => 'Galón',
+          'L' => 'Lítros',
+          'mL' => 'Mililítros',
+          )); !!}
+
       </div>
         </div>
         

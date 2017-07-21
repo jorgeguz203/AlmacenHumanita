@@ -79,11 +79,11 @@
           <label for="sel1">Unidad de Medida:</label>
           <select class="selectpicker" id=unidad_medida name="unidad_medida">
             <option value='pieza'>Pieza</option>
-            <option value='kg'>Kilográmos</option>
+            <option value='Kg'>Kilográmos</option>
             <option value='gr'>Gramos</option>
-            <option value='gl'>Galón</option>
-            <option value='li'>Lítros</option>
-            <option value='ml'>Mililítros</option>
+            <option value='gal'>Galón</option>
+            <option value='L'>Lítros</option>
+            <option value='mL'>Mililítros</option>
           </select>
       </div>
         </div>

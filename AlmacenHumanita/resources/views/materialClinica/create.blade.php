@@ -74,12 +74,12 @@
         <div class="form-group">
         <div class="container">
             
-              <input type="checkbox" name="seccion" value="inmunologia"> Inmunología<br>
-              <input type="checkbox" name="seccion" value="uroanalisis"> Uroanálisis<br>
-              <input type="checkbox" name="seccion" value="hematologia"> Hematología<br>
-              <input type="checkbox" name="seccion" value="bacteriologia"> Bactereología<br>
-              <input type="checkbox" name="seccion" value="bioquimica"> Bioquímica<br>
-              <input type="checkbox" name="seccion" value="hormonas"> Hormonas<br>
+              <input type="checkbox" name="seccion[]" value="inmunologia"> Inmunología<br>
+              <input type="checkbox" name="seccion[]" value="uroanalisis"> Uroanálisis<br>
+              <input type="checkbox" name="seccion[]" value="hematologia"> Hematología<br>
+              <input type="checkbox" name="seccion[]" value="bacteriologia"> Bactereología<br>
+              <input type="checkbox" name="seccion[]" value="bioquimica"> Bioquímica<br>
+              <input type="checkbox" name="seccion[]" value="hormonas"> Hormonas<br>
           
           </div>
       </div>
@@ -91,12 +91,13 @@
           <label for="sel1">Unidad de Medida:</label>
           <select class="selectpicker" id=unidad_medida name="unidad_medida">
             <option value='pieza'>Pieza</option>
-            <option value='kg'>Kilográmos</option>
-            <option value='gr'>Gramos</option>
-            <option value='gl'>Galón</option>
-            <option value='li'>Lítros</option>
-            <option value='ml'>Mililítros</option>
             <option value='caja'>Caja</option>
+            <option value='paquete'>Paquete</option>
+            <option value='Kg'>Kilográmos</option>
+            <option value='gr'>Gramos</option>
+            <option value='gal'>Galón</option>
+            <option value='L'>Lítros</option>
+            <option value='mL'>Mililítros</option>
 
           </select>
       </div>
