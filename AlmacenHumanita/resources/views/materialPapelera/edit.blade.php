@@ -79,6 +79,8 @@
           <label for="sel1">Unidad de Medida:</label>
 
           {!! Form::select('unidad_medida', array('pieza' => 'Pieza', 
+          'caja' => 'Caja',
+          'paquete' => 'Paquete',
           'Kg' => 'Kilográmos',
           'gr' => 'Gramos',
           'gal' => 'Galón',

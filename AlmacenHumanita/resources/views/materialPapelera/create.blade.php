@@ -79,6 +79,8 @@
           <label for="sel1">Unidad de Medida:</label>
           <select class="selectpicker" id=unidad_medida name="unidad_medida">
             <option value='pieza'>Pieza</option>
+            <option value='caja'>Caja</option>
+            <option value='paquete'>Paquete</option>
             <option value='Kg'>Kilográmos</option>
             <option value='gr'>Gramos</option>
             <option value='gal'>Galón</option>
