@@ -66,7 +66,7 @@
       'cafeteria' => 'Cafetería',
       'impresos' => 'Impresos',
       'rayos_x' => 'Rayos X',
-      'Otros' => 'Otros',
+      'otros' => 'Otros',
 
       )); !!}
         
