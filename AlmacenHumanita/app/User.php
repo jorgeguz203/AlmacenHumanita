@@ -17,7 +17,6 @@ class User extends Authenticatable
     return $this->belongsToMany('App\MaterialClinica')
       ->withTimestamps();
 }
-
 public function roles(){
         return $this->belongsToMany('App\Role');
     }

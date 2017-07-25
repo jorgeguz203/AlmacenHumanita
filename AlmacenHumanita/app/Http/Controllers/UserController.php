@@ -68,13 +68,13 @@ class UserController extends Controller
         $invcli = MaterialClinica::all();
         foreach ($invcli as $invc){
             if($user->id > 4){
-            if($invc->area=='Toma_de_muestras'){
+        
             InventarioSucursal::insert(array('materialclinica_id' => $invc->id, 'user_id' => $user->id, 
                 'nombre_material' => $invc->nombre,
                 'nombre_user' => $user->name,
                 'area' => $invc->area,
                 'existencia' => 0));
-            }
+            
         }
     }
 

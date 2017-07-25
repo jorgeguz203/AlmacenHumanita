@@ -239,6 +239,14 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::get('inventarioMatrizPapelerasHistorial6/{id}',['as'=>'SalidaPapeleria.historialSa6','uses'=>'SalidaPapeleriaController@shows6']);
 
 
+
+		//pedidos
+
+		Route::get('pedidoTomaMuestras/{id}',['as'=>'pedidos.pedidosMuestras','uses'=>'PedidosController@create_toma']);
+
+		Route::post('pedidoTomaMuestras',['as'=>'pedidos.store_toma','uses'=>'PedidosController@store_toma']);
+
+
 });
 
 

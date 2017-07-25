@@ -23,6 +23,12 @@ class InventarioSucursalpapeleria extends Model
 	      ->withTimestamps();
 		}
 
+		public function pedidospape()
+		{
+	    return $this->belongsToMany('App\PedidosPape')
+	      ->withTimestamps();
+		}
+
 		
 		public function scopeName($query, $name){
 			if (trim($name) != ""){

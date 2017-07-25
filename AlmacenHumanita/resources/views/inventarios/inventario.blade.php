@@ -46,7 +46,7 @@
 			<a class="btn btn-primary" href="#">Editar Existencia</a>
 		</td>
 		<td>
-			<a class="btn btn-success" href="#">Solicitar Material</a>
+			<a class="btn btn-success" href="{{ route('pedidos.pedidosMuestras',$material->id) }}">Solicitar Material</a>
 			<a class="btn btn-info" href="#">Historial</a>
         
 		</td>
