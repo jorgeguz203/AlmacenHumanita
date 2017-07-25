@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateInventarioSucursalsTable extends Migration
+class CreateHistorialPedidosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateInventarioSucursalsTable extends Migration
      */
     public function up()
     {
-        Schema::create('inventario_sucursals', function (Blueprint $table) {
+        Schema::create('historial_pedidos', function (Blueprint $table) {
             $table->increments('id');
-
-      $table->integer('materialclinica_id')->unsigned()->nullable();
+                  $table->integer('materialclinica_id')->unsigned()->nullable();
       $table->foreign('materialclinica_id')->references('id')
             ->on('materialclinica')->onDelete('cascade');
 
@@ -27,10 +26,14 @@ class CreateInventarioSucursalsTable extends Migration
       $table->string('nombre_user');
       $table->string('nombre_material');
       $table->string('area');
-      $table->float('existencia');  
-      $table->float('maximo')->nullable(); 
-      $table->float('minimo')->nullable(); 
-      $table->timestamps();
+        $table->string('inmunologia')->nullable();
+            $table->string('uroanalisis')->nullable();
+            $table->string('hematologia')->nullable();
+            $table->string('bacteriologia')->nullable();
+            $table->string('bioquimica')->nullable();
+            $table->string('hormonas')->nullable();
+      $table->float('cantidad');
+            $table->timestamps();
         });
     }
 
@@ -41,6 +44,6 @@ class CreateInventarioSucursalsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('inventario_sucursals');
+        Schema::dropIfExists('historial_pedidos');
     }
 }

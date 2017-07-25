@@ -67,19 +67,24 @@ class UserController extends Controller
 
         $invcli = MaterialClinica::all();
         foreach ($invcli as $invc){
+            if($user->id > 4){
             if($invc->area=='Toma_de_muestras'){
             InventarioSucursal::insert(array('materialclinica_id' => $invc->id, 'user_id' => $user->id, 
                 'nombre_material' => $invc->nombre,
                 'nombre_user' => $user->name,
                 'area' => $invc->area,
                 'existencia' => 0));
+            }
         }
     }
 
                 $invpap = MaterialPapelera::all();
         foreach ($invpap as $invp){
+            if($user->id > 4){
             InventarioSucursalpapeleria::insert(array('materialpapelera_id' => $invp->id, 'user_id' => $user->id, 'nombre_material' => $invp->nombre,
+                'area' => $invp->area,
                 'nombre_user' => $user->name, 'existencia' => 0));
+        }
         }
 
         return redirect()->route('users.index')

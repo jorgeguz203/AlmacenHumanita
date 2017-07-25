@@ -51,6 +51,7 @@ class MaterialPapeleraController extends Controller
             if($us->id > 4){
             InventarioSucursalpapeleria::insert(array('materialpapelera_id' => $material->id,  'user_id' => $us->id,
                 'nombre_material' => $material->nombre,
+                'area' => $material->area,
                 'nombre_user' => $us->name,
                 'existencia' => 0));
         }
