@@ -175,4 +175,29 @@ class PedidosController extends Controller
         return redirect()->route('pendientesSucursal.pendientesClinico')
                         ->with('Se ha eliminado con éxito');
     }
+
+        public function destroylab($id)
+    {
+        $pedido=Pedidos::find($id);
+        $tiempo=Carbon::now();
+        HistorialPedidos::insert(array('materialclinica_id'=>$pedido->materialclinica_id,
+        'user_id'=>$pedido->user_id, 
+        'nombre_user'=>$pedido->nombre_user, 
+        'nombre_material'=>$pedido->nombre_material, 
+        'area'=>$pedido->area, 
+        'seccion'=>$pedido->seccion,
+        'inmunologia'=>$pedido->inmunologia, 
+        'uroanalisis'=>$pedido->uroanalisis, 
+        'hematologia'=>$pedido->hematologia, 
+        'bacteriologia'=>$pedido->bacteriologia, 
+        'bioquimica'=>$pedido->bioquimica, 
+        'hormonas'=>$pedido->hormonas, 
+        'cantidad'=>$pedido->cantidad, 
+        'observaciones'=>$pedido->observaciones, 
+        'extras'=>$pedido->extras,
+        'created_at'=>$tiempo));
+        Pedidos::find($id)->delete();
+        return redirect()->route('pendientesSucursal.pendienteLab')
+                        ->with('Se ha eliminado con éxito');
+    }
 }

@@ -283,6 +283,7 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::delete('pendientePap/{id}',['as'=>'PedidosPape.destroy','uses'=>'PedidosPapeController@destroy']);
 
 		Route::get('pendienteLab',['as'=>'pendientesSucursal.pendienteLab','uses'=>'PedidosController@showlab']);
+		Route::delete('pendienteLab/{id}',['as'=>'PedidosLab.destroylab','uses'=>'PedidosController@destroylab']);
 
 
 
