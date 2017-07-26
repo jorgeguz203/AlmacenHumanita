@@ -53,7 +53,7 @@ class PedidosController extends Controller
       $pedidos = Pedidos::all();
       return view('pendientesSucursal.pendientesClinico',compact('pedidos'));
 
-
+}
     public function showadmin(){
 
         $user = User::all();
