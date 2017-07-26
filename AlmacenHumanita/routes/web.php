@@ -250,6 +250,10 @@ Route::group(['middleware' => ['auth']], function() {
 
 		Route::post('pedidoPapeleria',['as'=>'pedidos.store_papeleria','uses'=>'PedidosPapeController@store_papeleria']);
 
+		Route::get('pendienteAdminToma',['as'=>'pendientesAdmin.pendienteClinico','uses'=>'PedidosController@showadmin']);
+
+		Route::get('pendienteAdminPapeleria',['as'=>'pendientesAdmin.pendientePapeleria','uses'=>'PedidosController@showadminpape']);
+
 
 });
 

@@ -9,6 +9,7 @@ use App\MaterialPapelera;
 use Auth;   
 use App\User;
 use App\Pedidos;
+use App\PedidosPape;
 
 class PedidosController extends Controller
 {
@@ -43,5 +44,19 @@ class PedidosController extends Controller
 
         return redirect()->route('inventarios.inventario')
                         ->with('Se ha creado el material con éxito!');
+    }
+
+    public function showadmin(){
+
+        $user = User::all();
+        $pedidos = Pedidos::all();
+        return view('pendientesAdmin.pendienteClinico',compact('user', 'pedidos'));
+    }
+
+        public function showadminpape(){
+
+        $user = User::all();
+        $pedidos = PedidosPape::all();
+        return view('pendientesAdmin.pendientePapeleria',compact('user', 'pedidos'));
     }
 }

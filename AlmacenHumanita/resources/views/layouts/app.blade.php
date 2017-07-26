@@ -98,6 +98,39 @@
 
 
 <!-- Aqui termina -->
+
+                        @if (Auth::user()->can('drop-admin'))
+
+                        <li class="dropdown">
+                      
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                 <p> <strong>  Pedidos </strong> <span class="caret"> </p></span>
+                            </a>
+
+                            <ul class="dropdown-menu dropd" role="menu">
+                                    <li>
+                                        @if (Auth::user()->can('admin-clinica'))
+                                        <a href="{{ route('pendientesAdmin.pendienteClinico') }}" class="efecto-drop">
+                                          <p>  Pedidos de Sucursales  </p> 
+                                        </a>
+                                        @endif
+                                        @if (Auth::user()->can('admin-clinica'))
+                                        <a href="#" class="efecto-drop">
+                                          <p>  Pedidos de Laboratorio  </p>
+                                        </a>
+                                        @endif 
+                                        @if (Auth::user()->can('admin-papelera'))
+                                        <a href="{{ route('pendientesAdmin.pendientePapeleria') }}" class="efecto-drop">
+                                          <p>  Pedidos Papelería  </p>
+                                        </a>
+                                        @endif
+                                    </li>
+
+                            </ul>
+                        </li>
+                        @endif
+
+
                         @if (Auth::user()->can('admin-admin-papelera'))
 
                             <li class="dropdown">
