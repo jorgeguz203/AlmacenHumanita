@@ -9,6 +9,7 @@ use App\MaterialPapelera;
 use Auth;   
 use App\User;
 use App\Pedidos;
+use App\PedidosPape;
 
 class PedidosController extends Controller
 {
@@ -46,10 +47,25 @@ class PedidosController extends Controller
     }
 
 
+
     public function showsuc(){
 
       $pedidos = Pedidos::all();
       return view('pendientesSucursal.pendientesClinico',compact('pedidos'));
+
+
+    public function showadmin(){
+
+        $user = User::all();
+        $pedidos = Pedidos::all();
+        return view('pendientesAdmin.pendienteClinico',compact('user', 'pedidos'));
+    }
+
+        public function showadminpape(){
+
+        $user = User::all();
+        $pedidos = PedidosPape::all();
+        return view('pendientesAdmin.pendientePapeleria',compact('user', 'pedidos'));
 
     }
 }
