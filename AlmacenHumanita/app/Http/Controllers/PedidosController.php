@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Http\Controllers\Controller;
 use App\InventarioSucursal;
 use Illuminate\Http\Request;
@@ -10,6 +11,8 @@ use Auth;
 use App\User;
 use App\Pedidos;
 use App\PedidosPape;
+use App\HistorialPedidos;
+use Carbon\Carbon;
 
 class PedidosController extends Controller
 {
@@ -145,5 +148,31 @@ class PedidosController extends Controller
         $user = User::all();
         $pedidos = Pedidos::orderBy('nombre_material', 'ASC')->get();
         return view('pendientesAdmin.pendienteLab',compact('user', 'pedidos'));
+    }
+
+
+    public function destroy($id)
+    {
+        $pedido=Pedidos::find($id);
+        $tiempo=Carbon::now();
+        HistorialPedidos::insert(array('materialclinica_id'=>$pedido->materialclinica_id,
+        'user_id'=>$pedido->user_id, 
+        'nombre_user'=>$pedido->nombre_user, 
+        'nombre_material'=>$pedido->nombre_material, 
+        'area'=>$pedido->area, 
+        'seccion'=>$pedido->seccion,
+        'inmunologia'=>$pedido->inmunologia, 
+        'uroanalisis'=>$pedido->uroanalisis, 
+        'hematologia'=>$pedido->hematologia, 
+        'bacteriologia'=>$pedido->bacteriologia, 
+        'bioquimica'=>$pedido->bioquimica, 
+        'hormonas'=>$pedido->hormonas, 
+        'cantidad'=>$pedido->cantidad, 
+        'observaciones'=>$pedido->observaciones, 
+        'extras'=>$pedido->extras,
+        'created_at'=>$tiempo));
+        Pedidos::find($id)->delete();
+        return redirect()->route('pendientesSucursal.pendientesClinico')
+                        ->with('Se ha eliminado con éxito');
     }
 }

@@ -26,6 +26,7 @@ class CreateHistorialPedidosTable extends Migration
       $table->string('nombre_user');
       $table->string('nombre_material');
       $table->string('area');
+      $table->string('seccion');
         $table->string('inmunologia')->nullable();
             $table->string('uroanalisis')->nullable();
             $table->string('hematologia')->nullable();
@@ -33,6 +34,8 @@ class CreateHistorialPedidosTable extends Migration
             $table->string('bioquimica')->nullable();
             $table->string('hormonas')->nullable();
       $table->float('cantidad');
+      $table->string('observaciones')->nullable();
+      $table->string('extras')->nullable();
             $table->timestamps();
         });
     }
