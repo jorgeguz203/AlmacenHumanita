@@ -277,8 +277,10 @@ Route::group(['middleware' => ['auth']], function() {
 
 
 		Route::get('pendienteSuc',['as'=>'pendientesSucursal.pendientesClinico','uses'=>'PedidosController@showsuc']);
+		Route::delete('pendienteSuc/{id}',['as'=>'Pedidos.destroy','uses'=>'PedidosController@destroy']);
 
 		Route::get('pendientePap',['as'=>'pendientesSucursal.pendientePape','uses'=>'PedidosPapeController@showpap']);
+		Route::delete('pendientePap/{id}',['as'=>'PedidosPape.destroy','uses'=>'PedidosPapeController@destroy']);
 
 		Route::get('pendienteLab',['as'=>'pendientesSucursal.pendienteLab','uses'=>'PedidosController@showlab']);
 

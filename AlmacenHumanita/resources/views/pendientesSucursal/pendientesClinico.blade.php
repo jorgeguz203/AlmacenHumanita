@@ -27,7 +27,10 @@
 		<td>{{ $pedido->cantidad }}</td>
 		<td>{{ $pedido->created_at }}</td>
 		<td>
-		<a class="btn btn-success" href="">Confirmar</a>
+		
+			{!! Form::open(['method' => 'Delete','route' => ['Pedidos.destroy', $pedido->id],'style'=>'display:inline']) !!}
+            {!! Form::submit('Confirmar', ['class' => 'btn btn-success']) !!}
+            {!! Form::close() !!}
 		<a class="btn btn-danger" href="">Pendiente</a>
 		</td>
 

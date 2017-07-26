@@ -11,6 +11,8 @@ use Auth;
 use App\User;
 use App\Pedidos;
 use App\PedidosPape;
+use Carbon\Carbon;
+use App\HistorialPedidosPape;
 
 
 class PedidosPapeController extends Controller
@@ -48,6 +50,24 @@ class PedidosPapeController extends Controller
       $pedidos = PedidosPape::orderBy('nombre_material', 'ASC')->get();
       return view('pendientesSucursal.pendientePape',compact('pedidos'));
 
+    }
+
+        public function destroy($id)
+    {
+        $pedido=PedidosPape::find($id);
+        $tiempo=Carbon::now();
+        HistorialPedidosPape::insert(array('materialpapelera_id'=>$pedido->materialpapelera_id,
+        'user_id'=>$pedido->user_id, 
+        'nombre_user'=>$pedido->nombre_user, 
+        'nombre_material'=>$pedido->nombre_material, 
+        'area'=>$pedido->area, 
+        'cantidad'=>$pedido->cantidad, 
+        'observaciones'=>$pedido->observaciones, 
+        'created_at'=>$tiempo));
+
+        PedidosPape::find($id)->delete();
+        return redirect()->route('pendientesSucursal.pendientePape')
+                        ->with('Se ha eliminado con éxito');
     }
 }
 

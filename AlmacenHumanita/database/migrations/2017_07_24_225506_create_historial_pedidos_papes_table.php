@@ -26,7 +26,7 @@ class CreateHistorialPedidosPapesTable extends Migration
             $table->string('nombre_material');
             $table->string('area');
             $table->float('cantidad');
-            $table->string('observaciones');
+            $table->string('observaciones')->nullable();
             $table->timestamps();
         });
     }
