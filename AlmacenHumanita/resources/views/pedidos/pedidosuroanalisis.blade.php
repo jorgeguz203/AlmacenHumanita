@@ -5,7 +5,7 @@
 	<div class="row">
 	    <div class="col-lg-12 margin-tb">
 	        <div class="pull-left">
-	            <h2>Pedidos de Laboratorio</h2>
+	            <h2>Pedidos de Laboratorio Uroanálisis</h2>
 	        </div>
 
 	@if (count($errors) > 0)
@@ -18,7 +18,7 @@
 			</ul>
 		</div>
 	@endif
-	{!! Form::open(array('route' => 'pedidos.store_toma','method'=>'POST')) !!}
+	{!! Form::open(array('route' => 'pedidos.store_cli','method'=>'POST')) !!}
 	<div class="row">
 
 		<div class="col-xs-12 col-sm-12 col-md-12">
@@ -44,6 +44,11 @@
 
                 <select class="trans"  id="area" name="area">
                 <option value='Clinicos'></option>
+                </select>
+
+
+        <select class="trans"  id="user" name="seccion">
+                <option value='uroanalisis'></option>
                 </select>
 
         

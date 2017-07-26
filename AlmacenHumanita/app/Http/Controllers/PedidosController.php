@@ -27,6 +27,7 @@ class PedidosController extends Controller
             'nombre_user' => 'required',
             'nombre_material'=> 'required',
             'area'=> 'required',
+            'seccion',
             'inmunologia',
             'uroanalisis',
               'hematologia',
@@ -45,10 +46,40 @@ class PedidosController extends Controller
         return redirect()->route('inventarios.inventario');
     }
 
-        public function create_cli($id)
+        public function create_inmunologia($id)
     {
         $material = MaterialClinica::find($id);
-        return view('pedidos.pedidosClinicos',compact('material'));
+        return view('pedidos.pedidosinmunologia',compact('material'));
+    }
+
+            public function create_uroanalisis($id)
+    {
+        $material = MaterialClinica::find($id);
+        return view('pedidos.pedidosuroanalisis',compact('material'));
+    }
+
+            public function create_hematologia($id)
+    {
+        $material = MaterialClinica::find($id);
+        return view('pedidos.pedidoshematologia',compact('material'));
+    }
+
+            public function create_bacteriologia($id)
+    {
+        $material = MaterialClinica::find($id);
+        return view('pedidos.pedidosbacteriologia',compact('material'));
+    }
+
+            public function create_bioquimica($id)
+    {
+        $material = MaterialClinica::find($id);
+        return view('pedidos.pedidosbioquimica',compact('material'));
+    }
+
+            public function create_hormonas($id)
+    {
+        $material = MaterialClinica::find($id);
+        return view('pedidos.pedidoshormonas',compact('material'));
     }
 
             public function store_cli(Request $request)
@@ -59,6 +90,7 @@ class PedidosController extends Controller
             'nombre_user' => 'required',
             'nombre_material'=> 'required',
             'area'=> 'required',
+            'seccion',
             'inmunologia',
             'uroanalisis',
               'hematologia',

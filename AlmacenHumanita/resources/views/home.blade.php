@@ -186,7 +186,7 @@
         <td>{{ $material->nombre }}</td>
         <td>{{ $material->descripcion }}</td>
         <td>
-            <a class="btn btn-success" href="{{ route('pedidos.pedidosClinicos',$material->id) }}">Solicitar Material</a>
+            <a class="btn btn-success" href="{{ route('pedidos.pedidosinmunologia',$material->id) }}">Solicitar Material</a>
             <a class="btn btn-info" href="#">Historial</a>
         
         </td>
@@ -220,7 +220,7 @@
         <td>{{ $material->nombre }}</td>
         <td>{{ $material->descripcion }}</td>
         <td>
-            <a class="btn btn-success" href="{{ route('pedidos.pedidosClinicos',$material->id) }}">Solicitar Material</a>
+            <a class="btn btn-success" href="{{ route('pedidos.pedidosuroanalisis',$material->id) }}">Solicitar Material</a>
             <a class="btn btn-info" href="#">Historial</a>
         
         </td>
@@ -249,7 +249,7 @@
         <td>{{ $material->nombre }}</td>
         <td>{{ $material->descripcion }}</td>
         <td>
-            <a class="btn btn-success" href="{{ route('pedidos.pedidosClinicos',$material->id) }}">Solicitar Material</a>
+            <a class="btn btn-success" href="{{ route('pedidos.pedidoshematologia',$material->id) }}">Solicitar Material</a>
             <a class="btn btn-info" href="#">Historial</a>
         
         </td>
@@ -278,7 +278,7 @@
         <td>{{ $material->nombre }}</td>
         <td>{{ $material->descripcion }}</td>
         <td>
-            <a class="btn btn-success" href="{{ route('pedidos.pedidosClinicos',$material->id) }}">Solicitar Material</a>
+            <a class="btn btn-success" href="{{ route('pedidos.pedidosbacteriologia',$material->id) }}">Solicitar Material</a>
             <a class="btn btn-info" href="#">Historial</a>
         
         </td>
@@ -307,7 +307,7 @@
         <td>{{ $material->nombre }}</td>
         <td>{{ $material->descripcion }}</td>
         <td>
-            <a class="btn btn-success" href="{{ route('pedidos.pedidosClinicos',$material->id) }}">Solicitar Material</a>
+            <a class="btn btn-success" href="{{ route('pedidos.pedidosbioquimica',$material->id) }}">Solicitar Material</a>
             <a class="btn btn-info" href="#">Historial</a>
         
         </td>
@@ -336,7 +336,7 @@
         <td>{{ $material->nombre }}</td>
         <td>{{ $material->descripcion }}</td>
         <td>
-            <a class="btn btn-success" href="{{ route('pedidos.pedidosClinicos',$material->id) }}">Solicitar Material</a>
+            <a class="btn btn-success" href="{{ route('pedidos.pedidoshormonas',$material->id) }}">Solicitar Material</a>
             <a class="btn btn-info" href="#">Historial</a>
         
         </td>

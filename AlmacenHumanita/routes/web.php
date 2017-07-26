@@ -251,9 +251,29 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::post('pedidoPapeleria',['as'=>'pedidos.store_papeleria','uses'=>'PedidosPapeController@store_papeleria']);
 
 
-		Route::get('pedidoClinico/{id}',['as'=>'pedidos.pedidosClinicos','uses'=>'PedidosController@create_cli']);
+		Route::get('pedidoinmunologia/{id}',['as'=>'pedidos.pedidosinmunologia','uses'=>'PedidosController@create_inmunologia']);
 
-		Route::post('pedidoClinico',['as'=>'pedidos.store_toma','uses'=>'PedidosController@store_cli']);
+		Route::post('pedidoinmunologia',['as'=>'pedidos.store_cli','uses'=>'PedidosController@store_cli']);
+
+		Route::get('pedidouroanalisis/{id}',['as'=>'pedidos.pedidosuroanalisis','uses'=>'PedidosController@create_uroanalisis']);
+
+		Route::post('pedidouroanalisis',['as'=>'pedidos.store_cli','uses'=>'PedidosController@store_cli']); 
+
+		Route::get('pedidohematologia/{id}',['as'=>'pedidos.pedidoshematologia','uses'=>'PedidosController@create_hematologia']);
+
+		Route::post('pedidohematologia',['as'=>'pedidos.store_cli','uses'=>'PedidosController@store_cli']);
+
+		Route::get('pedidobacteriologia/{id}',['as'=>'pedidos.pedidosbacteriologia','uses'=>'PedidosController@create_bacteriologia']);
+
+		Route::post('pedidobacteriologia',['as'=>'pedidos.store_cli','uses'=>'PedidosController@store_cli']);
+
+		Route::get('pedidobioquimica/{id}',['as'=>'pedidos.pedidosbioquimica','uses'=>'PedidosController@create_bioquimica']);
+
+		Route::post('pedidobioquimica',['as'=>'pedidos.store_cli','uses'=>'PedidosController@store_cli']);
+
+		Route::get('pedidohormonas/{id}',['as'=>'pedidos.pedidoshormonas','uses'=>'PedidosController@create_hormonas']);
+
+		Route::post('pedidohormonas',['as'=>'pedidos.store_cli','uses'=>'PedidosController@store_cli']);
 
 
 		Route::get('pendienteSuc',['as'=>'pendientesSucursal.pendientesClinico','uses'=>'PedidosController@showsuc']);
@@ -261,6 +281,7 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::get('pendientePap',['as'=>'pendientesSucursal.pendientePape','uses'=>'PedidosPapeController@showpap']);
 
 		Route::get('pendienteLab',['as'=>'pendientesSucursal.pendienteLab','uses'=>'PedidosController@showlab']);
+
 
 
 		Route::get('pendienteAdminToma',['as'=>'pendientesAdmin.pendienteClinico','uses'=>'PedidosController@showadmin']);

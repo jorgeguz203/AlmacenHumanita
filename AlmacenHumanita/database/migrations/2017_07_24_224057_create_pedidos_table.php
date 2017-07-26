@@ -23,10 +23,10 @@ class CreatePedidosTable extends Migration
             $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')
                 ->on('users')->onDelete('cascade');
-
             $table->string('nombre_user');
             $table->string('nombre_material');
             $table->string('area');
+            $table->string('seccion')->nullable();
             $table->string('inmunologia')->nullable();
             $table->string('uroanalisis')->nullable();
             $table->string('hematologia')->nullable();

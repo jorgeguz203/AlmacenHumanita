@@ -8,7 +8,7 @@ class Pedidos extends Model
 {
     protected $table = 'pedidos';
 
-	 protected $fillable = ['materialclinica_id', 'user_id', 'nombre_user', 'nombre_material', 'area', 
+	 protected $fillable = ['materialclinica_id', 'user_id', 'nombre_user', 'nombre_material', 'area', 'seccion', 
 	 'inmunologia', 'uroanalisis', 'hematologia', 'bacteriologia', 'bioquimica', 'hormonas', 'cantidad', 'observaciones', 'extras'];
 
 
