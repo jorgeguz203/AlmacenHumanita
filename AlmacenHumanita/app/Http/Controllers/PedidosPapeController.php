@@ -41,5 +41,13 @@ class PedidosPapeController extends Controller
         return redirect()->route('inventarios.inventariopape')
                         ->with('Se ha creado el material con éxito!');
     }
+
+
+    public function showpap(){
+
+      $pedidos = PedidosPape::all();
+      return view('pendientesSucursal.pendientePape',compact('pedidos'));
+
+    }
 }
 

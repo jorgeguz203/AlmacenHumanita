@@ -44,4 +44,12 @@ class PedidosController extends Controller
         return redirect()->route('inventarios.inventario')
                         ->with('Se ha creado el material con éxito!');
     }
+
+
+    public function showsuc(){
+
+      $pedidos = Pedidos::all();
+      return view('pendientesSucursal.pendientesClinico',compact('pedidos'));
+
+    }
 }

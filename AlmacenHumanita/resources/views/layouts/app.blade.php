@@ -80,11 +80,11 @@
                             <ul class="dropdown-menu dropd" role="menu">
                                     <li>
 
-                                        <a href="#" class="efecto-drop">
+                                        <a href="{{ route('pendientesSucursal.pendientesClinico') }}" class="efecto-drop">
                                           <p>  Tomas de Muestra </p>  
                                         </a>  
 
-                                        <a href="#" class="efecto-drop">
+                                        <a href="{{ route('pendientesSucursal.pendientePape') }}" class="efecto-drop">
                                           <p>  Papelería   </p>
                                         </a> 
 
