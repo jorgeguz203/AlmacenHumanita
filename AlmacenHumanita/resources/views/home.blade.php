@@ -173,7 +173,7 @@
 <h4><strong> Inmunología(1) </strong></h4>
       
     <table class="table table-bordered">
-        <tr>
+       <tr class="tabla1">
             <th>Nombre del material:</th>
             <th>Descripción:</th>
             <th>Acción:</th>
@@ -207,7 +207,7 @@
     <h4><strong> Uroanálisis(2) </strong></h4>
       
     <table class="table table-bordered">
-        <tr>
+        <tr class="tabla1">
             <th>Nombre del material:</th>
             <th>Descripción:</th>
             <th>Acción:</th>
@@ -236,7 +236,7 @@
     <h4><strong> Hematología(3) </strong></h4>
       
     <table class="table table-bordered">
-        <tr>
+       <tr class="tabla1">
             <th>Nombre del material:</th>
             <th>Descripción:</th>
             <th>Acción:</th>
@@ -265,7 +265,7 @@
     <h4><strong> Bacteriología(4) </strong></h4>
       
     <table class="table table-bordered">
-        <tr>
+        <tr class="tabla1">
             <th>Nombre del material:</th>
             <th>Descripción:</th>
             <th>Acción:</th>
@@ -294,7 +294,7 @@
     <h4><strong> Bioquímica(5) </strong></h4>
       
     <table class="table table-bordered">
-        <tr>
+        <tr class="tabla1">
             <th>Nombre del material:</th>
             <th>Descripción:</th>
             <th>Acción:</th>
@@ -323,7 +323,7 @@
         <h4><strong> Hormonas(6) </strong></h4>
       
     <table class="table table-bordered">
-        <tr>
+        <tr class="tabla1">
             <th>Nombre del material:</th>
             <th>Descripción:</th>
             <th>Acción:</th>

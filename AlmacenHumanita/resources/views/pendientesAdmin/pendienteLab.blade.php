@@ -15,7 +15,7 @@
 
         <h4><strong> Inmunología(1)</strong></h4>
     <table class="table table-bordered">
-        <tr>
+        <tr class="tabla1">
             <th>Material</th>
             <th>Cantidad</th>
             <th>Observaciones</th>
@@ -24,7 +24,7 @@
         
     @foreach ($pedidos as $key => $pedido)
     @if($pedido->area == 'Clinicos')
-    @if($pedido->inmunologia == 'inmunologia')
+    @if($pedido->seccion == 'inmunologia')
     <tr>
         <td>{{ $pedido->nombre_material }}</td>
         <td>{{ $pedido->cantidad }}</td>
@@ -42,7 +42,7 @@
 
         <h4><strong> Uroanálisis(2)</strong></h4>
     <table class="table table-bordered">
-        <tr>
+        <tr class="tabla1">
             <th>Material</th>
             <th>Cantidad</th>
             <th>Observaciones</th>
@@ -51,7 +51,7 @@
         
     @foreach ($pedidos as $key => $pedido)
     @if($pedido->area == 'Clinicos')
-    @if($pedido->uroanalisis == 'uroanalisis')
+    @if($pedido->seccion == 'uroanalisis')
     <tr>
         <td>{{ $pedido->nombre_material }}</td>
         <td>{{ $pedido->cantidad }}</td>
@@ -69,7 +69,7 @@
 
         <h4><strong> Hematología(3)</strong></h4>
     <table class="table table-bordered">
-        <tr>
+        <tr class="tabla1">
             <th>Material</th>
             <th>Cantidad</th>
             <th>Observaciones</th>
@@ -78,7 +78,7 @@
         
     @foreach ($pedidos as $key => $pedido)
     @if($pedido->area == 'Clinicos')
-    @if($pedido->hematologia == 'hematologia')
+    @if($pedido->seccion == 'hematologia')
     <tr>
         <td>{{ $pedido->nombre_material }}</td>
         <td>{{ $pedido->cantidad }}</td>
@@ -96,7 +96,7 @@
 
         <h4><strong> Bacteriología(4)</strong></h4>
     <table class="table table-bordered">
-        <tr>
+        <tr class="tabla1">
             <th>Material</th>
             <th>Cantidad</th>
             <th>Observaciones</th>
@@ -105,7 +105,7 @@
         
     @foreach ($pedidos as $key => $pedido)
     @if($pedido->area == 'Clinicos')
-    @if($pedido->bacteriologia == 'bacteriologia')
+    @if($pedido->seccion == 'bacteriologia')
     <tr>
         <td>{{ $pedido->nombre_material }}</td>
         <td>{{ $pedido->cantidad }}</td>
@@ -123,7 +123,7 @@
 
         <h4><strong> Bioquímica(5)</strong></h4>
     <table class="table table-bordered">
-        <tr>
+        <tr class="tabla1">
             <th>Material</th>
             <th>Cantidad</th>
             <th>Observaciones</th>
@@ -132,7 +132,7 @@
         
     @foreach ($pedidos as $key => $pedido)
     @if($pedido->area == 'Clinicos')
-    @if($pedido->bioquimica == 'bioquimica')
+    @if($pedido->seccion == 'bioquimica')
     <tr>
         <td>{{ $pedido->nombre_material }}</td>
         <td>{{ $pedido->cantidad }}</td>
@@ -150,7 +150,7 @@
 
         <h4><strong> Hormonas(6)</strong></h4>
     <table class="table table-bordered">
-        <tr>
+        <tr class="tabla1">
             <th>Material</th>
             <th>Cantidad</th>
             <th>Observaciones</th>
@@ -159,7 +159,7 @@
         
     @foreach ($pedidos as $key => $pedido)
     @if($pedido->area == 'Clinicos')
-    @if($pedido->hormonas == 'hormonas')
+    @if($pedido->seccion == 'hormonas')
     <tr>
         <td>{{ $pedido->nombre_material }}</td>
         <td>{{ $pedido->cantidad }}</td>
