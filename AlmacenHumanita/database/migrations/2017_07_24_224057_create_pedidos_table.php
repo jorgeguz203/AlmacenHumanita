@@ -34,8 +34,8 @@ class CreatePedidosTable extends Migration
             $table->string('bioquimica')->nullable();
             $table->string('hormonas')->nullable();
             $table->float('cantidad');
-            $table->string('observaciones')->nullable;
-            $table->string('extras')->nullable;
+            $table->string('observaciones')->nullable();
+            $table->string('extras')->nullable();
             $table->timestamps();
         });
     }

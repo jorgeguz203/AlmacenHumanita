@@ -12,10 +12,17 @@ class Pedidos extends Model
 	 'inmunologia', 'uroanalisis', 'hematologia', 'bacteriologia', 'bioquimica', 'hormonas', 'cantidad', 'observaciones', 'extras'];
 
 
-    public function inventariosucursal()
+		    public function materialclinica()
 		{
 
-	    return $this->belongsToMany('App\inventariosucursal')
+	    return $this->belongsToMany('App\MaterialClinica')
+	      ->withTimestamps();
+		}
+
+		public function user()
+		{
+
+	    return $this->belongsToMany('App\User')
 	      ->withTimestamps();
 		}
 }

@@ -57,4 +57,11 @@ public function roles(){
       ->withTimestamps();
 }
 
+        public function pedidos()
+        {
+
+        return $this->belongsToMany('App\Pedidos')
+          ->withTimestamps();
+        }
+
 }

@@ -4,13 +4,18 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\InventarioSucursal;
 use Illuminate\Http\Request;
+use App\MaterialClinica;
+use App\MaterialPapelera;
+use Auth;   
+use App\User;
+use App\Pedidos;
 
 class PedidosController extends Controller
 {
     public function create_toma($id)
     {
-        $tomas = InventarioSucursaL::find('id');
-        return view('pedidos.pedidosMuestras',compact('tomas'));
+        $material = MaterialClinica::find($id);
+        return view('pedidos.pedidosMuestras',compact('material'));
     }
 
         public function store_toma(Request $request)

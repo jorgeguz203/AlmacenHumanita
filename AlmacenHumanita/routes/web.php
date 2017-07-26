@@ -246,6 +246,10 @@ Route::group(['middleware' => ['auth']], function() {
 
 		Route::post('pedidoTomaMuestras',['as'=>'pedidos.store_toma','uses'=>'PedidosController@store_toma']);
 
+		Route::get('pedidoPapeleria/{id}',['as'=>'pedidos.pedidosPape','uses'=>'PedidosPapeController@create_papeleria']);
+
+		Route::post('pedidoPapeleria',['as'=>'pedidos.store_papeleria','uses'=>'PedidosPapeController@store_papeleria']);
+
 
 });
 

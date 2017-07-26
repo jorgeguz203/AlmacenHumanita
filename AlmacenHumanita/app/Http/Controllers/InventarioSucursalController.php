@@ -9,6 +9,7 @@ use App\MaterialPapelera;
 use Auth;   
 use App\User;
 use App\InventarioSucursal;
+use App\Pedidos;
 
 class InventarioSucursalController extends Controller
 {
@@ -19,7 +20,8 @@ class InventarioSucursalController extends Controller
 
         $user = Auth::User()->find('id');
         $materialclinico = InventarioSucursal::name($request->get('name'))->orderBy('nombre_material','ASC')->paginate(150);
-        return view('inventarios.inventario', compact('materialclinico', 'user'));
+        $materialclinicos = MaterialClinica::orderBy('nombre','ASC')->get();
+        return view('inventarios.inventario', compact('materialclinico', 'user', 'materialclinicos'));
     }
 
 }

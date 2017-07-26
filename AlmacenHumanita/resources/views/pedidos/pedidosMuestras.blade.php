@@ -29,21 +29,21 @@
             <div class="form-group">
                 <strong>Material:</strong>
                 <select id="nombre_material" name="nombre_material">
-                <option value='{{ $tomas->nombre_material }}'>{{ $tomas->nombre_material }}</option>
+                <option value='{{ $material->nombre }}'>{{ $material->nombre }}</option>
                 </select>
             </div>
         </div>
 
         <select class="trans"  id="nombre_user" name="nombre_user">
-                <option value='{{ $tomas->nombre_user }}'></option>
+                <option value='{{ Auth::user()->name }}'></option>
                 </select>
 
         <select class="trans"  id="material_id" name="materialclinica_id">
-                <option value='{{ $tomas->materialclinica_id }}'></option>
+                <option value='{{ $material->id }}'></option>
                 </select>
 
         <select class="trans"  id="user" name="user_id">
-                <option value='{{ $tomas->user_id }}'></option>
+                <option value='{{ Auth::user()->id }}'></option>
                 </select>
 
                 <select class="trans"  id="area" name="area">

@@ -14,6 +14,13 @@ class MaterialClinica extends Model
 	 protected $fillable = ['nombre', 'descripcion', 'maximo', 'minimo', 'existencia', 'fecha_caducidad', 'area', 
 	 'inmunologia', 'uroanalisis','hematologia','bacteriologia','bioquimica','hormonas','unidad_medida', 'numero_referencia', 'presentacion'];
 
+	 	public function pedidos()
+		{
+
+	    return $this->belongsToMany('App\Pedidos')
+	      ->withTimestamps();
+		}
+
 	public function users()
 		{
 	    return $this->belongsToMany('App\User')

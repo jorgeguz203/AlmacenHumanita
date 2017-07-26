@@ -10,8 +10,8 @@
 	        <hr>
 	    </div>
 	</div>
-
-	    <!-- Buscador inicia -->
+<div class="container">
+	<!-- Buscador inicia -->
 	    
 	    	
 	    	{!! Form::open(['route' => 'inventarios.inventario', 'method' => 'GET', 'class' => 'navbar-form navbar-left', 'role' => 'search']) !!}
@@ -23,6 +23,14 @@
 {!! Form ::Close() !!}
 	     <!--Buscador fin  -->
 
+	     </div>
+
+	     <br>
+
+<div class="row">
+<div class="col-md-8"> 
+
+
 	<table class="table table-bordered">
 		<tr class="tabla1">
 
@@ -31,7 +39,7 @@
 			<th>Mínimo</th>
 			<th>Existencia</th>
 			<th>Editar</th>
-			<th>Solicitudes</th>
+			
 		</tr>
 
 	@foreach ($materialclinico as $key => $material)
@@ -45,15 +53,32 @@
 		<td>
 			<a class="btn btn-primary" href="#">Editar Existencia</a>
 		</td>
+	@endif
+	@endif
+	@endforeach
+</table>
+	</div>
+
+
+
+	<div class="col-md-4"> 
+	<table class="table table-bordered">
+		<tr class="tabla1">
+
+			<th>Solicitudes</th>
+		</tr>
+	@foreach ($materialclinicos as $key => $materiales)
+	@if($materiales->area == 'Toma_de_muestras')
 		<td>
-			<a class="btn btn-success" href="{{ route('pedidos.pedidosMuestras',$material->id) }}">Solicitar Material</a>
+			<a class="btn btn-success" href="{{ route('pedidos.pedidosMuestras',$materiales->id) }}">Solicitar Material</a>
 			<a class="btn btn-info" href="#">Historial</a>
         
 		</td>
 	</tr>
 	@endif
-	@endif
 	@endforeach
-	</table>
+	</div>
+	
+	</div>
 	</div>
 @endsection
