@@ -42,30 +42,76 @@ class PedidosController extends Controller
         $pedido = Pedidos::create($input);
 	
 
-        return redirect()->route('inventarios.inventario')
-                        ->with('Se ha creado el material con éxito!');
+        return redirect()->route('inventarios.inventario');
+    }
+
+        public function create_cli($id)
+    {
+        $material = MaterialClinica::find($id);
+        return view('pedidos.pedidosClinicos',compact('material'));
+    }
+
+            public function store_cli(Request $request)
+    {
+        $this->validate($request, [
+            'materialclinica_id' => 'required',
+            'user_id' => 'required',
+            'nombre_user' => 'required',
+            'nombre_material'=> 'required',
+            'area'=> 'required',
+            'inmunologia',
+            'uroanalisis',
+              'hematologia',
+              'bacteriologia',
+              'bioquimica',
+              'hormonas',
+              'cantidad'=> 'required',
+              'observaciones',
+              'extras',
+        ]);
+
+        $input = $request->all();
+        $pedido = Pedidos::create($input);
+  
+
+        return redirect('home');
+                        
     }
 
 
 
     public function showsuc(){
 
-      $pedidos = Pedidos::all();
+      $pedidos = Pedidos::orderBy('nombre_material', 'ASC')->get();
       return view('pendientesSucursal.pendientesClinico',compact('pedidos'));
+
+}
+
+    public function showlab(){
+
+      $pedidos = Pedidos::orderBy('nombre_material', 'ASC')->get();
+      return view('pendientesSucursal.pendienteLab',compact('pedidos'));
 
 }
     public function showadmin(){
 
         $user = User::all();
-        $pedidos = Pedidos::all();
+        $pedidos = Pedidos::orderBy('nombre_material', 'ASC')->get();
         return view('pendientesAdmin.pendienteClinico',compact('user', 'pedidos'));
     }
 
         public function showadminpape(){
 
         $user = User::all();
-        $pedidos = PedidosPape::all();
+        $pedidos = PedidosPape::orderBy('nombre_material', 'ASC')->get();
         return view('pendientesAdmin.pendientePapeleria',compact('user', 'pedidos'));
 
+    }
+
+        public function showadminlab(){
+
+        $user = User::all();
+        $pedidos = Pedidos::orderBy('nombre_material', 'ASC')->get();
+        return view('pendientesAdmin.pendienteLab',compact('user', 'pedidos'));
     }
 }

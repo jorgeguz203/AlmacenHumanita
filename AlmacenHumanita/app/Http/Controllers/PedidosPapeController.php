@@ -45,7 +45,7 @@ class PedidosPapeController extends Controller
 
     public function showpap(){
 
-      $pedidos = PedidosPape::all();
+      $pedidos = PedidosPape::orderBy('nombre_material', 'ASC')->get();
       return view('pendientesSucursal.pendientePape',compact('pedidos'));
 
     }

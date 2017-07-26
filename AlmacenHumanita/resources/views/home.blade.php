@@ -157,5 +157,200 @@
             
     </div>
 @endif
+
+<!-- laboratorios -->
+
+@if (Auth::user()->can('admin-laboratorio'))
+
+<div class="col-lg-12 margin-tb">
+            <div class="pull-left">
+                <h2> Pedidos de Laboratorios </h2>
+                <hr>
+            </div>      
+        </div>
+
+
+<h4><strong> Inmunología(1) </strong></h4>
+      
+    <table class="table table-bordered">
+        <tr>
+            <th>Nombre del material:</th>
+            <th>Descripción:</th>
+            <th>Acción:</th>
+        </tr>
+        
+    @foreach ($materiales as $key => $material)
+    @if ($material->area == 'Clinicos')
+    @if ($material->inmunologia == 'inmunologia')
+    <tr>
+        <td>{{ $material->nombre }}</td>
+        <td>{{ $material->descripcion }}</td>
+        <td>
+            <a class="btn btn-success" href="{{ route('pedidos.pedidosClinicos',$material->id) }}">Solicitar Material</a>
+            <a class="btn btn-info" href="#">Historial</a>
+        
+        </td>
+    </tr>
+    @endif
+    @endif
+     @endforeach
+
+
+    
+    </table>
+
+    <button class="btn btn-primary" href="">Varios</button>   
+    <hr>
+
+
+
+    <h4><strong> Uroanálisis(2) </strong></h4>
+      
+    <table class="table table-bordered">
+        <tr>
+            <th>Nombre del material:</th>
+            <th>Descripción:</th>
+            <th>Acción:</th>
+        </tr>
+        
+    @foreach ($materiales as $key => $material)
+    @if ($material->area == 'Clinicos')
+    @if ($material->uroanalisis == 'uroanalisis')
+    <tr>
+        <td>{{ $material->nombre }}</td>
+        <td>{{ $material->descripcion }}</td>
+        <td>
+            <a class="btn btn-success" href="{{ route('pedidos.pedidosClinicos',$material->id) }}">Solicitar Material</a>
+            <a class="btn btn-info" href="#">Historial</a>
+        
+        </td>
+    </tr>
+    @endif
+    @endif
+     @endforeach
+    
+    </table>
+    <button class="btn btn-primary" href="">Varios</button>   
+    <hr>
+
+    <h4><strong> Hematología(3) </strong></h4>
+      
+    <table class="table table-bordered">
+        <tr>
+            <th>Nombre del material:</th>
+            <th>Descripción:</th>
+            <th>Acción:</th>
+        </tr>
+        
+    @foreach ($materiales as $key => $material)
+    @if ($material->area == 'Clinicos')
+    @if ($material->hematologia == 'hematologia')
+    <tr>
+        <td>{{ $material->nombre }}</td>
+        <td>{{ $material->descripcion }}</td>
+        <td>
+            <a class="btn btn-success" href="{{ route('pedidos.pedidosClinicos',$material->id) }}">Solicitar Material</a>
+            <a class="btn btn-info" href="#">Historial</a>
+        
+        </td>
+    </tr>
+    @endif
+    @endif
+     @endforeach
+    
+    </table>
+    <button class="btn btn-primary" href="">Varios</button>   
+    <hr>
+
+    <h4><strong> Bacteriología(4) </strong></h4>
+      
+    <table class="table table-bordered">
+        <tr>
+            <th>Nombre del material:</th>
+            <th>Descripción:</th>
+            <th>Acción:</th>
+        </tr>
+        
+    @foreach ($materiales as $key => $material)
+    @if ($material->area == 'Clinicos')
+    @if ($material->bacteriologia == 'bacteriologia')
+    <tr>
+        <td>{{ $material->nombre }}</td>
+        <td>{{ $material->descripcion }}</td>
+        <td>
+            <a class="btn btn-success" href="{{ route('pedidos.pedidosClinicos',$material->id) }}">Solicitar Material</a>
+            <a class="btn btn-info" href="#">Historial</a>
+        
+        </td>
+    </tr>
+    @endif
+    @endif
+     @endforeach
+    
+    </table>
+    <button class="btn btn-primary" href="">Varios</button>   
+    <hr>
+
+    <h4><strong> Bioquímica(5) </strong></h4>
+      
+    <table class="table table-bordered">
+        <tr>
+            <th>Nombre del material:</th>
+            <th>Descripción:</th>
+            <th>Acción:</th>
+        </tr>
+        
+    @foreach ($materiales as $key => $material)
+    @if ($material->area == 'Clinicos')
+    @if ($material->bioquimica == 'bioquimica')
+    <tr>
+        <td>{{ $material->nombre }}</td>
+        <td>{{ $material->descripcion }}</td>
+        <td>
+            <a class="btn btn-success" href="{{ route('pedidos.pedidosClinicos',$material->id) }}">Solicitar Material</a>
+            <a class="btn btn-info" href="#">Historial</a>
+        
+        </td>
+    </tr>
+    @endif
+    @endif
+     @endforeach
+    
+    </table>
+    <button class="btn btn-primary" href="">Varios</button>   
+    <hr>
+
+        <h4><strong> Hormonas(6) </strong></h4>
+      
+    <table class="table table-bordered">
+        <tr>
+            <th>Nombre del material:</th>
+            <th>Descripción:</th>
+            <th>Acción:</th>
+        </tr>
+        
+    @foreach ($materiales as $key => $material)
+    @if ($material->area == 'Clinicos')
+    @if ($material->hormonas == 'hormonas')
+    <tr>
+        <td>{{ $material->nombre }}</td>
+        <td>{{ $material->descripcion }}</td>
+        <td>
+            <a class="btn btn-success" href="{{ route('pedidos.pedidosClinicos',$material->id) }}">Solicitar Material</a>
+            <a class="btn btn-info" href="#">Historial</a>
+        
+        </td>
+    </tr>
+    @endif
+    @endif
+     @endforeach
+    
+    </table>
+    <button class="btn btn-primary" href="">Varios</button>   
+    <hr>
+
+@endif
+
+
 </div>
 @endsection
