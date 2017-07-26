@@ -76,10 +76,10 @@ Route::group(['middleware' => ['auth']], function() {
 	Route::patch('almacenpapeleria/{id}',['as'=>'almacenpapeleria.update','uses'=>'almacenpapeController@update','middleware' => ['permission:admin-admin-papelera']]);
 
 	//admin laboratorio
-	Route::get('adminlab',['as'=>'adminlab.index','uses'=>'adminlaboratorioController@index','middleware' => ['permission:admin-laboratorio']]);
+	Route::get('adminlab',['as'=>'adminlab.index','uses'=>'adminlaboratorioController@index','middleware' => ['permission:admin-admin-laboratorio']]);
 	Route::get('adminlab/{id}',['as'=>'adminlab.show','uses'=>'adminlaboratorioController@show']);
-	Route::get('adminlab/{id}/edit',['as'=>'adminlab.edit','uses'=>'adminlaboratorioController@edit','middleware' => ['permission:admin-laboratorio']]);
-	Route::patch('adminlab/{id}',['as'=>'adminlab.update','uses'=>'adminlaboratorioController@update','middleware' => ['permission:admin-laboratorio']]);
+	Route::get('adminlab/{id}/edit',['as'=>'adminlab.edit','uses'=>'adminlaboratorioController@edit','middleware' => ['permission:admin-admin-laboratorio']]);
+	Route::patch('adminlab/{id}',['as'=>'adminlab.update','uses'=>'adminlaboratorioController@update','middleware' => ['permission:admin-admin-laboratorio']]);
 
 	//Roles
 	Route::get('roles',['as'=>'roles.index','uses'=>'RoleController@index']);
@@ -251,14 +251,23 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::post('pedidoPapeleria',['as'=>'pedidos.store_papeleria','uses'=>'PedidosPapeController@store_papeleria']);
 
 
+		Route::get('pedidoClinico/{id}',['as'=>'pedidos.pedidosClinicos','uses'=>'PedidosController@create_cli']);
+
+		Route::post('pedidoClinico',['as'=>'pedidos.store_toma','uses'=>'PedidosController@store_cli']);
+
+
 		Route::get('pendienteSuc',['as'=>'pendientesSucursal.pendientesClinico','uses'=>'PedidosController@showsuc']);
 
 		Route::get('pendientePap',['as'=>'pendientesSucursal.pendientePape','uses'=>'PedidosPapeController@showpap']);
+
+		Route::get('pendienteLab',['as'=>'pendientesSucursal.pendienteLab','uses'=>'PedidosController@showlab']);
 
 
 		Route::get('pendienteAdminToma',['as'=>'pendientesAdmin.pendienteClinico','uses'=>'PedidosController@showadmin']);
 
 		Route::get('pendienteAdminPapeleria',['as'=>'pendientesAdmin.pendientePapeleria','uses'=>'PedidosController@showadminpape']);
+
+		Route::get('pendienteAdminLab',['as'=>'pendientesAdmin.pendienteLab','uses'=>'PedidosController@showadminlab']);
 
 
 

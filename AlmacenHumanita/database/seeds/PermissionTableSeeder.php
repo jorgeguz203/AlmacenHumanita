@@ -62,6 +62,11 @@ class PermissionTableSeeder extends Seeder
                 'name' => 'drop-admin',
                 'display_name' => 'Accesos Menu',
                 'description' => 'Persmisos para ver los botones de administración en el menu'
+            ],
+            [
+                'name' => 'admin-admin-laboratorio',
+                'display_name' => 'Administrar cuenta de laboratorio',
+                'description' => 'Permiso para editar el laboratorio'
             ]
             
         ];

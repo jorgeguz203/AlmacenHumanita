@@ -42,6 +42,10 @@
                             
                         @elseif(Auth::user())
 
+                            @if (Auth::user()->can('admin-laboratorio'))
+                                        <li><a href="{{ route('pendientesSucursal.pendienteLab') }}" class="efecto-drop"><p><strong> Pedidos </strong></p></a></li>
+                        @endif
+
                         @if (Auth::user()->can('admin-sucrusal'))
 
                                                 <li class="dropdown">
@@ -115,7 +119,7 @@
                                         </a>
                                         @endif
                                         @if (Auth::user()->can('admin-clinica'))
-                                        <a href="#" class="efecto-drop">
+                                        <a href="{{ route('pendientesAdmin.pendienteLab') }}" class="efecto-drop">
                                           <p>  Pedidos de Laboratorio  </p>
                                         </a>
                                         @endif 
@@ -256,7 +260,7 @@
                                           <p>  Almacenista de Papelería  </p>
                                         </a> 
                                         @endif
-                                        @if (Auth::user()->can('admin-laboratorio'))
+                                        @if (Auth::user()->can('admin-admin-laboratorio'))
                                         <a href="{{ route('adminlab.index') }}" class="efecto-drop">
                                          <p>   Adminstrar Laboratorio  </p>
                                         </a> 

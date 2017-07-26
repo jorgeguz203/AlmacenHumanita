@@ -24,10 +24,10 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::User()->find('id');
-        $materiales = MaterialClinica::all();
-        $materialess = MaterialPapelera::all();
-        $materialclinico = InventarioSucursal::all();
-        $materialpapeleria = InventarioSucursalpapeleria::all();
+        $materiales = MaterialClinica::orderBy('nombre', 'ASC')->get();
+        $materialess = MaterialPapelera::orderBy('nombre', 'ASC')->get();
+        $materialclinico = InventarioSucursal::orderBy('nombre_material', 'ASC')->get();
+        $materialpapeleria = InventarioSucursalpapeleria::orderBy('nombre_material', 'ASC')->get();
         return view('home',compact('materiales', 'materialess', 'materialclinico', 'materialpapeleria', 'user'));
     }
 }
