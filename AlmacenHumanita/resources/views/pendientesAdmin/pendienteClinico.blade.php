@@ -14,9 +14,9 @@
 
         @foreach($user as $key => $us)
         @if($us->id > 4)
-        <h4><strong> Sucursal {{ $us->name }} </strong></h4>
+        <h4><strong> Sucursal {{ $us->name }} <a class="btn btn-info" href="">Historial</a> </strong></h4>
     <table class="table table-bordered">
-        <tr>
+        <tr class="tabla1">
             <th>Material</th>
             <th>Cantidad</th>
             <th>Observaciones</th>

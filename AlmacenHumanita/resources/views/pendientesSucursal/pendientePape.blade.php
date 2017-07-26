@@ -17,7 +17,7 @@
 	            <h2>Papelería</h2>
 	        </div>  
 	<table class="table table-bordered">
-		<tr>
+		 <tr class="tabla1">
 			<th>Nombre del material:</th>
 			<th>Cantidad:</th>
 			<th>Fecha:</th>
@@ -49,7 +49,7 @@
 	            <h2>Limpieza</h2>
 	        </div>  
 	<table class="table table-bordered">
-		<tr>
+		 <tr class="tabla1">
 			<th>Nombre del material:</th>
 			<th>Cantidad:</th>
 			<th>Fecha:</th>
@@ -81,7 +81,7 @@
 	            <h2>Cafetería</h2>
 	        </div>  
 	<table class="table table-bordered">
-		<tr>
+		 <tr class="tabla1">
 			<th>Nombre del material:</th>
 			<th>Cantidad:</th>
 			<th>Fecha:</th>
@@ -114,7 +114,7 @@
 	            <h2>Impresos</h2>
 	        </div>  
 	<table class="table table-bordered">
-		<tr>
+		 <tr class="tabla1">
 			<th>Nombre del material:</th>
 			<th>Cantidad:</th>
 			<th>Fecha:</th>
@@ -146,7 +146,7 @@
 	            <h2>Rayos X</h2>
 	        </div>  
 	<table class="table table-bordered">
-		<tr>
+		 <tr class="tabla1">
 			<th>Nombre del material:</th>
 			<th>Cantidad:</th>
 			<th>Fecha:</th>
@@ -181,7 +181,7 @@
 	            <h2>Otros</h2>
 	        </div>  
 	<table class="table table-bordered">
-		<tr>
+		 <tr class="tabla1">
 			<th>Nombre del material:</th>
 			<th>Cantidad:</th>
 			<th>Fecha:</th>

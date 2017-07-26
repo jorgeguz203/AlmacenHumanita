@@ -12,7 +12,7 @@
 
 	  
 	<table class="table table-bordered">
-		<tr>
+		 <tr class="tabla1">
 			<th>Nombre del material:</th>
 			<th>Cantidad:</th>
 			<th>Fecha:</th>
