@@ -112,7 +112,7 @@
 	@if($materiales->area == 'Toma_de_muestras')
 		<td>
 			<a class="btn btn-success" href="{{ route('pedidos.pedidosMuestras',$materiales->id) }}">Solicitar Material</a>
-			<a class="btn btn-info" href="#">Historial</a>
+			<a class="btn btn-info" href="{{ route('inventarios.historialinventario',$materiales->id) }}">Historial</a>
         
 		</td>
 	</tr>

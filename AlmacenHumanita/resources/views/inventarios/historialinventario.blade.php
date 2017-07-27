@@ -6,17 +6,16 @@
 
 <div class="col-lg-12 margin-tb">
 	        <div class="pull-left">
-	            <h2>Historial de Pedidos de {{ $sucursales->name }}</h2>
+	            <h2>Historial de Solicitudes de Material</h2>
 	        </div>      
 	    </div>
 
 	    <div class="pull-right">
-	            <a class="btn btn-primary" href="{{ route('pendientesAdmin.pendienteClinico') }}"> Atrás</a>
+	            <a class="btn btn-primary" href="{{ route('inventarios.inventario') }}"> Atrás</a>
 	            <hr>
 	        </div>
 
-
-	        <table class="table table-bordered">
+	<table class="table table-bordered">
 		<tr class="tabla1">
 			<th>Nombre del material:</th>
 			<th>Observaciones:</th>
@@ -25,14 +24,14 @@
 		</tr>
 		
 	@foreach ($historiales as $key => $historial)
-	@if ($sucursales->id == $historial->user_id)
-	@if ($inventarios->id == $historial->materialclinica_id)
-
+	@if (Auth::User()->id == $historial->user_id)
+	@if ($materiales->id == $historial->materialclinica_id)
 	<tr>
 		<td>{{ $historial->nombre_material }}</td>
 		<td>{{ $historial->observaciones }}</td>
 		<td>{{ $historial->cantidad }}</td>
 		<td>{{ $historial->created_at }}</td>
+	
 
 	</tr>
 	@endif
@@ -40,7 +39,5 @@
 	@endforeach
 	
 	</table>
-
-	
     </div>
 @endsection

@@ -11,14 +11,14 @@
 	    </div>
 
 	    <div class="pull-right">
-	            <a class="btn btn-primary" href="{{ route('pendientesAdmin.pendienteClinico') }}"> Atrás</a>
+	            <a class="btn btn-primary" href="{{ route('pendientesAdmin.pendientePapeleria') }}"> Atrás</a>
 	            <hr>
 	        </div>
 
 	<table class="table table-bordered">
 		<tr class="tabla1">
 			<th>Nombre del material:</th>
-			<th>Descripcíón:</th>
+			<th>Descripción:</th>
 			<th>Acción:</th>
 		</tr>
 		
@@ -28,7 +28,7 @@
 		<td>{{ $historial->nombre }}</td>
 		<td>{{ $historial->descripcion }}</td>
 		<td><a class="btn btn-info" 
-        href="{{ route('pendientesAdmin.historialPendientesClinico2',[$sucursales->id,$historial->id]) }}">
+        href="{{ route('pendientesAdmin.historialPendientesPape2',[$sucursales->id,$historial->id]) }}">
         Historial</a> </strong></h4></td>
 
 	</tr>

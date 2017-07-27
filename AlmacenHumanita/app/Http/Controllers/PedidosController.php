@@ -14,7 +14,7 @@ use App\PedidosPape;
 use App\HistorialPedidos;
 use Carbon\Carbon;
 use App\Faltante;
-
+use App\HistorialPedidosPape;
 class PedidosController extends Controller
 {
     public function create_toma($id)
@@ -381,15 +381,34 @@ class PedidosController extends Controller
     public function showHistCli($id){
 
         $sucursales = User::find($id);
-        $historiales = HistorialPedidos::all();
+        $historiales = MaterialClinica::all();
         return view('pendientesAdmin.historialPendientesClinico',compact('sucursales','historiales'));
     }
 
-     public function showHistCli2($id){
+     public function showHistCli2($id,$ids){
+
 
         $sucursales = User::find($id);
         $historiales = HistorialPedidos::all();
-        return view('pendientesAdmin.historialPendientesClinico2',compact('sucursales','historiales'));
+        $inventarios = MaterialClinica::find($ids);
+        return view('pendientesAdmin.historialPendientesClinico2',compact('sucursales','historiales','inventarios'));
+    }
+
+
+    public function showHistPap($id){
+
+        $sucursales = User::find($id);
+        $historiales = MaterialPapelera::all();
+        return view('pendientesAdmin.historialPendientesPape',compact('sucursales','historiales'));
+    }
+
+     public function showHistPap2($id,$ids){
+
+
+        $sucursales = User::find($id);
+        $historiales = HistorialPedidosPape::all();
+        $inventarios = MaterialPapelera::find($ids);
+        return view('pendientesAdmin.historialPendientesPape2',compact('sucursales','historiales','inventarios'));
     }
 
 
