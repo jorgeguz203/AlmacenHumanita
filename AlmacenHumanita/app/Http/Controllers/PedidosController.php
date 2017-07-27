@@ -13,6 +13,7 @@ use App\Pedidos;
 use App\PedidosPape;
 use App\HistorialPedidos;
 use Carbon\Carbon;
+use App\Faltante;
 
 class PedidosController extends Controller
 {
@@ -118,14 +119,16 @@ class PedidosController extends Controller
     public function showsuc(){
 
       $pedidos = Pedidos::orderBy('nombre_material', 'ASC')->get();
-      return view('pendientesSucursal.pendientesClinico',compact('pedidos'));
+      $faltante = Faltante::orderBy('nombre_material', 'ASC')->get();
+      return view('pendientesSucursal.pendientesClinico',compact('pedidos', 'faltante'));
 
 }
 
     public function showlab(){
 
       $pedidos = Pedidos::orderBy('nombre_material', 'ASC')->get();
-      return view('pendientesSucursal.pendienteLab',compact('pedidos'));
+      $faltante = Faltante::orderBy('nombre_material', 'ASC')->get();
+      return view('pendientesSucursal.pendienteLab',compact('pedidos', 'faltante'));
 
 }
     public function showadmin(){
@@ -173,7 +176,7 @@ class PedidosController extends Controller
         'created_at'=>$tiempo));
         Pedidos::find($id)->delete();
         return redirect()->route('pendientesSucursal.pendientesClinico')
-                        ->with('Se ha eliminado con éxito');
+                        ->with('Se ha entregado con éxito');
     }
 
         public function destroylab($id)
@@ -198,6 +201,177 @@ class PedidosController extends Controller
         'created_at'=>$tiempo));
         Pedidos::find($id)->delete();
         return redirect()->route('pendientesSucursal.pendienteLab')
+                        ->with('Se ha entregado con éxito');
+    }
+
+    public function faltante($id){
+
+        $pedido = Pedidos::find($id);
+        return view('faltantes.faltanteSuc',compact('pedido'));
+    }
+
+    public function faltantestore(Request $request, $id){
+
+            $this->validate($request, [
+            'materialclinica_id' => 'required',
+            'user_id' => 'required',
+            'nombre_user' => 'required',
+            'nombre_material'=> 'required',
+            'area'=> 'required',
+            'seccion',
+            'inmunologia',
+            'uroanalisis',
+            'hematologia',
+              'bacteriologia',
+              'bioquimica',
+              'hormonas',
+              'cantidad'=> 'required',
+              'observaciones',
+              'extras',
+        ]);
+
+        $input = $request->all();
+        $pedido = Faltante::create($input);
+
+                $ped = Pedidos::find($id);
+        $ped->cantidad = $ped->cantidad - request('faltante');
+        Pedidos::where('id',$id)->update(['cantidad' => $ped->cantidad]);
+        $ped->save();
+
+        $p=Pedidos::find($id);
+        $tiempo=Carbon::now();
+        HistorialPedidos::insert(array('materialclinica_id'=>$p->materialclinica_id,
+        'user_id'=>$p->user_id, 
+        'nombre_user'=>$pedido->nombre_user, 
+        'nombre_material'=>$p->nombre_material, 
+        'area'=>$p->area, 
+        'seccion'=>$pedido->seccion,
+        'inmunologia'=>$p->inmunologia, 
+        'uroanalisis'=>$p->uroanalisis, 
+        'hematologia'=>$p->hematologia, 
+        'bacteriologia'=>$p->bacteriologia, 
+        'bioquimica'=>$p->bioquimica, 
+        'hormonas'=>$p->hormonas, 
+        'cantidad'=>$p->cantidad, 
+        'observaciones'=>$p->observaciones, 
+        'extras'=>$p->extras,
+        'created_at'=>$tiempo));
+
+        Pedidos::find($id)->delete();
+
+        return redirect()->route('pendientesSucursal.pendientesClinico')
                         ->with('Se ha eliminado con éxito');
     }
+
+        public function destroyfaltante($ids)
+    {
+        $faltante=Faltante::find($ids);
+        $tiempo=Carbon::now();
+        HistorialPedidos::insert(array('materialclinica_id'=>$faltante->materialclinica_id,
+        'user_id'=>$faltante->user_id, 
+        'nombre_user'=>$faltante->nombre_user, 
+        'nombre_material'=>$faltante->nombre_material, 
+        'area'=>$faltante->area, 
+        'seccion'=>$faltante->seccion,
+        'inmunologia'=>$faltante->inmunologia, 
+        'uroanalisis'=>$faltante->uroanalisis, 
+        'hematologia'=>$faltante->hematologia, 
+        'bacteriologia'=>$faltante->bacteriologia, 
+        'bioquimica'=>$faltante->bioquimica, 
+        'hormonas'=>$faltante->hormonas, 
+        'cantidad'=>$faltante->faltante, 
+        'observaciones'=>$faltante->observaciones, 
+        'extras'=>$faltante->extras,
+        'created_at'=>$tiempo));
+        Faltante::find($ids)->delete();
+        return redirect()->route('pendientesSucursal.pendientesClinico')
+                        ->with('Se ha entregado con éxito');
+    }
+
+        public function faltanteLab($id){
+
+        $pedido = Pedidos::find($id);
+        return view('faltantes.faltanteLab',compact('pedido'));
+    }
+
+        public function faltantestorelab(Request $request, $id){
+
+            $this->validate($request, [
+            'materialclinica_id' => 'required',
+            'user_id' => 'required',
+            'nombre_user' => 'required',
+            'nombre_material'=> 'required',
+            'area'=> 'required',
+            'seccion',
+            'inmunologia',
+            'uroanalisis',
+            'hematologia',
+              'bacteriologia',
+              'bioquimica',
+              'hormonas',
+              'cantidad'=> 'required',
+              'observaciones',
+              'faltante'=>'required',
+              'extras',
+        ]);
+
+        $input = $request->all();
+        $pedido = Faltante::create($input);
+
+        $ped = Pedidos::find($id);
+        $ped->cantidad = $ped->cantidad - request('faltante');
+        Pedidos::where('id',$id)->update(['cantidad' => $ped->cantidad]);
+        $ped->save();
+
+        $p=Pedidos::find($id);
+        $tiempo=Carbon::now();
+        HistorialPedidos::insert(array('materialclinica_id'=>$p->materialclinica_id,
+        'user_id'=>$p->user_id, 
+        'nombre_user'=>$pedido->nombre_user, 
+        'nombre_material'=>$p->nombre_material, 
+        'area'=>$p->area, 
+        'seccion'=>$pedido->seccion,
+        'inmunologia'=>$p->inmunologia, 
+        'uroanalisis'=>$p->uroanalisis, 
+        'hematologia'=>$p->hematologia, 
+        'bacteriologia'=>$p->bacteriologia, 
+        'bioquimica'=>$p->bioquimica, 
+        'hormonas'=>$p->hormonas, 
+        'cantidad'=>$p->cantidad, 
+        'observaciones'=>$p->observaciones, 
+        'extras'=>$p->extras,
+        'created_at'=>$tiempo));
+        Pedidos::find($id)->delete();
+
+
+        return redirect()->route('pendientesSucursal.pendienteLab')
+                        ->with('Se ha eliminado con éxito');
+    }
+
+        public function destroyfaltanteLab($ids)
+    {
+        $faltante=Faltante::find($ids);
+        $tiempo=Carbon::now();
+        HistorialPedidos::insert(array('materialclinica_id'=>$faltante->materialclinica_id,
+        'user_id'=>$faltante->user_id, 
+        'nombre_user'=>$faltante->nombre_user, 
+        'nombre_material'=>$faltante->nombre_material, 
+        'area'=>$faltante->area, 
+        'seccion'=>$faltante->seccion,
+        'inmunologia'=>$faltante->inmunologia, 
+        'uroanalisis'=>$faltante->uroanalisis, 
+        'hematologia'=>$faltante->hematologia, 
+        'bacteriologia'=>$faltante->bacteriologia, 
+        'bioquimica'=>$faltante->bioquimica, 
+        'hormonas'=>$faltante->hormonas, 
+        'cantidad'=>$faltante->faltante, 
+        'observaciones'=>$faltante->observaciones, 
+        'extras'=>$faltante->extras,
+        'created_at'=>$tiempo));
+        Faltante::find($ids)->delete();
+        return redirect()->route('pendientesSucursal.pendienteLab')
+                        ->with('Se ha entregado con éxito');
+    }
+
+
 }

@@ -293,7 +293,24 @@ Route::group(['middleware' => ['auth']], function() {
 
 		Route::get('pendienteAdminLab',['as'=>'pendientesAdmin.pendienteLab','uses'=>'PedidosController@showadminlab']);
 
+		//faltante
+		Route::get('faltanteToma/{id}',['as'=>'faltantes.faltanteSuc','uses'=>'PedidosController@faltante',]);
 
+		Route::post('faltanteToma/{id}',['as'=>'pedidos.faltante','uses'=>'PedidosController@faltantestore']);
+
+		Route::delete('faltanteToma/{ids}',['as'=>'Pedidos.destroyfaltante','uses'=>'PedidosController@destroyfaltante']);
+
+		Route::get('faltantePape/{id}',['as'=>'faltantes.faltantePape','uses'=>'PedidosPapeController@faltantePape',]);
+
+		Route::post('faltantePape/{id}',['as'=>'pedidos.faltantestorePape','uses'=>'PedidosPapeController@faltantestorePape']);
+
+		Route::delete('faltantePape/{ids}',['as'=>'Pedidos.destroyfaltantePape','uses'=>'PedidosPapeController@destroyfaltantePape']);
+
+		Route::get('faltanteLab/{id}',['as'=>'faltantes.faltanteLab','uses'=>'PedidosController@faltanteLab']);
+
+		Route::post('faltanteLab/{id}',['as'=>'pedidos.faltanteLab','uses'=>'PedidosController@faltantestorelab']);
+
+		Route::delete('faltanteLab/{ids}',['as'=>'Pedidos.destroyfaltanteLab','uses'=>'PedidosController@destroyfaltanteLab']);
 
 });
 

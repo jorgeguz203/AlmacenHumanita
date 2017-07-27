@@ -27,6 +27,7 @@ class CreateFaltantesTable extends Migration
             $table->string('nombre_user');
             $table->string('nombre_material');
             $table->string('area');
+            $table->string('seccion')->nullable();
             $table->string('inmunologia')->nullable();
             $table->string('uroanalisis')->nullable();
             $table->string('hematologia')->nullable();
@@ -35,7 +36,7 @@ class CreateFaltantesTable extends Migration
             $table->string('hormonas')->nullable();
             $table->float('cantidad');
             $table->float('faltante');
-            $table->string('observaciones')->nullable;
+            $table->string('observaciones')->nullable();
             $table->timestamps();
         });
     }

@@ -45,6 +45,14 @@ class MaterialClinica extends Model
       ->withTimestamps();
 }
 
+        public function faltante()
+        {
+
+        return $this->belongsToMany('App\Faltante')
+          ->withTimestamps();
+        }
+
+
 		public function scopeName($query, $name){
 			if (trim($name) != ""){
 				$query->where(\DB::raw('nombre'), 'LIKE', "%$name%");

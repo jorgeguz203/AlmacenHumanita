@@ -64,4 +64,12 @@ public function roles(){
           ->withTimestamps();
         }
 
+        public function faltante()
+        {
+
+        return $this->belongsToMany('App\Faltante')
+          ->withTimestamps();
+        }
+
+
 }
