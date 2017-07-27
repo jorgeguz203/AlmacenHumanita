@@ -52,7 +52,7 @@ Route::group(['middleware' => ['auth']], function() {
 
 	Route::patch('userInventarioPapelerias/{user}',['as'=>'users.editinvsucpap2','uses'=>'UserController@updatePap']);
 
-	Route::get('inventario',['as'=>'inventarios.inventario','uses'=>'InventarioSucursalController@inventario']);
+	
 	Route::get('inventariopapeleria',['as'=>'inventarios.inventariopape','uses'=>'InventarioSucursalpapeleriaController@inventariopape']);
 
 	
@@ -293,8 +293,32 @@ Route::group(['middleware' => ['auth']], function() {
 
 		Route::get('pendienteAdminLab',['as'=>'pendientesAdmin.pendienteLab','uses'=>'PedidosController@showadminlab']);
 
+
 		//faltante
 		Route::get('faltanteToma/{id}',['as'=>'faltantes.faltanteSuc','uses'=>'PedidosController@faltante',]);
+
+		//historialPedidos
+
+		Route::get('historialPedidosClinico/{id}',['as'=>'pendientesAdmin.historialPendientesClinico','uses'=>'PedidosController@showHistCli']);
+
+		Route::get('historialPedidosClinico2/{id}',['as'=>'pendientesAdmin.historialPendientesClinico2','uses'=>'PedidosController@showHistCli2']);
+
+
+		//modals
+
+
+		Route::get('inventario',['as'=>'inventarios.inventario','uses'=>'InventarioSucursalController@inventario']);
+
+		Route::post('ModificaExistenciaModal',['as'=>'inventarios.inventario','uses'=>'InventarioSucursalController@modificaExistencia']);
+
+		Route::post('ModificaExistenciaModal2',['as'=>'inventarios.inventariopape','uses'=>'InventarioSucursalpapeleriaController@modificaExistencia']);
+		
+
+		Route::post('ModificaPedidosModal',['as'=>'home','uses'=>'VariosController@modificaExistencia']);
+
+
+
+		//faltantes
 
 		Route::post('faltanteToma/{id}',['as'=>'pedidos.faltante','uses'=>'PedidosController@faltantestore']);
 

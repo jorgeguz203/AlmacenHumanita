@@ -1,6 +1,51 @@
 @extends('layouts.app')
 
 @section('content')
+
+
+<!-- Modal -->
+<div id="modal-existencia" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+        <form id="form-existencia" class="form-horizontal" action="{{ route('home') }}" method="post">
+            {{ csrf_field() }}
+            <fieldset>
+
+            <!-- Form Name -->
+            <legend>Agregar Varios</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="existencia">Varios:</label>  
+              <div class="col-md-4">
+              <textarea id="extra" rows="5" cols="220" name="extra" type="text" placeholder="" class="form-control input-lg" required=""></textarea>
+
+              <input id="seccion" name="seccion" type="hidden" value="asf" class="form-control input-md" required="">
+                
+              </div>
+            </div>
+
+            <!-- Button (Double) -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="button1id"></label>
+              <div class="col-md-8">
+                <button type="button" id="button1id" name="button1id" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                <button type="submit" id="guardar" name="guardar" class="btn btn-primary">Guardar</button>
+              </div>
+            </div>
+
+            </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 <div class="container">
 @if (Auth::user()->can('admin-admin-clinica', 'admin-admin-papelera'))
     <div class="row">
@@ -199,7 +244,7 @@
     
     </table>
 
-    <button class="btn btn-primary" href="">Varios</button>   
+    <a class="btn btn-primary btn-varios" data-toggle="modal" data-target="#modal-existencia" data-seccion="inmunologia">Varios</a>   
     <hr>
 
 
@@ -230,7 +275,8 @@
      @endforeach
     
     </table>
-    <button class="btn btn-primary" href="">Varios</button>   
+
+   <a class="btn btn-primary btn-varios" data-toggle="modal" data-target="#modal-existencia" data-seccion="uroanalisis">Varios</a>  
     <hr>
 
     <h4><strong> Hematología(3) </strong></h4>
@@ -259,7 +305,7 @@
      @endforeach
     
     </table>
-    <button class="btn btn-primary" href="">Varios</button>   
+    <a class="btn btn-primary btn-varios" data-toggle="modal" data-target="#modal-existencia" data-seccion="hematologia">Varios</a>    
     <hr>
 
     <h4><strong> Bacteriología(4) </strong></h4>
@@ -288,7 +334,7 @@
      @endforeach
     
     </table>
-    <button class="btn btn-primary" href="">Varios</button>   
+       <a class="btn btn-primary btn-varios" data-toggle="modal" data-target="#modal-existencia" data-seccion="bacteriologia">Varios</a> 
     <hr>
 
     <h4><strong> Bioquímica(5) </strong></h4>
@@ -317,7 +363,8 @@
      @endforeach
     
     </table>
-    <button class="btn btn-primary" href="">Varios</button>   
+
+     <a class="btn btn-primary btn-varios" data-toggle="modal" data-target="#modal-existencia" data-seccion="bioquimica">Varios</a>   
     <hr>
 
         <h4><strong> Hormonas(6) </strong></h4>
@@ -346,11 +393,19 @@
      @endforeach
     
     </table>
-    <button class="btn btn-primary" href="">Varios</button>   
+    <a class="btn btn-primary btn-varios" data-toggle="modal" data-target="#modal-existencia" data-seccion="hormonas">Varios</a>   
     <hr>
 
 @endif
 
+<script>
+$(document).ready(function(){
+    $(".btn-varios").click(function() {
+        var seccion = $(this).data('seccion');
 
+        $('#seccion').val(seccion);
+    });
+});
+</script>
 </div>
 @endsection

@@ -13,6 +13,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/colores.css') }}" rel="stylesheet">
+
+    <script src="{{ asset('js/jquery2.2.5.min.js') }}"></script>
 </head>
 <body bgcolor="#C5F2E7">
     <div id="app">
@@ -56,11 +58,11 @@
                             <ul class="dropdown-menu dropd" role="menu">
                                     <li>
 
-                                        <a href="{{ route('inventarios.inventario') }}" class="efecto-drop">
+                                        <a href="http://127.0.0.1:8000/inventario" class="efecto-drop">
                                           <p>  Tomas de Muestra </p>  
                                         </a>  
 
-                                        <a href="{{ route('inventarios.inventariopape') }}" class="efecto-drop">
+                                        <a href="http://127.0.0.1:8000/inventariopapeleria" class="efecto-drop">
                                           <p>  Papelería   </p>
                                         </a> 
 

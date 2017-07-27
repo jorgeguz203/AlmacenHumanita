@@ -348,6 +348,7 @@ class PedidosController extends Controller
                         ->with('Se ha eliminado con éxito');
     }
 
+
         public function destroyfaltanteLab($ids)
     {
         $faltante=Faltante::find($ids);
@@ -372,6 +373,27 @@ class PedidosController extends Controller
         return redirect()->route('pendientesSucursal.pendienteLab')
                         ->with('Se ha entregado con éxito');
     }
+
+
+
+
+
+    public function showHistCli($id){
+
+        $sucursales = User::find($id);
+        $historiales = HistorialPedidos::all();
+        return view('pendientesAdmin.historialPendientesClinico',compact('sucursales','historiales'));
+    }
+
+     public function showHistCli2($id){
+
+        $sucursales = User::find($id);
+        $historiales = HistorialPedidos::all();
+        return view('pendientesAdmin.historialPendientesClinico2',compact('sucursales','historiales'));
+    }
+
+
+
 
 
 }

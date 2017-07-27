@@ -21,5 +21,14 @@ class InventarioSucursalpapeleriaController extends Controller
         return view('inventarios.inventariopape', compact('materialpapeleria', 'user', 'materialpapelerias'));
     }
 
+
+    public function modificaExistencia(Request $request){
+    	$existencia = $request->get('existencia');
+    	$id = $request->get('materia_id');
+    	InventarioSucursalpapeleria::where('id',$id)->update(['existencia' => $existencia]); 
+
+    	return back();
+    }
+
 }
 
