@@ -10,7 +10,8 @@ use App\InventarioSucursal;
 use App\InventarioSucursalpapeleria;
 use App\User;
 use Auth;
-
+use App\Faltante;
+use App\FaltantePape;
 
 class HomeController extends Controller
 {
@@ -23,12 +24,15 @@ class HomeController extends Controller
 
     public function index()
     {
+        $faltante = Faltante::orderBy('nombre_user', 'ASC')->get();
+        $faltantepape = FaltantePape::orderBy('nombre_user', 'ASC')->get();
         $user = Auth::User()->find('id');
+        $users = User::all();
         $materiales = MaterialClinica::orderBy('nombre', 'ASC')->get();
         $materialess = MaterialPapelera::orderBy('nombre', 'ASC')->get();
         $materialclinico = InventarioSucursal::orderBy('nombre_material', 'ASC')->get();
         $materialpapeleria = InventarioSucursalpapeleria::orderBy('nombre_material', 'ASC')->get();
-        return view('home',compact('materiales', 'materialess', 'materialclinico', 'materialpapeleria', 'user'));
+        return view('home',compact('materiales', 'materialess', 'materialclinico', 'materialpapeleria', 'user', 'users', 'faltante', 'faltantepape'));
     }
 }
 
