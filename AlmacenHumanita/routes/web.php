@@ -297,11 +297,17 @@ Route::group(['middleware' => ['auth']], function() {
 		//faltante
 		Route::get('faltanteToma/{id}',['as'=>'faltantes.faltanteSuc','uses'=>'PedidosController@faltante',]);
 
-		//historialPedidos
+		//historialPedidosclinicos
 
 		Route::get('historialPedidosClinico/{id}',['as'=>'pendientesAdmin.historialPendientesClinico','uses'=>'PedidosController@showHistCli']);
 
-		Route::get('historialPedidosClinico2/{id}',['as'=>'pendientesAdmin.historialPendientesClinico2','uses'=>'PedidosController@showHistCli2']);
+		Route::get('historialPedidosClinicos/{id}/{ids}',['as'=>'pendientesAdmin.historialPendientesClinico2','uses'=>'PedidosController@showHistCli2']);
+
+		//historialpedidospape
+
+		Route::get('historialPedidosPape/{id}',['as'=>'pendientesAdmin.historialPendientesPape','uses'=>'PedidosController@showHistPap']);
+
+		Route::get('historialPedidosPapes/{id}/{ids}',['as'=>'pendientesAdmin.historialPendientesPape2','uses'=>'PedidosController@showHistPap2']);
 
 
 		//modals
@@ -335,6 +341,13 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::post('faltanteLab/{id}',['as'=>'pedidos.faltanteLab','uses'=>'PedidosController@faltantestorelab']);
 
 		Route::delete('faltanteLab/{ids}',['as'=>'Pedidos.destroyfaltanteLab','uses'=>'PedidosController@destroyfaltanteLab']);
+
+
+		//historial Inventarios Suc
+		Route::get('historialInventario/{id}',['as'=>'inventarios.historialinventario','uses'=>'HistorialPedidosController@showHistInv']);
+
+		Route::get('historialInventarioPap/{id}',['as'=>'inventarios.historialinventariopape','uses'=>'HistorialPedidosController@showHistInvPap']);
+
 
 });
 

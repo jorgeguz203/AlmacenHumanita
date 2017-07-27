@@ -11,7 +11,7 @@
 	    </div>
 
 	    <div class="pull-right">
-	            <a class="btn btn-primary" href="{{ route('pendientesAdmin.pendienteClinico') }}"> Atrás</a>
+	            <a class="btn btn-primary" href="{{ route('pendientesAdmin.pendientePapeleria') }}"> Atrás</a>
 	            <hr>
 	        </div>
 
@@ -26,7 +26,7 @@
 		
 	@foreach ($historiales as $key => $historial)
 	@if ($sucursales->id == $historial->user_id)
-	@if ($inventarios->id == $historial->materialclinica_id)
+	@if ($inventarios->id == $historial->materialpapelera_id)
 
 	<tr>
 		<td>{{ $historial->nombre_material }}</td>

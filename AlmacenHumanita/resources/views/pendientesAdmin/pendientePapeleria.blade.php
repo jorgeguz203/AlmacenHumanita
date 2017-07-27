@@ -14,7 +14,8 @@
 
         @foreach($user as $key => $us)
         @if($us->id > 4)
-        <h4><strong> Sucursal {{ $us->name }} <a class="btn btn-info" href="">Historial</a> </strong></h4>
+        <h4><strong> Sucursal {{ $us->name }} <a class="btn btn-info" 
+        href="{{ route('pendientesAdmin.historialPendientesPape', $us->id) }}">Historial</a> </strong></h4>
     <table class="table table-bordered">
          <tr class="tabla1">
             <th>Material</th>

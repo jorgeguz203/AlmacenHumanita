@@ -128,7 +128,7 @@
 	<tr>
 		<td>
 			<a class="btn btn-success" href="{{ route('pedidos.pedidosPape',$materiales->id) }}">Solicitar Material</a>
-			<a class="btn btn-info" href="#">Historial</a>
+			<a class="btn btn-info" href="{{ route('inventarios.historialinventariopape',$materiales->id) }}">Historial</a>
         
 		</td>
 	
@@ -193,7 +193,7 @@
 	<tr>
 		<td>
 			<a class="btn btn-success" href="{{ route('pedidos.pedidosPape',$materiales->id) }}">Solicitar Material</a>
-			<a class="btn btn-info" href="#">Historial</a>
+			<a class="btn btn-info" href="{{ route('inventarios.historialinventariopape',$materiales->id) }}">Historial</a>
         
 		</td>
 	
@@ -260,7 +260,7 @@
 	<tr>
 		<td>
 			<a class="btn btn-success" href="{{ route('pedidos.pedidosPape',$materiales->id) }}">Solicitar Material</a>
-			<a class="btn btn-info" href="#">Historial</a>
+			<a class="btn btn-info" href="{{ route('inventarios.historialinventariopape',$materiales->id) }}">Historial</a>
         
 		</td>
 	
@@ -327,7 +327,7 @@
 	<tr>
 		<td>
 			<a class="btn btn-success" href="{{ route('pedidos.pedidosPape',$materiales->id) }}">Solicitar Material</a>
-			<a class="btn btn-info" href="#">Historial</a>
+			<a class="btn btn-info" href="{{ route('inventarios.historialinventariopape',$materiales->id) }}">Historial</a>
         
 		</td>
 	
@@ -396,7 +396,7 @@
 	<tr>
 		<td>
 			<a class="btn btn-success" href="{{ route('pedidos.pedidosPape',$materiales->id) }}">Solicitar Material</a>
-			<a class="btn btn-info" href="#">Historial</a>
+			<a class="btn btn-info" href="{{ route('inventarios.historialinventariopape',$materiales->id) }}">Historial</a>
         
 		</td>
 	
@@ -462,7 +462,7 @@
 	<tr>
 		<td>
 			<a class="btn btn-success" href="{{ route('pedidos.pedidosPape',$materiales->id) }}">Solicitar Material</a>
-			<a class="btn btn-info" href="#">Historial</a>
+			<a class="btn btn-info" href="{{ route('inventarios.historialinventariopape',$materiales->id) }}">Historial</a>
         
 		</td>
 	
