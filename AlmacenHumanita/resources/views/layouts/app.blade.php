@@ -13,6 +13,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/colores.css') }}" rel="stylesheet">
+
+    <script src="{{ asset('js/jquery2.2.5.min.js') }}"></script>
 </head>
 <body bgcolor="#C5F2E7">
     <div id="app">

@@ -24,4 +24,13 @@ class InventarioSucursalController extends Controller
         return view('inventarios.inventario', compact('materialclinico', 'user', 'materialclinicos'));
     }
 
+
+    public function modificaExistencia(Request $request){
+    	$existencia = $request->get('existencia');
+    	$id = $request->get('materia_id');
+    	InventarioSucursal::where('id',$id)->update(['existencia' => $existencia]); 
+
+    	return back();
+    }
+
 }

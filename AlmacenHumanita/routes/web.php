@@ -293,6 +293,23 @@ Route::group(['middleware' => ['auth']], function() {
 
 		Route::get('pendienteAdminLab',['as'=>'pendientesAdmin.pendienteLab','uses'=>'PedidosController@showadminlab']);
 
+		//historialPedidos
+
+		Route::get('historialPedidosClinico/{id}',['as'=>'pendientesAdmin.historialPendientesClinico','uses'=>'PedidosController@showHistCli']);
+
+		Route::get('historialPedidosClinico2/{id}',['as'=>'pendientesAdmin.historialPendientesClinico2','uses'=>'PedidosController@showHistCli2']);
+
+
+		//modals
+
+		Route::post('ModificaExistenciaModal',['as'=>'inventarios.inventario','uses'=>'InventarioSucursalController@modificaExistencia']);
+
+		Route::post('ModificaPedidosModal',['as'=>'home','uses'=>'VariosController@modificaExistencia']);
+
+
+
+
+
 
 
 });

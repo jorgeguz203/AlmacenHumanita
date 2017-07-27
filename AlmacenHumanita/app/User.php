@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
 use App\InventarioSucursal;
+use App\Varios;
 
 class User extends Authenticatable
 {
@@ -24,6 +25,12 @@ public function roles(){
     public function InventarioSucursal()
 {
     return $this->belongsToMany('App\InventarioSucursal')
+      ->withTimestamps();
+}
+
+public function Varios()
+{
+    return $this->belongsToMany('App\Varios')
       ->withTimestamps();
 }
 
