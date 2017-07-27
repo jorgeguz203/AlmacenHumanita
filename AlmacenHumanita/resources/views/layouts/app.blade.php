@@ -58,11 +58,11 @@
                             <ul class="dropdown-menu dropd" role="menu">
                                     <li>
 
-                                        <a href="{{ route('inventarios.inventario') }}" class="efecto-drop">
+                                        <a href="http://127.0.0.1:8000/inventario" class="efecto-drop">
                                           <p>  Tomas de Muestra </p>  
                                         </a>  
 
-                                        <a href="{{ route('inventarios.inventariopape') }}" class="efecto-drop">
+                                        <a href="http://127.0.0.1:8000/inventariopapeleria" class="efecto-drop">
                                           <p>  Papelería   </p>
                                         </a> 
 

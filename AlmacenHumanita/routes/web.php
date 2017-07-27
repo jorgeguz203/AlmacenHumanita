@@ -52,7 +52,7 @@ Route::group(['middleware' => ['auth']], function() {
 
 	Route::patch('userInventarioPapelerias/{user}',['as'=>'users.editinvsucpap2','uses'=>'UserController@updatePap']);
 
-	Route::get('inventario',['as'=>'inventarios.inventario','uses'=>'InventarioSucursalController@inventario']);
+	
 	Route::get('inventariopapeleria',['as'=>'inventarios.inventariopape','uses'=>'InventarioSucursalpapeleriaController@inventariopape']);
 
 	
@@ -302,7 +302,13 @@ Route::group(['middleware' => ['auth']], function() {
 
 		//modals
 
+
+		Route::get('inventario',['as'=>'inventarios.inventario','uses'=>'InventarioSucursalController@inventario']);
+
 		Route::post('ModificaExistenciaModal',['as'=>'inventarios.inventario','uses'=>'InventarioSucursalController@modificaExistencia']);
+
+		Route::post('ModificaExistenciaModal2',['as'=>'inventarios.inventariopape','uses'=>'InventarioSucursalpapeleriaController@modificaExistencia']);
+		
 
 		Route::post('ModificaPedidosModal',['as'=>'home','uses'=>'VariosController@modificaExistencia']);
 
