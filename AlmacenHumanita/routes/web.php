@@ -284,7 +284,7 @@ Route::group(['middleware' => ['auth']], function() {
 
 		Route::get('pendienteLab',['as'=>'pendientesSucursal.pendienteLab','uses'=>'PedidosController@showlab']);
 		Route::delete('pendienteLab/{id}',['as'=>'PedidosLab.destroylab','uses'=>'PedidosController@destroylab']);
-
+		Route::delete('pendienteLabs/{id}',['as'=>'PedidosLab.destroyvarios','uses'=>'PedidosController@destroyvarios']);
 
 
 		Route::get('pendienteAdminToma',['as'=>'pendientesAdmin.pendienteClinico','uses'=>'PedidosController@showadmin']);
@@ -335,6 +335,40 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::post('faltanteLab/{id}',['as'=>'pedidos.faltanteLab','uses'=>'PedidosController@faltantestorelab']);
 
 		Route::delete('faltanteLab/{ids}',['as'=>'Pedidos.destroyfaltanteLab','uses'=>'PedidosController@destroyfaltanteLab']);
+
+
+
+
+		Route::get('Historialinmunologia',['as'=>'historialeslab.historialinmunologia','uses'=>'PedidosController@historialinmunologia']);
+		Route::get('Historialinmunologiamaterial{id}',['as'=>'historialeslab.historialinmunologiamaterial','uses'=>'PedidosController@historialinmunologiamaterial']);
+
+		Route::get('Historialuroanalisis',['as'=>'historialeslab.historialuroanalisis','uses'=>'PedidosController@historialuroanalisis']);
+		Route::get('Historialuroanalisismaterial{id}',['as'=>'historialeslab.historialuroanalisismaterial','uses'=>'PedidosController@historialuroanalisismaterial']);
+
+		Route::get('Historialhematologia',['as'=>'historialeslab.historialhematologia','uses'=>'PedidosController@historialhematologia']);
+		Route::get('Historialhematologiamaterial{id}',['as'=>'historialeslab.historialhematologiamaterial','uses'=>'PedidosController@historialhematologiamaterial']);
+
+		Route::get('Historialbacteriologia',['as'=>'historialeslab.historialbacteriologia','uses'=>'PedidosController@historialbacteriologia']);
+		Route::get('Historialbacteriologiamaterial{id}',['as'=>'historialeslab.historialbacteriologiamaterial','uses'=>'PedidosController@historialbacteriologiamaterial']);
+
+		Route::get('Historialbioquimica',['as'=>'historialeslab.historialbioquimica','uses'=>'PedidosController@historialbioquimica']);
+		Route::get('Historialbioquimicamaterial{id}',['as'=>'historialeslab.historialbioquimicamaterial','uses'=>'PedidosController@historialbioquimicamaterial']);
+
+		Route::get('Historialhormonas',['as'=>'historialeslab.historialhormonas','uses'=>'PedidosController@historialhormonas']);
+		Route::get('Historialhormonasmaterial{id}',['as'=>'historialeslab.historialhormonasmaterial','uses'=>'PedidosController@historialhormonasmaterial']);
+
+		Route::get('Historialinmunologialab/{id}',['as'=>'historialeslab.historialinmunologialab','uses'=>'PedidosController@historialinmunologialab']);
+
+		Route::get('Historialuroanalisislab/{id}',['as'=>'historialeslab.historialuroanalisislab','uses'=>'PedidosController@historialuroanalisislab']);
+
+		Route::get('Historialhematologialab/{id}',['as'=>'historialeslab.historialhematologialab','uses'=>'PedidosController@historialhematologialab']);
+
+		Route::get('Historialbacteriologialab/{id}',['as'=>'historialeslab.historialbacteriologialab','uses'=>'PedidosController@historialbacteriologialab']);
+
+		Route::get('Historialbioquimicalab/{id}',['as'=>'historialeslab.historialbioquimicalab','uses'=>'PedidosController@historialbioquimicalab']);
+
+		Route::get('Historialhormonaslab/{id}',['as'=>'historialeslab.historialhormonaslab','uses'=>'PedidosController@historialhormonaslab']);
+
 
 });
 

@@ -13,7 +13,8 @@
         </div>
 
 
-        <h4><strong> Inmunología(1)</strong></h4>
+        <h4><strong> Inmunología(1) <a class="btn btn-info" 
+        href="{{ route('historialeslab.historialinmunologia') }}">Historial</a></strong></h4>
     <table class="table table-bordered">
         <tr class="tabla1">
             <th>Material</th>
@@ -35,12 +36,29 @@
     @endif
     @endif
     @endforeach
+
+                    @foreach ($varios as $key => $vario)
+
+    @if ($vario->seccion == 'inmunologia')
+    <tr>
+        <td>{{ $vario->extra }}</td>
+        <td></td>
+        <td></td>
+        <td>{{ $vario->created_at }}</td>
+
+    </tr>
+
+    @endif
+
+    @endforeach
+    
     
     </table>
     <hr>
 
 
-        <h4><strong> Uroanálisis(2)</strong></h4>
+        <h4><strong> Uroanálisis(2) <a class="btn btn-info" 
+        href="{{ route('historialeslab.historialuroanalisis') }}">Historial</a></strong></h4>
     <table class="table table-bordered">
         <tr class="tabla1">
             <th>Material</th>
@@ -62,12 +80,28 @@
     @endif
     @endif
     @endforeach
+
+                    @foreach ($varios as $key => $vario)
+
+    @if ($vario->seccion == 'uroanalisis')
+    <tr>
+        <td>{{ $vario->extra }}</td>
+        <td></td>
+        <td></td>
+        <td>{{ $vario->created_at }}</td>
+    </tr>
+
+    @endif
+
+    @endforeach
+    
     
     </table>
     <hr>
 
 
-        <h4><strong> Hematología(3)</strong></h4>
+        <h4><strong> Hematología(3) <a class="btn btn-info"  
+        href="{{ route('historialeslab.historialhematologia') }}">Historial</a></strong></h4>
     <table class="table table-bordered">
         <tr class="tabla1">
             <th>Material</th>
@@ -89,12 +123,28 @@
     @endif
     @endif
     @endforeach
+
+                    @foreach ($varios as $key => $vario)
+
+    @if ($vario->seccion == 'hematologia')
+    <tr>
+        <td>{{ $vario->extra }}</td>
+        <td></td>
+        <td></td>
+        <td>{{ $vario->created_at }}</td>
+    </tr>
+
+    @endif
+
+    @endforeach
+    
     
     </table>
     <hr>
 
 
-        <h4><strong> Bacteriología(4)</strong></h4>
+        <h4><strong> Bacteriología(4) <a class="btn btn-info" 
+        href="{{ route('historialeslab.historialbacteriologia') }}">Historial</a></strong></h4>
     <table class="table table-bordered">
         <tr class="tabla1">
             <th>Material</th>
@@ -116,12 +166,29 @@
     @endif
     @endif
     @endforeach
+
+                    @foreach ($varios as $key => $vario)
+
+    @if ($vario->seccion == 'bacteriologia')
+    <tr>
+        <td>{{ $vario->extra }}</td>
+        <td></td>
+        <td></td>
+        <td>{{ $vario->created_at }}</td>
+
+    </tr>
+
+    @endif
+
+    @endforeach
+    
     
     </table>
     <hr>
 
 
-        <h4><strong> Bioquímica(5)</strong></h4>
+        <h4><strong> Bioquímica(5) <a class="btn btn-info" 
+        href="{{ route('historialeslab.historialbioquimica') }}">Historial</a></strong></h4>
     <table class="table table-bordered">
         <tr class="tabla1">
             <th>Material</th>
@@ -143,12 +210,28 @@
     @endif
     @endif
     @endforeach
+
+                    @foreach ($varios as $key => $vario)
+
+    @if ($vario->seccion == 'bioquimica')
+    <tr>
+        <td>{{ $vario->extra }}</td>
+        <td></td>
+        <td></td>
+        <td>{{ $vario->created_at }}</td>
+    </tr>
+
+    @endif
+
+    @endforeach
+    
     
     </table>
     <hr>
 
 
-        <h4><strong> Hormonas(6)</strong></h4>
+        <h4><strong> Hormonas(6) <a class="btn btn-info" 
+        href="{{ route('historialeslab.historialhormonas') }}">Historial</a></strong></h4>
     <table class="table table-bordered">
         <tr class="tabla1">
             <th>Material</th>
@@ -170,6 +253,21 @@
     @endif
     @endif
     @endforeach
+
+                    @foreach ($varios as $key => $vario)
+  
+    @if ($vario->seccion == 'hormonas')
+    <tr>
+        <td>{{ $vario->extra }}</td>
+        <td></td>
+        <td></td>
+        <td>{{ $vario->created_at }}</td>
+    </tr>
+
+    @endif
+  
+    @endforeach
+    
     
     </table>
     <hr>

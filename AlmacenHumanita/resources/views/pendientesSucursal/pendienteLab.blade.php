@@ -41,6 +41,27 @@
 	@endif
 	@endif
 	@endforeach
+
+	@foreach ($varios as $key => $vario)
+	@if (Auth::User()->id == $pedido->user_id)
+	@if ($vario->seccion == 'inmunologia')
+	<tr>
+		<td>Otro</td>
+		<td>{{ $vario->extra }}</td>
+		<td>{{ $vario->created_at }}</td>
+		<td>
+			{!! Form::open(['method' => 'Delete','route' => ['PedidosLab.destroyvarios', $vario->id],'style'=>'display:inline']) !!}
+            {!! Form::submit('Confirmar', ['class' => 'btn btn-success']) !!}
+            {!! Form::close() !!}
+		</td>
+
+	</tr>
+
+	@endif
+	@endif
+	@endforeach
+
+
 	
 	</table>
 
@@ -74,6 +95,8 @@
 	@endif
 	@endif
 	@endforeach
+
+
 	
 	</table>
 
@@ -109,6 +132,26 @@
 	@endif
 	@endif
 	@endforeach
+
+		@foreach ($varios as $key => $vario)
+	@if (Auth::User()->id == $pedido->user_id)
+	@if ($vario->seccion == 'uroanalisis')
+	<tr>
+		<td>Otro</td>
+		<td>{{ $vario->extra }}</td>
+		<td>{{ $vario->created_at }}</td>
+		<td>
+			{!! Form::open(['method' => 'Delete','route' => ['PedidosLab.destroyvarios', $vario->id],'style'=>'display:inline']) !!}
+            {!! Form::submit('Confirmar', ['class' => 'btn btn-success']) !!}
+            {!! Form::close() !!}
+		</td>
+
+	</tr>
+
+	@endif
+	@endif
+	@endforeach
+
 	
 	</table>
 
@@ -182,6 +225,25 @@
 	@endif
 	@endif
 	@endforeach
+
+			@foreach ($varios as $key => $vario)
+	@if (Auth::User()->id == $pedido->user_id)
+	@if ($vario->seccion == 'hematologia')
+	<tr>
+		<td>Otro</td>
+		<td>{{ $vario->extra }}</td>
+		<td>{{ $vario->created_at }}</td>
+		<td>
+			{!! Form::open(['method' => 'Delete','route' => ['PedidosLab.destroyvarios', $vario->id],'style'=>'display:inline']) !!}
+            {!! Form::submit('Confirmar', ['class' => 'btn btn-success']) !!}
+            {!! Form::close() !!}
+		</td>
+
+	</tr>
+
+	@endif
+	@endif
+	@endforeach
 	
 	</table>
 
@@ -215,6 +277,8 @@
 	@endif
 	@endif
 	@endforeach
+
+
 	
 	</table>
 
@@ -248,6 +312,26 @@
 
 	</tr>
 	@endif
+	@endif
+	@endif
+	@endforeach
+
+
+			@foreach ($varios as $key => $vario)
+	@if (Auth::User()->id == $pedido->user_id)
+	@if ($vario->seccion == 'bacteriologia')
+	<tr>
+		<td>Otro</td>
+		<td>{{ $vario->extra }}</td>
+		<td>{{ $vario->created_at }}</td>
+		<td>
+			{!! Form::open(['method' => 'Delete','route' => ['PedidosLab.destroyvarios', $vario->id],'style'=>'display:inline']) !!}
+            {!! Form::submit('Confirmar', ['class' => 'btn btn-success']) !!}
+            {!! Form::close() !!}
+		</td>
+
+	</tr>
+
 	@endif
 	@endif
 	@endforeach
@@ -321,6 +405,26 @@
 	@endif
 	@endif
 	@endforeach
+
+
+			@foreach ($varios as $key => $vario)
+	@if (Auth::User()->id == $pedido->user_id)
+	@if ($vario->seccion == 'bioquimica')
+	<tr>
+		<td>Otro</td>
+		<td>{{ $vario->extra }}</td>
+		<td>{{ $vario->created_at }}</td>
+		<td>
+			{!! Form::open(['method' => 'Delete','route' => ['PedidosLab.destroyvarios', $vario->id],'style'=>'display:inline']) !!}
+            {!! Form::submit('Confirmar', ['class' => 'btn btn-success']) !!}
+            {!! Form::close() !!}
+		</td>
+
+	</tr>
+
+	@endif
+	@endif
+	@endforeach
 	
 	</table>
 
@@ -391,6 +495,26 @@
 	@endif
 	@endif
 	@endforeach
+
+				@foreach ($varios as $key => $vario)
+	@if (Auth::User()->id == $pedido->user_id)
+	@if ($vario->seccion == 'hormonas')
+	<tr>
+		<td>Otro</td>
+		<td>{{ $vario->extra }}</td>
+		<td>{{ $vario->created_at }}</td>
+		<td>
+			{!! Form::open(['method' => 'Delete','route' => ['PedidosLab.destroyvarios', $vario->id],'style'=>'display:inline']) !!}
+            {!! Form::submit('Confirmar', ['class' => 'btn btn-success']) !!}
+            {!! Form::close() !!}
+		</td>
+
+	</tr>
+
+	@endif
+	@endif
+	@endforeach
+	
 	
 	</table>
 
