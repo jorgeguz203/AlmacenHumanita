@@ -280,7 +280,7 @@
         <td>{{ $material->descripcion }}</td>
         <td>
             <a class="btn btn-success" href="{{ route('pedidos.pedidosinmunologia',$material->id) }}">Solicitar Material</a>
-            <a class="btn btn-info" href="#">Historial</a>
+            <a class="btn btn-info" href="{{ route('historialeslab.historialinmunologialab',$material->id) }}">Historial</a>
         
         </td>
     </tr>
@@ -314,7 +314,7 @@
         <td>{{ $material->descripcion }}</td>
         <td>
             <a class="btn btn-success" href="{{ route('pedidos.pedidosuroanalisis',$material->id) }}">Solicitar Material</a>
-            <a class="btn btn-info" href="#">Historial</a>
+            <a class="btn btn-info" href="{{ route('historialeslab.historialuroanalisislab',$material->id) }}">Historial</a>
         
         </td>
     </tr>
@@ -344,7 +344,7 @@
         <td>{{ $material->descripcion }}</td>
         <td>
             <a class="btn btn-success" href="{{ route('pedidos.pedidoshematologia',$material->id) }}">Solicitar Material</a>
-            <a class="btn btn-info" href="#">Historial</a>
+            <a class="btn btn-info" href="{{ route('historialeslab.historialhematologialab',$material->id) }}">Historial</a>
         
         </td>
     </tr>
@@ -373,7 +373,7 @@
         <td>{{ $material->descripcion }}</td>
         <td>
             <a class="btn btn-success" href="{{ route('pedidos.pedidosbacteriologia',$material->id) }}">Solicitar Material</a>
-            <a class="btn btn-info" href="#">Historial</a>
+            <a class="btn btn-info" href="{{ route('historialeslab.historialbacteriologialab',$material->id) }}">Historial</a>
         
         </td>
     </tr>
@@ -402,7 +402,7 @@
         <td>{{ $material->descripcion }}</td>
         <td>
             <a class="btn btn-success" href="{{ route('pedidos.pedidosbioquimica',$material->id) }}">Solicitar Material</a>
-            <a class="btn btn-info" href="#">Historial</a>
+            <a class="btn btn-info" href="{{ route('historialeslab.historialbioquimicalab',$material->id) }}">Historial</a>
         
         </td>
     </tr>
@@ -432,7 +432,7 @@
         <td>{{ $material->descripcion }}</td>
         <td>
             <a class="btn btn-success" href="{{ route('pedidos.pedidoshormonas',$material->id) }}">Solicitar Material</a>
-            <a class="btn btn-info" href="#">Historial</a>
+            <a class="btn btn-info" href="{{ route('historialeslab.historialhormonaslab',$material->id) }}">Historial</a>
         
         </td>
     </tr>

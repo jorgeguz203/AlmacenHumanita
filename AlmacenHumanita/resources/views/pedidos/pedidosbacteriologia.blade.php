@@ -7,6 +7,12 @@
 	        <div class="pull-left">
 	            <h2>Pedidos de Laboratorio Bacteriología</h2>
 	        </div>
+                        <div class="pull-right">
+                <a class="btn btn-primary" href="http://127.0.0.1:8000/"> Atrás</a>
+            </div>
+        </div>
+    </div>
+  
 
 	@if (count($errors) > 0)
 		<div class="alert alert-danger">
