@@ -7,7 +7,55 @@
         <div class="col-md-6">          
                 <div class="panel-body dag" align="center">
                 <h3>Pedidos Pendientes</h3>
-        </div>
+                </div>
+                        <br>
+
+        @if (Auth::user()->can('admin-admin-clinica'))
+
+<strong>Materiales Clínicos</strong>
+    <table class="table table-bordered">
+     <tr class="tabla1">
+            <th>Usuario</th>
+            <th>Sección</th>
+            <th>Nombre</th>
+            <th>Cantidad</th>
+        </tr>
+    @foreach ($faltante as $key => $faltantes)
+    <tr>
+        <td>{{ $faltantes->nombre_user }}</td>
+        <td>{{ $faltantes->seccion }}</td>
+        <td>{{ $faltantes->nombre_material }}</td>
+        <td>{{ $faltantes->cantidad }}</td>
+    </tr>
+
+    @endforeach
+    </table>
+
+
+    @endif
+
+            @if (Auth::user()->can('admin-admin-papelera'))
+
+<strong>Materiales de Papelería</strong>
+    <table class="table table-bordered">
+     <tr class="tabla1">
+            <th>Usuario</th>
+            <th>Nombre</th>
+            <th>Cantidad</th>
+        </tr>
+    @foreach ($faltantepape as $key => $faltantes)
+    <tr>
+        <td>{{ $faltantes->nombre_user }}</td>
+        <td>{{ $faltantes->nombre_material }}</td>
+        <td>{{ $faltantes->cantidad }}</td>
+    </tr>
+
+    @endforeach
+    </table>
+
+
+    @endif
+
     </div>
 
 <div class="col-md-6">
