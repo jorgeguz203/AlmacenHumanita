@@ -15,6 +15,7 @@
 	            <hr>
 	        </div>
 
+
 	<table class="table table-bordered">
 		<tr class="tabla1">
 			<th>Nombre del material:</th>
@@ -22,8 +23,8 @@
 			<th>Acción:</th>
 		</tr>
 
-
 	@foreach ($materiales as $key => $material)
+	@if($material->area == 'Toma_de_muestras')
 	<tr>
 		<td>{{ $material->nombre }}</td>
 		<td>{{ $material->descripcion }}</td>
@@ -32,7 +33,7 @@
         Historial</a> </strong></h4></td>
 
 	</tr>
-	
+	@endif
 	@endforeach
 	
 	</table>

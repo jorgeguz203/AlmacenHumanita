@@ -71,7 +71,7 @@
         <td>{{ $faltantes->nombre_user }}</td>
         <td>{{ $faltantes->seccion }}</td>
         <td>{{ $faltantes->nombre_material }}</td>
-        <td>{{ $faltantes->cantidad }}</td>
+        <td>{{ $faltantes->faltante }}</td>
     </tr>
 
     @endforeach
@@ -93,7 +93,7 @@
     <tr>
         <td>{{ $faltantes->nombre_user }}</td>
         <td>{{ $faltantes->nombre_material }}</td>
-        <td>{{ $faltantes->cantidad }}</td>
+        <td>{{ $faltantes->faltante }}</td>
     </tr>
 
     @endforeach

@@ -17,6 +17,14 @@ class SalidaPapeleriaController extends Controller
         return view('inventarioMatrizPapeleria.reducir1', compact('material', 'users'));
     }
 
+       public function reducirped($id)
+    {
+        $material = MaterialPapelera::find($id);
+        $users = User::all();
+        return view('inventarioMatrizClinica.reducirpapeleria', compact('material', 'users'));
+    }
+
+
     public function reducir2($id)
     {
         $material = MaterialPapelera::find($id);
@@ -79,6 +87,36 @@ class SalidaPapeleriaController extends Controller
         $material->save();
 
         return redirect()->route('inventarioMatrizPapeleria.index1', compact('material'));
+                        
+    } 
+
+        public function updateinvsalidaped (Request $request, $id)
+    {
+            $this->validate($request, [
+            'materialpapelera_id' => 'required',
+            'user_id' => 'required',
+            'cantidad'=> 'required',
+            'nombre_user',
+            'descripcion',
+
+        ]);
+
+        $user=User::find(request('user_id'));
+        $material = MaterialPapelera::find(request('materialpapelera_id'));
+        $salida= new SalidaPapeleria;
+        $salida->materialpapelera_id = request('materialpapelera_id');
+        $salida->user_id = request('user_id');
+        $salida->cantidad = request('cantidad');
+        $salida->nombre_user = $user->name;
+        $salida->descripcion = request('descripcion');
+        $salida->save();
+
+        $material = MaterialPapelera::find($id);
+        $material->existencia = $material->existencia - request('cantidad');
+        MaterialPapelera::where('id',$id)->update(['existencia' => $material->existencia]);
+        $material->save();
+
+        return redirect()->route('pendientesAdmin.pendientePapeleria', compact('material'));
                         
     } 
 

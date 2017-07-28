@@ -52,7 +52,7 @@ class PedidosController extends Controller
         $pedido = Pedidos::create($input);
 	
 
-        return redirect('http://127.0.0.1:8000/inventario');
+        return redirect('http://192.168.1.17:8000/inventario');
     }
 
         public function create_inmunologia($id)
@@ -142,14 +142,16 @@ class PedidosController extends Controller
 
         $user = User::all();
         $pedidos = Pedidos::orderBy('nombre_material', 'ASC')->get();
-        return view('pendientesAdmin.pendienteClinico',compact('user', 'pedidos'));
+        $materiales = MaterialClinica::orderBy('nombre', 'ASC')->get();
+        return view('pendientesAdmin.pendienteClinico',compact('user', 'pedidos', 'materiales'));
     }
 
         public function showadminpape(){
 
         $user = User::all();
         $pedidos = PedidosPape::orderBy('nombre_material', 'ASC')->get();
-        return view('pendientesAdmin.pendientePapeleria',compact('user', 'pedidos'));
+        $materiales = MaterialPapelera::orderBy('nombre', 'ASC')->get();
+        return view('pendientesAdmin.pendientePapeleria',compact('user', 'pedidos', 'materiales'));
 
     }
 
@@ -158,7 +160,8 @@ class PedidosController extends Controller
         $user = User::all();
         $pedidos = Pedidos::orderBy('nombre_material', 'ASC')->get();
         $varios = Varios::orderBy('extra', 'ASC')->get();
-        return view('pendientesAdmin.pendienteLab',compact('user', 'pedidos', 'varios'));
+        $materiales = MaterialClinica::orderBy('nombre', 'ASC')->get();
+        return view('pendientesAdmin.pendienteLab',compact('user', 'pedidos', 'varios', 'materiales'));
     }
 
 

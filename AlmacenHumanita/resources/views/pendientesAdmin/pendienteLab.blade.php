@@ -15,12 +15,18 @@
 
         <h4><strong> Inmunología(1) <a class="btn btn-info" 
         href="{{ route('historialeslab.historialinmunologia') }}">Historial</a></strong></h4>
+
+
+        <div class="row">
+        <div class="col-md-12"> 
     <table class="table table-bordered">
         <tr class="tabla1">
             <th>Material</th>
             <th>Cantidad</th>
             <th>Observaciones</th>
             <th>Fecha</th>
+            <th>Existencia Almacén</th>
+            <th>Acción</th>
         </tr>
         
     @foreach ($pedidos as $key => $pedido)
@@ -32,7 +38,26 @@
         <td>{{ $pedido->observaciones }}</td>
         <td>{{ $pedido->created_at }}</td>
 
+
+    @foreach ($materiales as $key => $material)
+
+    @if ($pedido->materialclinica_id == $material->id)
+    @if($material->area == 'Clinicos')
+        <td>
+            
+        {{  $material->existencia  }}
+        </td>
+
+        <td>
+            <a class="btn btn-danger" href="{{ route('inventarioMatrizClinica.reducirclinicospedidos',$material->id) }}">Salida</a>
+
+        </td>
+    @endif
+    @endif
+    @endforeach
     </tr>
+    
+
     @endif
     @endif
     @endforeach
@@ -54,17 +79,26 @@
     
     
     </table>
+    </div>
+  </div>
+
+
+
     <hr>
 
+<h4><strong> Uroanálisis(2) <a class="btn btn-info" 
+        href="{{ route('historialeslab.historialinmunologia') }}">Historial</a></strong></h4>
 
-        <h4><strong> Uroanálisis(2) <a class="btn btn-info" 
-        href="{{ route('historialeslab.historialuroanalisis') }}">Historial</a></strong></h4>
+        <div class="row">
+        <div class="col-md-12"> 
     <table class="table table-bordered">
         <tr class="tabla1">
             <th>Material</th>
             <th>Cantidad</th>
             <th>Observaciones</th>
             <th>Fecha</th>
+            <th>Existencia Almacén</th>
+            <th>Acción</th>
         </tr>
         
     @foreach ($pedidos as $key => $pedido)
@@ -76,7 +110,26 @@
         <td>{{ $pedido->observaciones }}</td>
         <td>{{ $pedido->created_at }}</td>
 
+    @foreach ($materiales as $key => $material)
+
+    @if ($pedido->materialclinica_id == $material->id)
+    @if($material->area == 'Clinicos')
+        <td>
+            {{  $material->existencia  }}
+        
+        </td>
+
+        <td>
+            <a class="btn btn-danger" href="{{ route('inventarioMatrizClinica.reducirclinicospedidos',$material->id) }}">Salida</a>
+
+        </td>
+
+    
+
     </tr>
+    @endif
+    @endif
+    @endforeach
     @endif
     @endif
     @endforeach
@@ -89,6 +142,7 @@
         <td></td>
         <td></td>
         <td>{{ $vario->created_at }}</td>
+
     </tr>
 
     @endif
@@ -97,17 +151,26 @@
     
     
     </table>
+    </div>
+ </div>
+
+
+
     <hr>
 
+    <h4><strong> Hematología(3) <a class="btn btn-info" 
+        href="{{ route('historialeslab.historialinmunologia') }}">Historial</a></strong></h4>
 
-        <h4><strong> Hematología(3) <a class="btn btn-info"  
-        href="{{ route('historialeslab.historialhematologia') }}">Historial</a></strong></h4>
+       <div class="row">
+        <div class="col-md-12"> 
     <table class="table table-bordered">
         <tr class="tabla1">
             <th>Material</th>
             <th>Cantidad</th>
             <th>Observaciones</th>
             <th>Fecha</th>
+            <th>Existencia Almacén</th>
+            <th>Acción</th>
         </tr>
         
     @foreach ($pedidos as $key => $pedido)
@@ -119,7 +182,27 @@
         <td>{{ $pedido->observaciones }}</td>
         <td>{{ $pedido->created_at }}</td>
 
+    @foreach ($materiales as $key => $material)
+
+    @if ($pedido->materialclinica_id == $material->id)
+    @if($material->area == 'Clinicos')
+
+        <td>
+            
+        
+        </td>
+
+        <td>
+            <a class="btn btn-danger" href="{{ route('inventarioMatrizClinica.reducirclinicospedidos',$material->id) }}">Salida</a>
+
+        </td>
+
+    
+
     </tr>
+    @endif
+    @endif
+    @endforeach
     @endif
     @endif
     @endforeach
@@ -132,6 +215,7 @@
         <td></td>
         <td></td>
         <td>{{ $vario->created_at }}</td>
+
     </tr>
 
     @endif
@@ -140,17 +224,27 @@
     
     
     </table>
+    </div>
+   </div>
+
+
+
+
     <hr>
 
+    <h4><strong> Bacteriología(4) <a class="btn btn-info" 
+        href="{{ route('historialeslab.historialinmunologia') }}">Historial</a></strong></h4>
 
-        <h4><strong> Bacteriología(4) <a class="btn btn-info" 
-        href="{{ route('historialeslab.historialbacteriologia') }}">Historial</a></strong></h4>
+        <div class="row">
+        <div class="col-md-12"> 
     <table class="table table-bordered">
         <tr class="tabla1">
             <th>Material</th>
             <th>Cantidad</th>
             <th>Observaciones</th>
             <th>Fecha</th>
+            <th>Existencia Almacén</th>
+            <th>Acción</th>
         </tr>
         
     @foreach ($pedidos as $key => $pedido)
@@ -161,8 +255,24 @@
         <td>{{ $pedido->cantidad }}</td>
         <td>{{ $pedido->observaciones }}</td>
         <td>{{ $pedido->created_at }}</td>
+    @foreach ($materiales as $key => $material)
+
+    @if ($pedido->materialclinica_id == $material->id)
+    @if($material->area == 'Clinicos')
+        <td>
+            {{  $material->existencia  }}
+        
+        </td>
+
+        <td>
+            <a class="btn btn-danger" href="{{ route('inventarioMatrizClinica.reducirclinicospedidos',$material->id) }}">Salida</a>
+
+        </td>
 
     </tr>
+    @endif
+    @endif
+    @endforeach
     @endif
     @endif
     @endforeach
@@ -184,17 +294,25 @@
     
     
     </table>
+    </div>
+ </div>
+
+
     <hr>
 
+    <h4><strong> Bioquímica(5) <a class="btn btn-info" 
+        href="{{ route('historialeslab.historialinmunologia') }}">Historial</a></strong></h4>
 
-        <h4><strong> Bioquímica(5) <a class="btn btn-info" 
-        href="{{ route('historialeslab.historialbioquimica') }}">Historial</a></strong></h4>
+        <div class="row">
+        <div class="col-md-12"> 
     <table class="table table-bordered">
         <tr class="tabla1">
             <th>Material</th>
             <th>Cantidad</th>
             <th>Observaciones</th>
             <th>Fecha</th>
+            <th>Existencia Almacén</th>
+            <th>Acción</th>
         </tr>
         
     @foreach ($pedidos as $key => $pedido)
@@ -205,8 +323,25 @@
         <td>{{ $pedido->cantidad }}</td>
         <td>{{ $pedido->observaciones }}</td>
         <td>{{ $pedido->created_at }}</td>
+    @foreach ($materiales as $key => $material)
+
+    @if ($pedido->materialclinica_id == $material->id)
+    @if($material->area == 'Clinicos')
+
+    <td>
+            
+        
+        </td>
+
+        <td>
+            <a class="btn btn-danger" href="{{ route('inventarioMatrizClinica.reducirclinicospedidos',$material->id) }}">Salida</a>
+
+        </td>
 
     </tr>
+     @endif
+    @endif
+    @endforeach
     @endif
     @endif
     @endforeach
@@ -219,6 +354,7 @@
         <td></td>
         <td></td>
         <td>{{ $vario->created_at }}</td>
+
     </tr>
 
     @endif
@@ -227,17 +363,25 @@
     
     
     </table>
+    </div>
+ </div>
+
+
     <hr>
 
+    <h4><strong> Hormonas(6) <a class="btn btn-info" 
+        href="{{ route('historialeslab.historialinmunologia') }}">Historial</a></strong></h4>
 
-        <h4><strong> Hormonas(6) <a class="btn btn-info" 
-        href="{{ route('historialeslab.historialhormonas') }}">Historial</a></strong></h4>
+        <div class="row">
+        <div class="col-md-12"> 
     <table class="table table-bordered">
         <tr class="tabla1">
             <th>Material</th>
             <th>Cantidad</th>
             <th>Observaciones</th>
             <th>Fecha</th>
+            <th>Existencia Almacén</th>
+            <th>Acción</th>
         </tr>
         
     @foreach ($pedidos as $key => $pedido)
@@ -249,27 +393,49 @@
         <td>{{ $pedido->observaciones }}</td>
         <td>{{ $pedido->created_at }}</td>
 
+    @foreach ($materiales as $key => $material)
+    @if ($pedido->materialclinica_id == $material->id)
+    @if($material->area == 'Clinicos')
+
+        <td>
+            {{  $material->existencia  }}
+        
+        </td>
+
+        <td>
+            <a class="btn btn-danger" href="{{ route('inventarioMatrizClinica.reducirclinicospedidos',$material->id) }}">Salida</a>
+
+        </td>
+
+    @endif
+    @endif
+    @endforeach
     </tr>
+    
     @endif
     @endif
     @endforeach
 
                     @foreach ($varios as $key => $vario)
-  
+
     @if ($vario->seccion == 'hormonas')
     <tr>
         <td>{{ $vario->extra }}</td>
         <td></td>
         <td></td>
         <td>{{ $vario->created_at }}</td>
+
     </tr>
 
     @endif
-  
+
     @endforeach
     
     
     </table>
+    </div>
+ </div>
+
     <hr>
 
 

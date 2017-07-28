@@ -384,6 +384,16 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::get('Historialhormonaslab/{id}',['as'=>'historialeslab.historialhormonaslab','uses'=>'PedidosController@historialhormonaslab']);
 
 
+	Route::get('inventarioMatrizClinicass/{id}',['as'=>'inventarioMatrizClinica.reducirtomapedido','uses'=>'SalidaMatrizController@reducirped']);
+	Route::get('inventarioMatrizClinicasClinicoss/{id}',['as'=>'inventarioMatrizClinica.reducirclinicospedidos','uses'=>'SalidaMatrizController@reducirclinicosped']);
+	Route::get('inventarioMatrizPapelerias/{id}',['as'=>'inventarioMatrizClinica.reducirpapeleria','uses'=>'SalidaPapeleriaController@reducirped']);
+
+
+	Route::post('inventarioMatrizClinicass/{id}',['as'=>'SalidaMatriz.updateinvsalidaped','uses'=>'SalidaMatrizController@updateinvsalidaped']);
+	Route::post('inventarioMatrizClinicaClinicosss/{id}',['as'=>'SalidaMatriz.updateinvsalidaclinicosped','uses'=>'SalidaMatrizController@updateinvsalidaclinicosped']);
+	Route::post('inventarioMatrizPapelerias/{id}',['as'=>'SalidaPapeleria.updateinvsalidaped','uses'=>'SalidaPapeleriaController@updateinvsalidaped']);
+
+
 
 });
 
