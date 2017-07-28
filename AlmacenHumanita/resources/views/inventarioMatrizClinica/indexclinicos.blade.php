@@ -13,7 +13,7 @@
 			    <!-- Buscador inicia -->
 	    
 	    	
-	    	{!! Form::open(['route' => 'materialClinica.index', 'method' => 'GET', 'class' => 'navbar-form navbar-left', 'role' => 'search']) !!}
+	    	{!! Form::open(['route' => 'inventarioMatrizClinica.indexclinicos', 'method' => 'GET', 'class' => 'navbar-form navbar-left', 'role' => 'search']) !!}
   <div class="form-group">
   {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Buscador']) !!}
 

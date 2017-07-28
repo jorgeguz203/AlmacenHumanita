@@ -13,7 +13,7 @@
 		    <!-- Buscador inicia -->
 	    
 	    	
-	    	{!! Form::open(['route' => 'materialPapelera.index', 'method' => 'GET', 'class' => 'navbar-form navbar-left', 'role' => 'search']) !!}
+	    	{!! Form::open(['route' => 'inventarioMatrizPapeleria.index3', 'method' => 'GET', 'class' => 'navbar-form navbar-left', 'role' => 'search']) !!}
   <div class="form-group">
   {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Buscador']) !!}
 
