@@ -16,7 +16,7 @@
 	        </div>
 
 	<table class="table table-bordered">
-		<tr>
+		<tr class="tabla1">
 			<th>Sucursal salida:</th>
 			<th>Fecha de salida:</th>
 			<th>Cantidad salida:</th>

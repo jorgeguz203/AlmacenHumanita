@@ -303,13 +303,13 @@ Route::group(['middleware' => ['auth']], function() {
 
 		Route::get('historialPedidosClinico/{id}',['as'=>'pendientesAdmin.historialPendientesClinico','uses'=>'PedidosController@showHistCli']);
 
-		Route::get('historialPedidosClinicos/{id}/{ids}',['as'=>'pendientesAdmin.historialPendientesClinico2','uses'=>'PedidosController@showHistCli2']);
+		Route::get('historialPedidosClinicos/{id}',['as'=>'pendientesAdmin.historialPendientesClinico2','uses'=>'PedidosController@showHistCli2']);
 
 		//historialpedidospape
 
 		Route::get('historialPedidosPape/{id}',['as'=>'pendientesAdmin.historialPendientesPape','uses'=>'PedidosController@showHistPap']);
 
-		Route::get('historialPedidosPapes/{id}/{ids}',['as'=>'pendientesAdmin.historialPendientesPape2','uses'=>'PedidosController@showHistPap2']);
+		Route::get('historialPedidosPapes/{id}',['as'=>'pendientesAdmin.historialPendientesPape2','uses'=>'PedidosController@showHistPap2']);
 
 
 		//modals

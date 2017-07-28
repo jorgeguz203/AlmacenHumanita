@@ -6,7 +6,7 @@
 
 <div class="col-lg-12 margin-tb">
 	        <div class="pull-left">
-	            <h2>Historial de Pedidos de {{ $sucursales->name }}</h2>
+	            <h2>Historial de Pedidos de Material</h2>
 	        </div>      
 	    </div>
 
@@ -25,8 +25,7 @@
 		</tr>
 		
 	@foreach ($historiales as $key => $historial)
-	@if ($sucursales->id == $historial->user_id)
-	@if ($inventarios->id == $historial->materialclinica_id)
+	@if ($materiales->id == $historial->materialclinica_id)
 
 	<tr>
 		<td>{{ $historial->nombre_material }}</td>
@@ -35,7 +34,6 @@
 		<td>{{ $historial->created_at }}</td>
 
 	</tr>
-	@endif
 	@endif
 	@endforeach
 	

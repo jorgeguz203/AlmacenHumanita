@@ -16,7 +16,7 @@
 	        </div>
 
 	<table class="table table-bordered">
-		<tr>
+		<tr class="tabla1">
 			<th>Nombre de Proveedor:</th>
 			<th>Fecha de entrada:</th>
 			<th>No. Factura:</th>

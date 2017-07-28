@@ -22,17 +22,16 @@
 			<th>Acción:</th>
 		</tr>
 		
-	@foreach ($historiales as $key => $historial)
-	@if ($sucursales->id == $historial->id)
+	@foreach ($materiales as $key => $material)
 	<tr>
-		<td>{{ $historial->nombre }}</td>
-		<td>{{ $historial->descripcion }}</td>
+		<td>{{ $material->nombre }}</td>
+		<td>{{ $material->descripcion }}</td>
 		<td><a class="btn btn-info" 
-        href="{{ route('pendientesAdmin.historialPendientesPape2',[$sucursales->id,$historial->id]) }}">
+        href="{{ route('pendientesAdmin.historialPendientesPape2', $material->id) }}">
         Historial</a> </strong></h4></td>
 
 	</tr>
-	@endif
+	
 	@endforeach
 	
 	</table>

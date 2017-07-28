@@ -395,34 +395,31 @@ class PedidosController extends Controller
     public function showHistCli($id){
 
         $sucursales = User::find($id);
-        $historiales = MaterialClinica::all();
-        return view('pendientesAdmin.historialPendientesClinico',compact('sucursales','historiales'));
+        $materiales = MaterialClinica::orderBy('nombre','ASC')->get();
+        return view('pendientesAdmin.historialPendientesClinico',compact('materiales', 'sucursales'));
     }
 
-     public function showHistCli2($id,$ids){
+     public function showHistCli2($id){
 
-
-        $sucursales = User::find($id);
-        $historiales = HistorialPedidos::all();
-        $inventarios = MaterialClinica::find($ids);
-        return view('pendientesAdmin.historialPendientesClinico2',compact('sucursales','historiales','inventarios'));
+        $materiales = MaterialClinica::find($id);
+        $historiales = HistorialPedidos::orderBy('nombre_material','ASC')->get();
+        return view('pendientesAdmin.historialPendientesClinico2',compact('historiales','materiales'));
     }
 
 
     public function showHistPap($id){
 
         $sucursales = User::find($id);
-        $historiales = MaterialPapelera::all();
-        return view('pendientesAdmin.historialPendientesPape',compact('sucursales','historiales'));
+        $materiales = MaterialPapelera::orderBy('nombre','ASC')->get();
+        return view('pendientesAdmin.historialPendientesPape',compact('materiales', 'sucursales'));
     }
 
-     public function showHistPap2($id,$ids){
+     public function showHistPap2($id){
 
 
-        $sucursales = User::find($id);
-        $historiales = HistorialPedidosPape::all();
-        $inventarios = MaterialPapelera::find($ids);
-        return view('pendientesAdmin.historialPendientesPape2',compact('sucursales','historiales','inventarios'));
+        $materiales = MaterialPapelera::find($id);
+        $historiales = HistorialPedidosPape::orderBy('nombre_material','ASC')->get();
+        return view('pendientesAdmin.historialPendientesPape2',compact('historiales','materiales'));
     }
 
 

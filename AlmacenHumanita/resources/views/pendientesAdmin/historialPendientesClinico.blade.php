@@ -6,7 +6,7 @@
 
 <div class="col-lg-12 margin-tb">
 	        <div class="pull-left">
-	            <h2>Historial de Pedidos de {{ $sucursales->name }}</h2>
+	            <h2>Historial de Pedidos de Sucursal</h2>
 	        </div>      
 	    </div>
 
@@ -21,18 +21,18 @@
 			<th>Descripcíón:</th>
 			<th>Acción:</th>
 		</tr>
-		
-	@foreach ($historiales as $key => $historial)
-	@if ($sucursales->id == $historial->id)
+
+
+	@foreach ($materiales as $key => $material)
 	<tr>
-		<td>{{ $historial->nombre }}</td>
-		<td>{{ $historial->descripcion }}</td>
+		<td>{{ $material->nombre }}</td>
+		<td>{{ $material->descripcion }}</td>
 		<td><a class="btn btn-info" 
-        href="{{ route('pendientesAdmin.historialPendientesClinico2',[$sucursales->id,$historial->id]) }}">
+        href="{{ route('pendientesAdmin.historialPendientesClinico2', $material->id) }}">
         Historial</a> </strong></h4></td>
 
 	</tr>
-	@endif
+	
 	@endforeach
 	
 	</table>
