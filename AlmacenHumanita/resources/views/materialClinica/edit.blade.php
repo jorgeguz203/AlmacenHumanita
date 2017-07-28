@@ -61,7 +61,7 @@
         <div class="form-group">
       <label for="sel1">Área:</label>
 
-      {!! Form::select('area', array('clinico' => 'Clínico', 'toma_muestra' => 'Toma de Muestras')); !!}
+      {!! Form::select('area', array('Clinicos' => 'Clínico', 'Toma_de_muestras' => 'Toma de Muestras',)); !!}
         
       </div>
         </div>

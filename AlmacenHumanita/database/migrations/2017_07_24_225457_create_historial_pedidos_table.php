@@ -26,7 +26,7 @@ class CreateHistorialPedidosTable extends Migration
       $table->string('nombre_user');
       $table->string('nombre_material');
       $table->string('area');
-      $table->string('seccion');
+      $table->string('seccion')->nullable();
         $table->string('inmunologia')->nullable();
             $table->string('uroanalisis')->nullable();
             $table->string('hematologia')->nullable();

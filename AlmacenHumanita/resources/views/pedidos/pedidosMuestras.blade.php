@@ -8,7 +8,7 @@
 	            <h2>Pedido Toma de Muestra</h2>
 	        </div>
 	        <div class="pull-right">
-	            <a class="btn btn-primary" href="{{ route('inventarios.inventario') }}"> Atrás</a>
+	            <a class="btn btn-primary" href="http://127.0.0.1:8000/inventario"> Atrás</a>
 	        </div>
 	    </div>
 	</div>

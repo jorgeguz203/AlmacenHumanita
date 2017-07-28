@@ -214,7 +214,7 @@
 
                             <ul class="dropdown-menu dropd" role="menu">
                                     <li>
-                                        @if (Auth::user()->can('admin-users'))
+                                        @if (Auth::user()->can('drop-admin'))
                                         <a href="{{ route('users.index') }}" class="efecto-drop">
                                           <p>  Administrar Sucursales  </p> 
                                         </a>

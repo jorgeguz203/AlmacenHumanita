@@ -171,7 +171,7 @@ class UserController extends Controller
     public function editinvSuc(Request $request, $id)
     {
         $user = User::find($id);
-        $mats = InventarioSucursal::all();
+        $mats = InventarioSucursal::orderBy('nombre_material', 'ASC')->get();
     
         return view('users.editinv',compact('mats','user'));
     }
@@ -179,7 +179,7 @@ class UserController extends Controller
     public function editinvPap(Request $request, $id)
     {
         $user = User::find($id);
-        $mats = InventarioSucursalpapeleria::all();
+        $mats = InventarioSucursalpapeleria::orderBy('nombre_material', 'ASC')->get();
      
         return view('users.editinvpap',compact('mats','user'));
     }

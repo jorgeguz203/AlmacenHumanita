@@ -35,7 +35,7 @@ class MaterialClinicaController extends Controller
             'unidad_medida',
             'descripcion',
             'existencia'=> 'required',
-            'area',
+            'area'=>'required',
               'inmunologia',
               'uroanalisis',
               'hematologia',

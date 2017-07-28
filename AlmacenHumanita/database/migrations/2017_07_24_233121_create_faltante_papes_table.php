@@ -18,7 +18,7 @@ class CreateFaltantePapesTable extends Migration
 
                         $table->integer('materialpapelera_id')->unsigned()->nullable();
             $table->foreign('materialpapelera_id')->references('id')
-                ->on('materialpapeleria')->onDelete('cascade');
+                ->on('materialpapeleras')->onDelete('cascade');
 
 
             $table->integer('user_id')->unsigned()->nullable();

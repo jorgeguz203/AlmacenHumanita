@@ -52,7 +52,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Rol:</strong>
-                {!! Form::select('roles[]', $roles->slice(0,1),$userRole, array('class' => 'form-control','multiple')) !!}
+                {!! Form::select('roles[]', $roles->slice(0,1),$userRole, array('class')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

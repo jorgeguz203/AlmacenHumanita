@@ -64,7 +64,7 @@
 <!-- Buscador inicia -->
 	    <div class="pull-left">
 	    	
-	    	{!! Form::open(['route' => 'inventarios.inventariopape', 'method' => 'GET', 'class' => 'navbar-form navbar-left', 'role' => 'search']) !!}
+	    	{!! Form::open(['href'=>'http://127.0.0.1:8000/inventariopapeleria', 'method' => 'GET', 'class' => 'navbar-form navbar-left', 'role' => 'search']) !!}
   <div class="form-group">
   {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Buscador']) !!}
 

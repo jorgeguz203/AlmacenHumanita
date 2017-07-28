@@ -40,8 +40,9 @@ class PedidosPapeController extends Controller
         $pedido = PedidosPape::create($input);
 	
 
-        return redirect()->route('inventarios.inventariopape')
+        return redirect('http://127.0.0.1:8000/inventariopapeleria')
                         ->with('Se ha creado el material con éxito!');
+
     }
 
 

@@ -29,6 +29,13 @@ public function InventarioSucursalpapeleria()
       ->withTimestamps();
 }
 
+    public function faltantepape()
+		{
+
+	    return $this->belongsToMany('App\FaltantePape')
+	      ->withTimestamps();
+		}
+
 
 public function scopeName($query, $name){
 			if (trim($name) != ""){

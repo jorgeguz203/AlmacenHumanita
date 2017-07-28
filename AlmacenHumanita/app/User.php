@@ -78,5 +78,12 @@ public function Varios()
           ->withTimestamps();
         }
 
+                public function faltantepape()
+        {
+
+        return $this->belongsToMany('App\FaltantePape')
+          ->withTimestamps();
+        }
+
 
 }

@@ -9,7 +9,7 @@
 	            <h2>Editar Administrador</h2>
 	        </div>
 	        <div class="pull-right">
-	            <a class="btn btn-primary" href="{{ route('root.index') }}"> Atrás</a>
+	            <a class="btn btn-primary" href="{{ route('almacenpapeleria.index') }}"> Atrás</a>
 	        </div>
 	    </div>
 	</div>
@@ -52,7 +52,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Rol:</strong>
-                {!! Form::select('roles[]', $roles->slice(2,1),$userRole, array('class' => 'form-control','multiple')) !!}
+                {!! Form::select('roles[]', $roles->slice(2,1),$userRole, array('class')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

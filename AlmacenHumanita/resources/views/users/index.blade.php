@@ -42,16 +42,21 @@
 		</td>
 		<td>
 			<a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Ver</a>
+			@if (Auth::user()->can('admin-users'))
 			<a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Editar</a>
 			{!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline','onclick'=>"return confirm('¿Estás seguro de querer eliminar esta sucursal?')"]) !!}
             {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
         	{!! Form::close() !!}
+        	@endif
 		</td>
 
 		<td>
+		@if (Auth::user()->can('admin-clinica'))
 		<a class="btn btn-primary" href="{{ route('users.editinv',$user->id) }}">Editar Clinica</a>
+		@endif
+		@if (Auth::user()->can('admin-papelera'))
 		<a class="btn btn-primary" href="{{ route('users.editinvpap',$user->id) }}">Editar Papelería</a>
-
+		@endif
 		</td>
 	</tr>
 

@@ -52,7 +52,7 @@ class PedidosController extends Controller
         $pedido = Pedidos::create($input);
 	
 
-        return redirect()->route('inventarios.inventario');
+        return redirect('http://127.0.0.1:8000/inventario');
     }
 
         public function create_inmunologia($id)
@@ -428,75 +428,75 @@ class PedidosController extends Controller
 
 
     public function historialinmunologia(){
-        $materiales = MaterialClinica::all();
+        $materiales = MaterialClinica::orderBy('nombre','ASC')->get();
         return view('historialeslab.historialinmunologia',compact('materiales','historial'));
     }
         public function historialinmunologiamaterial($id){
         $materiales = MaterialClinica::find($id);
-        $historiales = HistorialPedidos::all();
+        $historiales = HistorialPedidos::orderBy('nombre_material','ASC')->get();
         return view('historialeslab.historialinmunologiamaterial',compact('materiales','historiales'));
     }
        public function historialinmunologialab($id){
         $materiales = MaterialClinica::find($id);
-        $historiales = HistorialPedidos::all();
+        $historiales = HistorialPedidos::orderBy('nombre_material','ASC')->get();
         return view('historialeslab.historialinmunologialab',compact('materiales','historiales'));
     }
 
 
     public function historialuroanalisis(){
-        $materiales = MaterialClinica::all();
+        $materiales = MaterialClinica::orderBy('nombre','ASC')->get();
         return view('historialeslab.historialuroanalisis',compact('materiales','historial'));
     }
             public function historialuroanalisismaterial($id){
         $materiales = MaterialClinica::find($id);
-        $historiales = HistorialPedidos::all();
+        $historiales = HistorialPedidos::orderBy('nombre_material','ASC')->get();
         return view('historialeslab.historialuroanalisismaterial',compact('materiales','historiales'));
     }
 
 
         public function historialhematologia(){
-        $materiales = MaterialClinica::all();
+        $materiales = MaterialClinica::orderBy('nombre','ASC')->get();
         return view('historialeslab.historialhematologia',compact('materiales','historial'));
     }
 
                 public function historialhematologiamaterial($id){
         $materiales = MaterialClinica::find($id);
-        $historiales = HistorialPedidos::all();
+        $historiales = HistorialPedidos::orderBy('nombre_material','ASC')->get();
         return view('historialeslab.historialhematologiamaterial',compact('materiales','historiales'));
     }
 
 
 
             public function historialbacteriologia(){
-        $materiales = MaterialClinica::all();
+        $materiales = MaterialClinica::orderBy('nombre','ASC')->get();
         return view('historialeslab.historialbacteriologia',compact('materiales','historial'));
     }
                 public function historialbacteriologiamaterial($id){
         $materiales = MaterialClinica::find($id);
-        $historiales = HistorialPedidos::all();
+        $historiales = HistorialPedidos::orderBy('nombre_material','ASC')->get();
         return view('historialeslab.historialbacteriologiamaterial',compact('materiales','historiales'));
     }
 
 
                 public function historialbioquimica(){
-        $materiales = MaterialClinica::all();
+        $materiales = MaterialClinica::orderBy('nombre','ASC')->get();
         return view('historialeslab.historialbioquimica',compact('materiales','historial'));
     }
                     public function historialbioquimicamaterial($id){
         $materiales = MaterialClinica::find($id);
-        $historiales = HistorialPedidos::all();
+        $historiales = HistorialPedidos::orderBy('nombre_material','ASC')->get();
         return view('historialeslab.historialbioquimicamaterial',compact('materiales','historiales'));
     }
 
 
 
                     public function historialhormonas(){
-        $materiales = MaterialClinica::all();
+        $materiales = MaterialClinica::orderBy('nombre','ASC')->get();
         return view('historialeslab.historialhormonas',compact('materiales','historial'));
     }
                     public function historialhormonasmaterial($id){
         $materiales = MaterialClinica::find($id);
-        $historiales = HistorialPedidos::all();
+        $historiales = HistorialPedidos::orderBy('nombre_material','ASC')->get();
         return view('historialeslab.historialhormonasmaterial',compact('materiales','historiales'));
     }
 
@@ -504,31 +504,31 @@ class PedidosController extends Controller
 
            public function historialuroanalisislab($id){
         $materiales = MaterialClinica::find($id);
-        $historiales = HistorialPedidos::all();
+        $historiales = HistorialPedidos::orderBy('nombre_material','ASC')->get();
         return view('historialeslab.historialuroanalisislab',compact('materiales','historiales'));
     }
 
            public function historialhematologialab($id){
         $materiales = MaterialClinica::find($id);
-        $historiales = HistorialPedidos::all();
+        $historiales = HistorialPedidos::orderBy('nombre_material','ASC')->get();
         return view('historialeslab.historialhematologialab',compact('materiales','historiales'));
     }
 
            public function historialbacteriologialab($id){
         $materiales = MaterialClinica::find($id);
-        $historiales = HistorialPedidos::all();
+        $historiales = HistorialPedidos::orderBy('nombre_material','ASC')->get();
         return view('historialeslab.historialbacteriologialab',compact('materiales','historiales'));
     }
 
            public function historialbioquimicalab($id){
         $materiales = MaterialClinica::find($id);
-        $historiales = HistorialPedidos::all();
+        $historiales = HistorialPedidos::orderBy('nombre_material','ASC')->get();
         return view('historialeslab.historialbioquimicalab',compact('materiales','historiales'));
     }
 
            public function historialhormonaslab($id){
         $materiales = MaterialClinica::find($id);
-        $historiales = HistorialPedidos::all();
+        $historiales = HistorialPedidos::orderBy('nombre_material','ASC')->get();
         return view('historialeslab.historialhormonaslab',compact('materiales','historiales'));
     }
 

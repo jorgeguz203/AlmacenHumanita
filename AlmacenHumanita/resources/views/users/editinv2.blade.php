@@ -55,20 +55,20 @@
 		<div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Máximo:</strong><small><font color="red">(obligatorio)</font></small>
-                {!! Form::text('maximo', null, array('placeholder' => '','class' => 'form-control')) !!}
+                {!! Form::number('maximo', null, array('placeholder' => '','class' => 'form-control')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Mínimo:</strong><small><font color="red">(obligatorio)</font></small>
-                {!! Form::text('minimo', null, array('placeholder' => '','class' => 'form-control')) !!}
+                {!! Form::number('minimo', null, array('placeholder' => '','class' => 'form-control')) !!}
             </div>
         </div>
         
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Existencia:</strong><small><font color="red">(obligatorio)</font></small>
-                {!! Form::text('existencia', null, array('placeholder' => '','class' => 'form-control')) !!}
+                {!! Form::number('existencia', null, array('placeholder' => '','class' => 'form-control')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

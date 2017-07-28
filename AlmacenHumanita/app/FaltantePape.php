@@ -14,7 +14,7 @@ class FaltantePape extends Model
     public function materialpapeleria()
 		{
 
-	    return $this->belongsToMany('App\MaterialPapeleria')
+	    return $this->belongsToMany('App\MaterialPapelera')
 	      ->withTimestamps();
 		}
 

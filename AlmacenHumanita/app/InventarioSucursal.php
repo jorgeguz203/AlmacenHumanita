@@ -35,6 +35,13 @@ class InventarioSucursal extends Model
 			
 		}
 
+				public function scopeNames($query, $name){
+			if (trim($name) != ""){
+				$query->where(\DB::raw('nombre'), 'LIKE', "%$name%");
+			}
+			
+		}
+
 
 
 }

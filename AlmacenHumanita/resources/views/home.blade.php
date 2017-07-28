@@ -47,7 +47,8 @@
 
 
 <div class="container">
-@if (Auth::user()->can('admin-admin-clinica', 'admin-admin-papelera'))
+
+@if (Auth::user()->can('admin-admin-papelera') OR Auth::user()->can('admin-admin-clinica'))
     <div class="row">
         <div class="col-md-6">          
                 <div class="panel-body dag" align="center">
@@ -166,8 +167,8 @@
         </div>
             
     </div>
-@endif
 
+@endif
 
 
 <!--                  sucursales               -->

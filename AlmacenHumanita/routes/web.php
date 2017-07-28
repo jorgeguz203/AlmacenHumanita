@@ -40,6 +40,8 @@ Route::group(['middleware' => ['auth']], function() {
 	Route::patch('users/{id}',['as'=>'users.update','uses'=>'UserController@update']);
 	Route::delete('users/{id}',['as'=>'users.destroy','uses'=>'UserController@destroy']);
 
+	
+
 	Route::get('userInventarioClinica/{id}',['as'=>'users.editinv','uses'=>'UserController@editinvSuc']);
 
 	Route::get('userInventarioClinicas/{user}/{id}',['as'=>'users.editinv2','uses'=>'UserController@editinvSuc2']);
@@ -60,8 +62,8 @@ Route::group(['middleware' => ['auth']], function() {
 	//admin root
 	Route::get('root',['as'=>'root.index','uses'=>'RootController@index','middleware' => ['permission:admin-admin']]);
 	Route::get('root/{id}',['as'=>'root.show','uses'=>'RootController@show']);
-	Route::get('root/{id}/edit',['as'=>'root.edit','uses'=>'RootController@edit','middleware' => ['permission:admin-admin']]);
-	Route::patch('root/{id}',['as'=>'root.update','uses'=>'RootController@update','middleware' => ['permission:admin-admin']]);
+	Route::get('root/{id}/edit',['as'=>'root.edit','uses'=>'rootController@edit','middleware' => ['permission:admin-admin']]);
+	Route::patch('root/{id}',['as'=>'root.update','uses'=>'rootController@updateroot','middleware' => ['permission:admin-admin']]);
 
 	//admin de clinica
 	Route::get('almacenclinica',['as'=>'almacenclinica.index','uses'=>'almacenclinicaController@index','middleware' => ['permission:admin-admin-clinica']]);
