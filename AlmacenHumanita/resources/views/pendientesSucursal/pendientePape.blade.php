@@ -32,7 +32,8 @@
 		<td>{{ $pedido->cantidad }}</td>
 		<td>{{ $pedido->created_at }}</td>
 		<td>
-			{!! Form::open(['method' => 'Delete','route' => ['PedidosPape.destroy', $pedido->id],'style'=>'display:inline']) !!}
+			{!! Form::open(['method' => 'Delete','route' => ['PedidosPape.destroy', $pedido->id],'style'=>'display:inline'
+			,'onclick'=>"return confirm('¿Estás seguro de querer confirmar el pedido para $pedido->nombre_material?')"]) !!}
             {!! Form::submit('Confirmar', ['class' => 'btn btn-success']) !!}
             {!! Form::close() !!}
 		<a class="btn btn-danger" href="{{ route('faltantes.faltantePape', $pedido->id) }}">Pendiente</a>

@@ -28,7 +28,7 @@ class CreateMaterialclinicaTable extends Migration
             $table->string('bioquimica')->nullable();
             $table->string('hormonas')->nullable();
             $table->string('unidad_medida')->nullable();
-            $table->bigInteger('numero_referencia')->nullable();
+            $table->string('numero_referencia')->nullable();
             $table->string('presentacion')->nullable();
             $table->timestamps();
         });

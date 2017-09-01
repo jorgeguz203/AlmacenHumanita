@@ -8,7 +8,10 @@
 	            <h2>Pedido de Papelería</h2>
 	        </div>
 	        <div class="pull-right">
-	            <a class="btn btn-primary" href="http://192.168.1.17:8000/inventariopapeleria"> Atrás</a>
+
+
+            
+	            <a class="btn btn-primary" href="http://127.0.0.1:8000/inventariopapeleria"> Atrás</a>
 	        </div>
 	    </div>
 	</div>

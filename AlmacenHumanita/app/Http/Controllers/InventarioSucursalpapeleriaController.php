@@ -16,8 +16,8 @@ class InventarioSucursalpapeleriaController extends Controller
             public function inventariopape(Request $request){
 
         $user = Auth::User()->find('id');
-        $materialpapeleria = InventarioSucursalpapeleria::name($request->get('name'))->orderBy('nombre_material','ASC')->paginate(150);
-        $materialpapelerias = MaterialPapelera::name($request->get('name'))->orderBy('nombre','ASC')->paginate(150);
+        $materialpapeleria = InventarioSucursalpapeleria::name($request->get('name'))->orderBy('nombre_material','ASC')->paginate(10000);
+        $materialpapelerias = MaterialPapelera::name($request->get('name'))->orderBy('nombre','ASC')->paginate(10000);
         return view('inventarios.inventariopape', compact('materialpapeleria', 'user', 'materialpapelerias'));
     }
 

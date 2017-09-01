@@ -57,12 +57,15 @@
 
                             <ul class="dropdown-menu dropd" role="menu">
                                     <li>
+<!--         Aqui las ip   -->
 
-                                        <a href="http://192.168.1.17:8000/inventario" class="efecto-drop">
+
+
+                                        <a href="http://127.0.0.1:8000/inventario" class="efecto-drop">
                                           <p>  Tomas de Muestra </p>  
                                         </a>  
 
-                                        <a href="http://192.168.1.17:8000/inventariopapeleria" class="efecto-drop">
+                                        <a href="http://127.0.0.1:8000/inventariopapeleria" class="efecto-drop">
                                           <p>  Papelería   </p>
                                         </a> 
 
@@ -73,6 +76,9 @@
                             </ul>
                         </li>
                         @endif
+
+
+                        
 <!-- Aqui kuri          -->
 
 

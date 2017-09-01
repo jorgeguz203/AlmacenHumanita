@@ -19,8 +19,8 @@ class InventarioSucursalController extends Controller
     public function inventario(Request $request){
 
         $user = Auth::User()->find('id');
-        $materialclinico = InventarioSucursal::name($request->get('name'))->orderBy('nombre_material','ASC')->paginate(150);
-        $materialclinicos = MaterialClinica::name($request->get('name'))->orderBy('nombre','ASC')->paginate(150);
+        $materialclinico = InventarioSucursal::name($request->get('name'))->orderBy('nombre_material','ASC')->paginate(10000);
+        $materialclinicos = MaterialClinica::name($request->get('name'))->orderBy('nombre','ASC')->paginate(10000);
         return view('inventarios.inventario', compact('materialclinico', 'user', 'materialclinicos'));
     }
 

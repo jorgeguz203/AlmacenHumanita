@@ -52,7 +52,7 @@ class PedidosController extends Controller
         $pedido = Pedidos::create($input);
 	
 
-        return redirect('http://192.168.1.17:8000/inventario');
+        return redirect('http://127.0.0.1:8000/inventario');
     }
 
         public function create_inmunologia($id)
@@ -530,6 +530,27 @@ class PedidosController extends Controller
         $materiales = MaterialClinica::find($id);
         $historiales = HistorialPedidos::orderBy('nombre_material','ASC')->get();
         return view('historialeslab.historialhormonaslab',compact('materiales','historiales'));
+    }
+
+        public function destroyclinico1($id)
+    {
+        Pedidos::find($id)->delete();
+        return redirect()->route('pendientesAdmin.pendienteClinico')
+                        ->with('Se ha eliminado la sucursal con éxito!');
+    }
+
+        public function destroypape1($id)
+    {
+        Pedidos::find($id)->delete();
+        return redirect()->route('pendientesAdmin.pendientePapeleria')
+                        ->with('Se ha eliminado la sucursal con éxito!');
+    }
+
+        public function destroylab1($id)
+    {
+        Pedidos::find($id)->delete();
+        return redirect()->route('pendientesAdmin.pendienteLab')
+                        ->with('Se ha eliminado la sucursal con éxito!');
     }
 
 

@@ -290,10 +290,14 @@ Route::group(['middleware' => ['auth']], function() {
 
 
 		Route::get('pendienteAdminToma',['as'=>'pendientesAdmin.pendienteClinico','uses'=>'PedidosController@showadmin']);
+		Route::delete('pendienteAdminToma/{id}',['as'=>'pendientesAdmin.destroyclinicos','uses'=>'PedidosController@destroyclinico1']);
 
-		Route::get('pendienteAdminPapeleria',['as'=>'pendientesAdmin.pendientePapeleria','uses'=>'PedidosController@showadminpape']);
+		Route::get('pendienteAdminPapeleria',['as'=>'pendientesAdmin.pendientePapeleria','uses'=>'PedidosController@showadminpape']
+			);
+		Route::delete('pendienteAdminPapeleria/{id}',['as'=>'pendientesAdmin.destroypapes','uses'=>'PedidosController@destroypape1']);
 
 		Route::get('pendienteAdminLab',['as'=>'pendientesAdmin.pendienteLab','uses'=>'PedidosController@showadminlab']);
+		Route::delete('pendienteAdminLab/{id}',['as'=>'pendientesAdmin.destroylabs','uses'=>'PedidosController@destroylab1']);
 
 
 		//faltante

@@ -51,6 +51,10 @@
         <td>
             <a class="btn btn-danger" href="{{ route('inventarioMatrizClinica.reducirclinicospedidos',$material->id) }}">Salida</a>
 
+            {!! Form::open(['method' => 'DELETE','route' => ['pendientesAdmin.destroylabs', $pedido->id],'style'=>'display:inline','onclick'=>"return confirm('¿Estás seguro de querer eliminar este pedido?')"]) !!}
+            {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
+            {!! Form::close() !!}
+
         </td>
     @endif
     @endif
@@ -70,6 +74,11 @@
         <td></td>
         <td></td>
         <td>{{ $vario->created_at }}</td>
+                    <td></td>
+        <td>
+            <a class="btn btn-primary" href="http://192.168.1.17:8000/inventarioMatrizClinica">Inventario</a>
+
+        </td>
 
     </tr>
 
@@ -87,7 +96,7 @@
     <hr>
 
 <h4><strong> Uroanálisis(2) <a class="btn btn-info" 
-        href="{{ route('historialeslab.historialinmunologia') }}">Historial</a></strong></h4>
+        href="{{ route('historialeslab.historialuroanalisis') }}">Historial</a></strong></h4>
 
         <div class="row">
         <div class="col-md-12"> 
@@ -121,6 +130,9 @@
 
         <td>
             <a class="btn btn-danger" href="{{ route('inventarioMatrizClinica.reducirclinicospedidos',$material->id) }}">Salida</a>
+            {!! Form::open(['method' => 'DELETE','route' => ['pendientesAdmin.destroylabs', $pedido->id],'style'=>'display:inline','onclick'=>"return confirm('¿Estás seguro de querer eliminar este pedido?')"]) !!}
+            {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
+            {!! Form::close() !!}
 
         </td>
 
@@ -142,6 +154,11 @@
         <td></td>
         <td></td>
         <td>{{ $vario->created_at }}</td>
+                    <td></td>
+        <td>
+            <a class="btn btn-primary" href="http://192.168.1.17:8000/inventarioMatrizClinica">Inventario</a>
+
+        </td>
 
     </tr>
 
@@ -159,7 +176,7 @@
     <hr>
 
     <h4><strong> Hematología(3) <a class="btn btn-info" 
-        href="{{ route('historialeslab.historialinmunologia') }}">Historial</a></strong></h4>
+        href="{{ route('historialeslab.historialhematologia') }}">Historial</a></strong></h4>
 
        <div class="row">
         <div class="col-md-12"> 
@@ -188,12 +205,15 @@
     @if($material->area == 'Clinicos')
 
         <td>
-            
+            {{  $material->existencia  }}
         
         </td>
 
         <td>
             <a class="btn btn-danger" href="{{ route('inventarioMatrizClinica.reducirclinicospedidos',$material->id) }}">Salida</a>
+            {!! Form::open(['method' => 'DELETE','route' => ['pendientesAdmin.destroylabs', $pedido->id],'style'=>'display:inline','onclick'=>"return confirm('¿Estás seguro de querer eliminar este pedido?')"]) !!}
+            {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
+            {!! Form::close() !!}
 
         </td>
 
@@ -202,10 +222,13 @@
     </tr>
     @endif
     @endif
+
     @endforeach
+
     @endif
     @endif
     @endforeach
+
 
                     @foreach ($varios as $key => $vario)
 
@@ -215,6 +238,11 @@
         <td></td>
         <td></td>
         <td>{{ $vario->created_at }}</td>
+                    <td></td>
+        <td>
+            <a class="btn btn-primary" href="http://192.168.1.17:8000/inventarioMatrizClinica">Inventario</a>
+
+        </td>
 
     </tr>
 
@@ -233,7 +261,7 @@
     <hr>
 
     <h4><strong> Bacteriología(4) <a class="btn btn-info" 
-        href="{{ route('historialeslab.historialinmunologia') }}">Historial</a></strong></h4>
+        href="{{ route('historialeslab.historialbacteriologia') }}">Historial</a></strong></h4>
 
         <div class="row">
         <div class="col-md-12"> 
@@ -266,6 +294,9 @@
 
         <td>
             <a class="btn btn-danger" href="{{ route('inventarioMatrizClinica.reducirclinicospedidos',$material->id) }}">Salida</a>
+            {!! Form::open(['method' => 'DELETE','route' => ['pendientesAdmin.destroylabs', $pedido->id],'style'=>'display:inline','onclick'=>"return confirm('¿Estás seguro de querer eliminar este pedido?')"]) !!}
+            {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
+            {!! Form::close() !!}
 
         </td>
 
@@ -285,6 +316,11 @@
         <td></td>
         <td></td>
         <td>{{ $vario->created_at }}</td>
+                    <td></td>
+        <td>
+            <a class="btn btn-primary" href="http://192.168.1.17:8000/inventarioMatrizClinica">Inventario</a>
+
+        </td>
 
     </tr>
 
@@ -301,7 +337,7 @@
     <hr>
 
     <h4><strong> Bioquímica(5) <a class="btn btn-info" 
-        href="{{ route('historialeslab.historialinmunologia') }}">Historial</a></strong></h4>
+        href="{{ route('historialeslab.historialbioquimica') }}">Historial</a></strong></h4>
 
         <div class="row">
         <div class="col-md-12"> 
@@ -335,6 +371,9 @@
 
         <td>
             <a class="btn btn-danger" href="{{ route('inventarioMatrizClinica.reducirclinicospedidos',$material->id) }}">Salida</a>
+            {!! Form::open(['method' => 'DELETE','route' => ['pendientesAdmin.destroylabs', $pedido->id],'style'=>'display:inline','onclick'=>"return confirm('¿Estás seguro de querer eliminar este pedido?')"]) !!}
+            {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
+            {!! Form::close() !!}
 
         </td>
 
@@ -354,6 +393,11 @@
         <td></td>
         <td></td>
         <td>{{ $vario->created_at }}</td>
+                    <td></td>
+        <td>
+            <a class="btn btn-primary" href="http://192.168.1.17:8000/inventarioMatrizClinica">Inventario</a>
+
+        </td>
 
     </tr>
 
@@ -370,7 +414,7 @@
     <hr>
 
     <h4><strong> Hormonas(6) <a class="btn btn-info" 
-        href="{{ route('historialeslab.historialinmunologia') }}">Historial</a></strong></h4>
+        href="{{ route('historialeslab.historialhormonas') }}">Historial</a></strong></h4>
 
         <div class="row">
         <div class="col-md-12"> 
@@ -404,6 +448,9 @@
 
         <td>
             <a class="btn btn-danger" href="{{ route('inventarioMatrizClinica.reducirclinicospedidos',$material->id) }}">Salida</a>
+            {!! Form::open(['method' => 'DELETE','route' => ['pendientesAdmin.destroylabs', $pedido->id],'style'=>'display:inline','onclick'=>"return confirm('¿Estás seguro de querer eliminar este pedido?')"]) !!}
+            {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
+            {!! Form::close() !!}
 
         </td>
 
@@ -424,6 +471,11 @@
         <td></td>
         <td></td>
         <td>{{ $vario->created_at }}</td>
+                    <td></td>
+        <td>
+            <a class="btn btn-primary" href="http://192.168.1.17:8000/inventarioMatrizClinica">Inventario</a>
+
+        </td>
 
     </tr>
 

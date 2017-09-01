@@ -23,7 +23,7 @@ class CreateMaterialPapelerasTable extends Migration
           //$table->integer('proveedor_id');
             $table->string('area')->nullable();
             $table->string('unidad_medida')->nullable();
-            $table->bigInteger('numero_referencia')->nullable();
+            $table->string('numero_referencia')->nullable();
             $table->string('presentacion')->nullable();
             $table->timestamps();
         });

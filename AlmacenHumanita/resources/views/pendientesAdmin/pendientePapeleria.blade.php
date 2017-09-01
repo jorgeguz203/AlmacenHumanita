@@ -65,6 +65,9 @@
 
         <td>
             <a class="btn btn-danger" href="{{ route('inventarioMatrizClinica.reducirpapeleria',$material->id) }}">Salida</a>
+            {!! Form::open(['method' => 'DELETE','route' => ['pendientesAdmin.destroypapes', $pedido->id],'style'=>'display:inline','onclick'=>"return confirm('¿Estás seguro de querer eliminar este pedido?')"]) !!}
+            {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
+            {!! Form::close() !!}
 
         </td>
     </tr>
@@ -121,6 +124,9 @@
 
         <td>
             <a class="btn btn-info" href="{{ route('inventarioMatrizClinica.reducirpapeleria',$material->id) }}">Salida</a>
+                        {!! Form::open(['method' => 'DELETE','route' => ['pendientesAdmin.destroypapes', $pedido->id],'style'=>'display:inline','onclick'=>"return confirm('¿Estás seguro de querer eliminar este pedido?')"]) !!}
+            {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
+            {!! Form::close() !!}
 
         </td>
     </tr>
@@ -176,6 +182,9 @@
 
         <td>
             <a class="btn btn-danger" href="{{ route('inventarioMatrizClinica.reducirpapeleria',$material->id) }}">Salida</a>
+                        {!! Form::open(['method' => 'DELETE','route' => ['pendientesAdmin.destroypapes', $pedido->id],'style'=>'display:inline','onclick'=>"return confirm('¿Estás seguro de querer eliminar este pedido?')"]) !!}
+            {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
+            {!! Form::close() !!}
 
         </td>
     </tr>
@@ -239,6 +248,9 @@
 
         <td>
             <a class="btn btn-danger" href="{{ route('inventarioMatrizClinica.reducirpapeleria',$material->id) }}">Salida</a>
+                        {!! Form::open(['method' => 'DELETE','route' => ['pendientesAdmin.destroypapes', $pedido->id],'style'=>'display:inline','onclick'=>"return confirm('¿Estás seguro de querer eliminar este pedido?')"]) !!}
+            {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
+            {!! Form::close() !!}
 
         </td>
     </tr>
@@ -299,6 +311,9 @@
 
         <td>
             <a class="btn btn-danger" href="{{ route('inventarioMatrizClinica.reducirpapeleria',$material->id) }}">Salida</a>
+                        {!! Form::open(['method' => 'DELETE','route' => ['pendientesAdmin.destroypapes', $pedido->id],'style'=>'display:inline','onclick'=>"return confirm('¿Estás seguro de querer eliminar este pedido?')"]) !!}
+            {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
+            {!! Form::close() !!}
 
         </td>
     </tr>
@@ -356,6 +371,9 @@
 
         <td>
             <a class="btn btn-danger" href="{{ route('inventarioMatrizClinica.reducirpapeleria',$material->id) }}">Salida</a>
+                        {!! Form::open(['method' => 'DELETE','route' => ['pendientesAdmin.destroypapes', $pedido->id],'style'=>'display:inline','onclick'=>"return confirm('¿Estás seguro de querer eliminar este pedido?')"]) !!}
+            {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
+            {!! Form::close() !!}
 
         </td>
     </tr>

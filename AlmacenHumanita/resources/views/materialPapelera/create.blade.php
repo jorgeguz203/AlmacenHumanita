@@ -93,7 +93,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Número de Referencia:</strong>
-                {!! Form::number('numero_referencia', null, array('placeholder' => '859641','class' => 'form-control')) !!}
+                {!! Form::text('numero_referencia', null, array('placeholder' => '859641','class' => 'form-control')) !!}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
