@@ -69,7 +69,7 @@
 	     <br>
 
 <div class="row">
-<div class="col-md-8"> 
+<div class="col-md-16"> 
 
 
 	<table class="table table-bordered">
@@ -80,12 +80,13 @@
 			<th>Mínimo</th>
 			<th>Existencia</th>
 			<th>Editar</th>
-			
+			<th>Solicitudes</th>
 		</tr>
 
 	@foreach ($materialclinico as $key => $material)
 	@if($material->user_id == Auth::user()->id)
 	@if($material->area == 'Toma_de_muestras')
+
 	<tr>
 		<td>{{ $material->nombre_material }}</td>
 		<td>{{ $material->maximo }}</td>
@@ -94,32 +95,27 @@
 		<td>
 			<a class="btn btn-primary btn-existencia" data-toggle="modal" data-target="#modal-existencia" data-id="{{ $material->id }}">Editar Existencia</a>
 		</td>
-	@endif
-	@endif
-	@endforeach
-</table>
-	</div>
 
 
-
-	<div class="col-md-4"> 
-	<table class="table table-bordered">
-		<tr class="tabla1">
-
-			<th>Solicitudes</th>
-		</tr>
+	
 	@foreach ($materialclinicos as $key => $materiales)
+	@if($material->materialclinica_id == $materiales->id)
 	@if($materiales->area == 'Toma_de_muestras')
 		<td>
 			<a class="btn btn-success" href="{{ route('pedidos.pedidosMuestras',$materiales->id) }}">Solicitar Material</a>
 			<a class="btn btn-info" href="{{ route('inventarios.historialinventario',$materiales->id) }}">Historial</a>
         
 		</td>
-	</tr>
+	
+	@endif
 	@endif
 	@endforeach
-	</div>
+
+	@endif
+	@endif
+	@endforeach
 	
+	</table>
 	</div>
 	</div>
 
