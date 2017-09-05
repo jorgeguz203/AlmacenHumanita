@@ -88,7 +88,7 @@
 	</div>
 
 	<div class="row">
-<div class="col-md-8"> 
+<div class="col-md-16"> 
 
 	<table class="table table-bordered">
 		<tr class="tabla1">
@@ -98,6 +98,8 @@
 			<th>Mínimo</th>
 			<th>Existencia</th>
 			<th>Editar</th>
+			<th>Historial</th>
+			<th>Extraordinarios</th>
 		</tr>
 
 	@foreach ($materialpapeleria as $key => $material)
@@ -111,29 +113,25 @@
 		<td>
 			<a class="btn btn-primary btn-existencia" data-toggle="modal" data-target="#modal-existencia" data-id="{{ $material->id }}">Editar Existencia</a>
 		</td>
+
+
+
+	@foreach ($materialpapelerias as $key => $materiales)
+	@if($material->materialpapelera_id == $materiales->id)
+	@if($materiales->area == 'papeleria')
+
+		<td>
+			<a class="btn btn-info" href="{{ route('inventarios.historialinventariopape',$materiales->id) }}">Historial</a>
+		</td>
+		<td>
+			<a class="btn btn-success" href="{{ route('pedidos.pedidosPape',$materiales->id) }}">Extraordinarios</a>
+		</td>
 		</tr>
 	@endif
 	@endif
 	@endforeach
-</table>
-	</div>
 
-	<div class="col-md-4"> 
-	<table class="table table-bordered">
-		<tr class="tabla1">
-			<th>Solicitudes</th>
-		</tr>
-	@foreach ($materialpapelerias as $key => $materiales)
-	@if($materiales->area == 'papeleria')
-	<tr>
-		<td>
-			<a class="btn btn-success" href="{{ route('pedidos.pedidosPape',$materiales->id) }}">Solicitar Material</a>
-			<a class="btn btn-info" href="{{ route('inventarios.historialinventariopape',$materiales->id) }}">Historial</a>
-        
-		</td>
-	
-	</tr>
-
+	@endif
 	@endif
 	@endforeach
 	</table>
@@ -153,7 +151,7 @@
 
 
 	<div class="row">
-<div class="col-md-8"> 
+<div class="col-md-16"> 
 
 	<table class="table table-bordered">
 		<tr class="tabla1">
@@ -163,6 +161,8 @@
 			<th>Mínimo</th>
 			<th>Existencia</th>
 			<th>Editar</th>
+			<th>Historial</th>
+			<th>Extraordinarios</th>
 		</tr>
 
 	@foreach ($materialpapeleria as $key => $material)
@@ -176,29 +176,25 @@
 		<td>
 			<a class="btn btn-primary btn-existencia" data-toggle="modal" data-target="#modal-existencia" data-id="{{ $material->id }}">Editar Existencia</a>
 		</td>
+
+
+
+	@foreach ($materialpapelerias as $key => $materiales)
+	@if($material->materialpapelera_id == $materiales->id)
+	@if($materiales->area == 'limpieza')
+
+		<td>
+			<a class="btn btn-info" href="{{ route('inventarios.historialinventariopape',$materiales->id) }}">Historial</a>
+		</td>
+		<td>
+			<a class="btn btn-success" href="{{ route('pedidos.pedidosPape',$materiales->id) }}">Extraordinarios</a>
+		</td>
 		</tr>
 	@endif
 	@endif
 	@endforeach
-</table>
-	</div>
 
-	<div class="col-md-4"> 
-	<table class="table table-bordered">
-		<tr class="tabla1">
-			<th>Solicitudes</th>
-		</tr>
-	@foreach ($materialpapelerias as $key => $materiales)
-	@if($materiales->area == 'limpieza')
-	<tr>
-		<td>
-			<a class="btn btn-success" href="{{ route('pedidos.pedidosPape',$materiales->id) }}">Solicitar Material</a>
-			<a class="btn btn-info" href="{{ route('inventarios.historialinventariopape',$materiales->id) }}">Historial</a>
-        
-		</td>
-	
-	</tr>
-
+	@endif
 	@endif
 	@endforeach
 	</table>
@@ -219,8 +215,8 @@
 	</div>
 
 
-	<div class="row">
-<div class="col-md-8"> 
+		<div class="row">
+<div class="col-md-16"> 
 
 	<table class="table table-bordered">
 		<tr class="tabla1">
@@ -230,6 +226,8 @@
 			<th>Mínimo</th>
 			<th>Existencia</th>
 			<th>Editar</th>
+			<th>Historial</th>
+			<th>Extraordinarios</th>
 		</tr>
 
 	@foreach ($materialpapeleria as $key => $material)
@@ -243,34 +241,31 @@
 		<td>
 			<a class="btn btn-primary btn-existencia" data-toggle="modal" data-target="#modal-existencia" data-id="{{ $material->id }}">Editar Existencia</a>
 		</td>
+
+
+
+	@foreach ($materialpapelerias as $key => $materiales)
+	@if($material->materialpapelera_id == $materiales->id)
+	@if($materiales->area == 'cafeteria')
+
+		<td>
+			<a class="btn btn-info" href="{{ route('inventarios.historialinventariopape',$materiales->id) }}">Historial</a>
+		</td>
+		<td>
+			<a class="btn btn-success" href="{{ route('pedidos.pedidosPape',$materiales->id) }}">Extraordinarios</a>
+		</td>
 		</tr>
 	@endif
 	@endif
 	@endforeach
-</table>
-	</div>
 
-	<div class="col-md-4"> 
-	<table class="table table-bordered">
-		<tr class="tabla1">
-			<th>Solicitudes</th>
-		</tr>
-	@foreach ($materialpapelerias as $key => $materiales)
-	@if($materiales->area == 'cafeteria')
-	<tr>
-		<td>
-			<a class="btn btn-success" href="{{ route('pedidos.pedidosPape',$materiales->id) }}">Solicitar Material</a>
-			<a class="btn btn-info" href="{{ route('inventarios.historialinventariopape',$materiales->id) }}">Historial</a>
-        
-		</td>
-	
-	</tr>
-
+	@endif
 	@endif
 	@endforeach
 	</table>
 	</div>
 	</div>
+
 
 
 
@@ -286,8 +281,8 @@
 	</div>
 
 
-	<div class="row">
-<div class="col-md-8"> 
+		<div class="row">
+<div class="col-md-16"> 
 
 	<table class="table table-bordered">
 		<tr class="tabla1">
@@ -297,6 +292,8 @@
 			<th>Mínimo</th>
 			<th>Existencia</th>
 			<th>Editar</th>
+			<th>Historial</th>
+			<th>Extraordinarios</th>
 		</tr>
 
 	@foreach ($materialpapeleria as $key => $material)
@@ -310,29 +307,25 @@
 		<td>
 			<a class="btn btn-primary btn-existencia" data-toggle="modal" data-target="#modal-existencia" data-id="{{ $material->id }}">Editar Existencia</a>
 		</td>
+
+
+
+	@foreach ($materialpapelerias as $key => $materiales)
+	@if($material->materialpapelera_id == $materiales->id)
+	@if($materiales->area == 'impresos')
+
+		<td>
+			<a class="btn btn-info" href="{{ route('inventarios.historialinventariopape',$materiales->id) }}">Historial</a>
+		</td>
+		<td>
+			<a class="btn btn-success" href="{{ route('pedidos.pedidosPape',$materiales->id) }}">Extraordinarios</a>
+		</td>
 		</tr>
 	@endif
 	@endif
 	@endforeach
-</table>
-	</div>
 
-	<div class="col-md-4"> 
-	<table class="table table-bordered">
-		<tr class="tabla1">
-			<th>Solicitudes</th>
-		</tr>
-	@foreach ($materialpapelerias as $key => $materiales)
-	@if($materiales->area == 'impresos')
-	<tr>
-		<td>
-			<a class="btn btn-success" href="{{ route('pedidos.pedidosPape',$materiales->id) }}">Solicitar Material</a>
-			<a class="btn btn-info" href="{{ route('inventarios.historialinventariopape',$materiales->id) }}">Historial</a>
-        
-		</td>
-	
-	</tr>
-
+	@endif
 	@endif
 	@endforeach
 	</table>
@@ -355,8 +348,8 @@
 	</div>
 
 
-	<div class="row">
-<div class="col-md-8"> 
+		<div class="row">
+<div class="col-md-16"> 
 
 	<table class="table table-bordered">
 		<tr class="tabla1">
@@ -366,6 +359,8 @@
 			<th>Mínimo</th>
 			<th>Existencia</th>
 			<th>Editar</th>
+			<th>Historial</th>
+			<th>Extraordinarios</th>
 		</tr>
 
 	@foreach ($materialpapeleria as $key => $material)
@@ -379,29 +374,25 @@
 		<td>
 			<a class="btn btn-primary btn-existencia" data-toggle="modal" data-target="#modal-existencia" data-id="{{ $material->id }}">Editar Existencia</a>
 		</td>
+
+
+
+	@foreach ($materialpapelerias as $key => $materiales)
+	@if($material->materialpapelera_id == $materiales->id)
+	@if($materiales->area == 'rayos_x')
+
+		<td>
+			<a class="btn btn-info" href="{{ route('inventarios.historialinventariopape',$materiales->id) }}">Historial</a>
+		</td>
+		<td>
+			<a class="btn btn-success" href="{{ route('pedidos.pedidosPape',$materiales->id) }}">Extraordinarios</a>
+		</td>
 		</tr>
 	@endif
 	@endif
 	@endforeach
-</table>
-	</div>
 
-	<div class="col-md-4"> 
-	<table class="table table-bordered">
-		<tr class="tabla1">
-			<th>Solicitudes</th>
-		</tr>
-	@foreach ($materialpapelerias as $key => $materiales)
-	@if($materiales->area == 'rayos_x')
-	<tr>
-		<td>
-			<a class="btn btn-success" href="{{ route('pedidos.pedidosPape',$materiales->id) }}">Solicitar Material</a>
-			<a class="btn btn-info" href="{{ route('inventarios.historialinventariopape',$materiales->id) }}">Historial</a>
-        
-		</td>
-	
-	</tr>
-
+	@endif
 	@endif
 	@endforeach
 	</table>
@@ -421,8 +412,8 @@
 	</div>
 
 
-	<div class="row">
-<div class="col-md-8"> 
+		<div class="row">
+<div class="col-md-16"> 
 
 	<table class="table table-bordered">
 		<tr class="tabla1">
@@ -432,6 +423,8 @@
 			<th>Mínimo</th>
 			<th>Existencia</th>
 			<th>Editar</th>
+			<th>Historial</th>
+			<th>Extraordinarios</th>
 		</tr>
 
 	@foreach ($materialpapeleria as $key => $material)
@@ -445,34 +438,31 @@
 		<td>
 			<a class="btn btn-primary btn-existencia" data-toggle="modal" data-target="#modal-existencia" data-id="{{ $material->id }}">Editar Existencia</a>
 		</td>
+
+
+
+	@foreach ($materialpapelerias as $key => $materiales)
+	@if($material->materialpapelera_id == $materiales->id)
+	@if($materiales->area == 'otros')
+
+		<td>
+			<a class="btn btn-info" href="{{ route('inventarios.historialinventariopape',$materiales->id) }}">Historial</a>
+		</td>
+		<td>
+			<a class="btn btn-success" href="{{ route('pedidos.pedidosPape',$materiales->id) }}">Extraordinarios</a>
+		</td>
 		</tr>
 	@endif
 	@endif
 	@endforeach
-</table>
-	</div>
 
-	<div class="col-md-4"> 
-	<table class="table table-bordered">
-		<tr class="tabla1">
-			<th>Solicitudes</th>
-		</tr>
-	@foreach ($materialpapelerias as $key => $materiales)
-	@if($materiales->area == 'otros')
-	<tr>
-		<td>
-			<a class="btn btn-success" href="{{ route('pedidos.pedidosPape',$materiales->id) }}">Solicitar Material</a>
-			<a class="btn btn-info" href="{{ route('inventarios.historialinventariopape',$materiales->id) }}">Historial</a>
-        
-		</td>
-	
-	</tr>
-
+	@endif
 	@endif
 	@endforeach
 	</table>
 	</div>
 	</div>
+
 
 
 
@@ -489,6 +479,23 @@ $(document).ready(function(){
 		$('#existencia').val($('#value-' + id).html());
 		$('#materia_id').val(id);
 
+	});
+
+		$("#form-existencia").submit(function() {
+		var action = $("#form-existencia").attr('action');
+
+		var token =  $("#form-existencia").find('input[name="_token"]').val();
+		var existencia = $("#existencia").val();
+		var materia_id = $("#materia_id").val();
+
+
+		$.post( action, { _token: token, existencia: existencia, materia_id: materia_id })
+		  .done(function( data ) {
+		    $('#value-' + data.id).html(data.existencia);
+		    $('#modal-existencia').modal('hide');
+		  });
+
+		return false;
 	});
 });
 </script>

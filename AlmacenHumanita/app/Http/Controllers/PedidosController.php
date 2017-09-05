@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\URL;
+
 use App\Http\Controllers\Controller;
 use App\InventarioSucursal;
 use Illuminate\Http\Request;
@@ -211,8 +214,7 @@ class PedidosController extends Controller
         'extras'=>$pedido->extras,
         'created_at'=>$tiempo));
         Pedidos::find($id)->delete();
-        return redirect()->route('pendientesSucursal.pendienteLab')
-                        ->with('Se ha entregado con éxito');
+        return back();
     }
 
     public function destroyvarios($id){

@@ -52,6 +52,12 @@ class MaterialClinica extends Model
           ->withTimestamps();
         }
 
+        		public function cotizacion()
+		{
+	    return $this->belongsToMany('App\Cotizacion')
+	      ->withTimestamps();
+		}
+
 
 		public function scopeName($query, $name){
 			if (trim($name) != ""){

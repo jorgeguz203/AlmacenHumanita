@@ -10,6 +10,7 @@ use Auth;
 use App\User;
 use App\InventarioSucursal;
 use App\Pedidos;
+use Carbon\Carbon;
 
 class InventarioSucursalController extends Controller
 {
@@ -25,15 +26,42 @@ class InventarioSucursalController extends Controller
     }
 
 
+
+
     public function modificaExistencia(Request $request){
     	$existencia = $request->get('existencia');
     	$id = $request->get('materia_id');
-    	InventarioSucursal::where('id',$id)->update(['existencia' => $existencia]); 
+    	$ped = InventarioSucursal::find($id); 
+        if($existencia <= $ped->maximo){
+            $ped->update(['existencia' => $existencia]);
+            $tiempo=Carbon::now();
+            Pedidos::insert(['materialclinica_id' => $ped->materialclinica_id, 
+                'user_id' => $ped->user_id, 
+                'nombre_user' => $ped->nombre_user,
+                'nombre_material' => $ped->nombre_material,
+                'area' => $ped->area,
+                'seccion' => null,
+                'inmunologia' => null,
+                'uroanalisis' => null,
+                'hematologia' => null,
+                'bacteriologia' => null,
+                'bioquimica' => null,
+                'hormonas' => null,
+                'cantidad' => $ped->maximo - $existencia,
+                'observaciones' => null,
+                'extras' => null,
+                'created_at'=>$tiempo]);
+        } else {
+            $existencia = $ped->existencia;
+        }
 
     	return response()->json([
             'id' => $id,
             'existencia' => $existencia
         ]);
+
+
+
     }
 
 }

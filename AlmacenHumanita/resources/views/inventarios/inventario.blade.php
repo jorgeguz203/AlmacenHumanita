@@ -140,6 +140,7 @@ $(document).ready(function(){
 
 		$.post( action, { _token: token, existencia: existencia, materia_id: materia_id })
 		  .done(function( data ) {
+		  	console.log(data);
 		    $('#value-' + data.id).html(data.existencia);
 		    $('#modal-existencia').modal('hide');
 		  });

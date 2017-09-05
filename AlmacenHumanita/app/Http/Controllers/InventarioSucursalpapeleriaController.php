@@ -9,6 +9,8 @@ use App\MaterialPapelera;
 use Auth;   
 use App\User;
 use App\InventarioSucursalpapeleria;
+use Carbon\Carbon;
+use App\PedidosPape;
 
 class InventarioSucursalpapeleriaController extends Controller
 {
@@ -25,9 +27,30 @@ class InventarioSucursalpapeleriaController extends Controller
     public function modificaExistencia(Request $request){
     	$existencia = $request->get('existencia');
     	$id = $request->get('materia_id');
-    	InventarioSucursalpapeleria::where('id',$id)->update(['existencia' => $existencia]); 
+        $ped = InventarioSucursalpapeleria::find($id); 
+        if($existencia < $ped->maximo){
+            $ped->update(['existencia' => $existencia]);
+            $tiempo=Carbon::now();
+            PedidosPape::insert(['materialpapelera_id' => $ped->materialpapelera_id, 
+                'user_id' => $ped->user_id, 
+                'nombre_user' => $ped->nombre_user,
+                'nombre_material' => $ped->nombre_material,
+                'area' => $ped->area,
+                'cantidad' => $ped->maximo - $existencia,
+                'observaciones' => null,
+                'created_at'=>$tiempo]);
+        } if ($existencia == $ped->maximo){
+            $ped->update(['existencia' => $existencia]);
+        }else {
+            $existencia = $ped->existencia;
+        }
 
-    	return back();
+        
+
+        return response()->json([
+            'id' => $id,
+            'existencia' => $existencia
+        ]);
     }
 
 }
