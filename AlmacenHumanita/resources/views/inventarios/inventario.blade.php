@@ -80,7 +80,8 @@
 			<th>Mínimo</th>
 			<th>Existencia</th>
 			<th>Editar</th>
-			<th>Solicitudes</th>
+			<th>Historial</th>
+			<th>Extraordinarios</th>
 		</tr>
 
 	@foreach ($materialclinico as $key => $material)
@@ -101,10 +102,11 @@
 	@foreach ($materialclinicos as $key => $materiales)
 	@if($material->materialclinica_id == $materiales->id)
 	@if($materiales->area == 'Toma_de_muestras')
+	<td>
+		<a class="btn btn-info" href="{{ route('inventarios.historialinventario',$materiales->id) }}">Historial</a>
+	</td>
 		<td>
-			<a class="btn btn-success" href="{{ route('pedidos.pedidosMuestras',$materiales->id) }}">Solicitar Material</a>
-			<a class="btn btn-info" href="{{ route('inventarios.historialinventario',$materiales->id) }}">Historial</a>
-        
+			<a class="btn btn-success" href="{{ route('pedidos.pedidosMuestras',$materiales->id) }}">Extraordinarios</a>
 		</td>
 	
 	@endif
@@ -126,7 +128,23 @@ $(document).ready(function(){
 
 		$('#existencia').val($('#value-' + id).html());
 		$('#materia_id').val(id);
+	});
 
+	$("#form-existencia").submit(function() {
+		var action = $("#form-existencia").attr('action');
+
+		var token =  $("#form-existencia").find('input[name="_token"]').val();
+		var existencia = $("#existencia").val();
+		var materia_id = $("#materia_id").val();
+
+
+		$.post( action, { _token: token, existencia: existencia, materia_id: materia_id })
+		  .done(function( data ) {
+		    $('#value-' + data.id).html(data.existencia);
+		    $('#modal-existencia').modal('hide');
+		  });
+
+		return false;
 	});
 });
 </script>

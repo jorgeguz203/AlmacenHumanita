@@ -30,7 +30,10 @@ class InventarioSucursalController extends Controller
     	$id = $request->get('materia_id');
     	InventarioSucursal::where('id',$id)->update(['existencia' => $existencia]); 
 
-    	return back();
+    	return response()->json([
+            'id' => $id,
+            'existencia' => $existencia
+        ]);
     }
 
 }
