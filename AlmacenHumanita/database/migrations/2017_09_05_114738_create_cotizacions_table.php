@@ -22,11 +22,16 @@ class CreateCotizacionsTable extends Migration
             $table->foreign('proveedor_id')->references('id')
                     ->on('proveedors')->onDelete('cascade');
             $table->string('nombre_material');
-            $table->string('nombre_proveedor1');
-            $table->string('nombre_proveedor2');
-            $table->string('nombre_proveedor3');
-            $table->string('nombre_proveedor4');
-            $table->string('nombre_proveedor5');
+            $table->string('nombre_proveedor1')->nullable();
+            $table->float('precio1')->nullable();
+            $table->string('nombre_proveedor2')->nullable();
+            $table->float('precio2')->nullable();
+            $table->string('nombre_proveedor3')->nullable();
+            $table->float('precio3')->nullable();
+            $table->string('nombre_proveedor4')->nullable();
+            $table->float('precio4')->nullable();
+            $table->string('nombre_proveedor5')->nullable();
+            $table->float('precio5')->nullable();
             $table->timestamps();
         });
     }

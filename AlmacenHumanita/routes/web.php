@@ -106,6 +106,12 @@ Route::group(['middleware' => ['auth']], function() {
 	Route::delete('materialClinica/{id}',['as'=>'materialClinica.destroy','uses'=>'MaterialClinicaController@destroy']);
 
 
+	//Cotizaciones
+	Route::get('Cotizacion/{id}',['as'=>'cotizacion.create','uses'=>'CotizacionController@create']);
+	Route::post('Cotizacion/{id}',['as'=>'cotizacion.store','uses'=>'CotizacionController@store']);
+	Route::get('Cotizacionhistorial/{id}',['as'=>'cotizacion.historial','uses'=>'CotizacionController@historial']);
+
+
 
 	//ADMIN MaterialPapelera
 

@@ -39,6 +39,8 @@
 			<th>Nombre</th>
 			<th>Descripción</th>
 			<th width="280px">Acción</th>
+			<th>Cotizaciones</th>
+			<th>Historial</th>
 		</tr>
 
 	@foreach ($materiales as $key => $material)
@@ -56,6 +58,14 @@
         	{!! Form::close() !!}
         
 		</td>
+
+		<td>
+			<a class="btn btn-success" href="{{ route('cotizacion.create',$material->id) }}">Cotizar</a>
+		</td>
+		<td>
+			<a class="btn btn-info" href="{{ route('cotizacion.historial',$material->id) }}">Historial</a>
+		</td>
+
 	</tr>
 	@endforeach
 	</table>

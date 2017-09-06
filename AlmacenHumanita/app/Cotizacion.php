@@ -8,8 +8,7 @@ class Cotizacion extends Model
 {
     protected $table = 'cotizacions';
 
-    protected $fillable = ['materialclinica_id', 'proveedor_id', 'nombre_material', 'nombre_proveedor2', 'nombre_proveedor3', 'nombre_proveedor4', 
-	 'nombre_proveedor5'];
+    protected $fillable = ['materialclinica_id', 'proveedor_id', 'nombre_material', 'nombre_proveedor1', 'precio1', 'nombre_proveedor2', 'precio2', 'nombre_proveedor3','precio3', 'nombre_proveedor4', 'precio4', 'nombre_proveedor5', 'precio5'];
 
 
 	 	public function materialclinica()
