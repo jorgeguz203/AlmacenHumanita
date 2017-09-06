@@ -14,7 +14,7 @@ class MaterialClinicaController extends Controller
     public function index(Request $request)
     {
 
-        $materiales = MaterialClinica::name($request->get('name'))->orderBy('nombre','ASC')->paginate(150);
+        $materiales = MaterialClinica::name($request->get('name'))->orderBy('nombre','ASC')->paginate(200);
         return view('materialClinica.index',compact('materiales'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }

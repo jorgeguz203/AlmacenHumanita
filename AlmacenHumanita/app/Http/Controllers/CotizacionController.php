@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\MaterialClinica;
 use App\Proveedor;
+use App\Cotizacion;
 
 class CotizacionController extends Controller
 {
@@ -20,7 +21,6 @@ class CotizacionController extends Controller
 
     	   	$this->validate($request, [
     	    'materialclinica_id' => 'required',
-    	    'proveedor_id' => 'required',
             'nombre_material' => 'required',
             'nombre_proveedor1',
             'precio1',
@@ -50,7 +50,8 @@ class CotizacionController extends Controller
     public function historial($id){
 
     	$material = MaterialClinica::find($id);
-    	return view('cotizacion.historial',compact('material'));
+    	$cotizacion = Cotizacion::all();
+    	return view('cotizacion.historial',compact('material', 'cotizacion'));
 
     }
 

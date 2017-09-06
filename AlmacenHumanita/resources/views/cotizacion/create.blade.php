@@ -29,20 +29,24 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Material:</strong>
-                <select id="materialClinica" name="materialclinica_id">
-                <option value='{{ $material->id }}'>{{ $material->nombre }}</option>
+                <select id="nombre_material" name="nombre_material">
+                <option value='{{ $material->nombre }}'>{{ $material->nombre }}</option>
                 </select>
             </div>
         </div>
 
+                <select class="trans"  id="materialclinica_id" name="materialclinica_id">
+                <option value='{{ $material->id }}'></option>
+                </select>
+
         <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="form-group">
                 <strong>Proveedor 1:</strong>
-                    <select id="Proveedor" name="Proveedor_id">
+                    <select id="nombre_proveedor1" name="nombre_proveedor1">
 
                     @foreach ($proveedors as $proveedor)
 
-                        <option value='{{ $proveedor->id }}'>{{ $proveedor->nombre }}</option>
+                        <option value='{{ $proveedor->nombre }}'>{{ $proveedor->nombre }}</option>
 
                     @endforeach
             </select>
@@ -59,11 +63,11 @@
                 <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="form-group">
                 <strong>Proveedor 2:</strong>
-                    <select id="Proveedor" name="Proveedor_id">
+                    <select id="nombre_proveedor2" name="nombre_proveedor2">
 
                     @foreach ($proveedors as $proveedor)
 
-                        <option value='{{ $proveedor->id }}'>{{ $proveedor->nombre }}</option>
+                        <option value='{{ $proveedor->nombre }}'>{{ $proveedor->nombre }}</option>
 
                     @endforeach
             </select>
@@ -79,11 +83,11 @@
                 <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="form-group">
                 <strong>Proveedor 3:</strong>
-                    <select id="Proveedor" name="Proveedor_id">
+                    <select id="nombre_proveedor3" name="nombre_proveedor3">
 
                     @foreach ($proveedors as $proveedor)
 
-                        <option value='{{ $proveedor->id }}'>{{ $proveedor->nombre }}</option>
+                        <option value='{{ $proveedor->nombre }}'>{{ $proveedor->nombre }}</option>
 
                     @endforeach
             </select>
@@ -100,11 +104,11 @@
                 <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="form-group">
                 <strong>Proveedor 4:</strong>
-                    <select id="Proveedor" name="Proveedor_id">
+                    <select id="nombre_proveedor4" name="nombre_proveedor4">
 
                     @foreach ($proveedors as $proveedor)
 
-                        <option value='{{ $proveedor->id }}'>{{ $proveedor->nombre }}</option>
+                        <option value='{{ $proveedor->nombre }}'>{{ $proveedor->nombre }}</option>
 
                     @endforeach
             </select>
@@ -121,11 +125,11 @@
                 <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="form-group">
                 <strong>Proveedor 5:</strong>
-                    <select id="Proveedor" name="Proveedor_id">
+                    <select id="nombre_proveedor5" name="nombre_proveedor5">
 
                     @foreach ($proveedors as $proveedor)
 
-                        <option value='{{ $proveedor->id }}'>{{ $proveedor->nombre }}</option>
+                        <option value='{{ $proveedor->nombre }}'>{{ $proveedor->nombre }}</option>
 
                     @endforeach
             </select>

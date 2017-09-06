@@ -18,9 +18,6 @@ class CreateCotizacionsTable extends Migration
             $table->integer('materialclinica_id')->unsigned()->nullable();
             $table->foreign('materialclinica_id')->references('id')
                     ->on('materialclinica')->onDelete('cascade');
-            $table->integer('proveedor_id')->unsigned()->nullable();
-            $table->foreign('proveedor_id')->references('id')
-                    ->on('proveedors')->onDelete('cascade');
             $table->string('nombre_material');
             $table->string('nombre_proveedor1')->nullable();
             $table->float('precio1')->nullable();
