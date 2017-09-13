@@ -365,7 +365,7 @@
     @if($material->area == 'Clinicos')
 
     <td>
-            
+            {{  $material->existencia  }}
         
         </td>
 

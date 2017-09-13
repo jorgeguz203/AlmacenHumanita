@@ -298,7 +298,7 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::get('pendienteAdminToma',['as'=>'pendientesAdmin.pendienteClinico','uses'=>'PedidosController@showadmin']);
 		Route::delete('pendienteAdminToma/{id}',['as'=>'pendientesAdmin.destroyclinicos','uses'=>'PedidosController@destroyclinico1']);
 
-		Route::get('pendienteAdminPapeleria',['as'=>'pendientesAdmin.pendientePapeleria','uses'=>'PedidosController@showadminpape']
+		Route::get('Fia',['as'=>'pendientesAdmin.pendientePapeleria','uses'=>'PedidosController@showadminpape']
 			);
 		Route::delete('pendienteAdminPapeleria/{id}',['as'=>'pendientesAdmin.destroypapes','uses'=>'PedidosController@destroypape1']);
 
@@ -332,7 +332,10 @@ Route::group(['middleware' => ['auth']], function() {
 		Route::post('ModificaExistenciaModal2',['as'=>'inventarios.inventariopape','uses'=>'InventarioSucursalpapeleriaController@modificaExistencia']);
 		
 
-		Route::post('ModificaPedidosModal',['as'=>'home','uses'=>'VariosController@modificaExistencia']);
+		Route::post('ModificaPedidosModal',['as'=>'modificaPedidos','uses'=>'VariosController@modificaExistencia']);
+
+
+		Route::post('PedidoLabModal',['as'=>'home','uses'=>'HomeController@hacerpedido']);
 
 
 

@@ -193,7 +193,7 @@ class PedidosController extends Controller
                         ->with('Se ha entregado con éxito');
     }
 
-        public function destroylab($id)
+        public function destroylab($id, Request $request)
     {
         $pedido=Pedidos::find($id);
         $tiempo=Carbon::now();
@@ -214,13 +214,16 @@ class PedidosController extends Controller
         'extras'=>$pedido->extras,
         'created_at'=>$tiempo));
         Pedidos::find($id)->delete();
-        return back();
+        return response()->json([
+            'id' => $id,
+        ]);
     }
 
     public function destroyvarios($id){
         Varios::find($id)->delete();
-        return redirect()->route('pendientesSucursal.pendienteLab')
-                        ->with('Se ha entregado con éxito');
+        return response()->json([
+            'id' => $id,
+        ]);
     }
 
     public function faltante($id){
@@ -389,8 +392,9 @@ class PedidosController extends Controller
         'extras'=>$faltante->extras,
         'created_at'=>$tiempo));
         Faltante::find($ids)->delete();
-        return redirect()->route('pendientesSucursal.pendienteLab')
-                        ->with('Se ha entregado con éxito');
+        return response()->json([
+            'id' => $ids,
+        ]);
     }
 
 
@@ -543,7 +547,7 @@ class PedidosController extends Controller
 
         public function destroypape1($id)
     {
-        Pedidos::find($id)->delete();
+        PedidosPape::find($id)->delete();
         return redirect()->route('pendientesAdmin.pendientePapeleria')
                         ->with('Se ha eliminado la sucursal con éxito!');
     }

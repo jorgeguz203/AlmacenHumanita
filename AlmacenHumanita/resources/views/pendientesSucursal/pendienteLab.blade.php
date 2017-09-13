@@ -29,10 +29,10 @@
 		<td>{{ $pedido->nombre_material }}</td>
 		<td>{{ $pedido->cantidad }}</td>
 		<td>{{ $pedido->created_at }}</td>
-		<td>
-			{!! Form::open(['method' => 'Delete','route' => ['PedidosLab.destroylab', $pedido->id],'style'=>'display:inline'
+		<td id="actions-{{ $pedido->id }}">
+			{!! Form::open(['id'=>"confirmar", 'class' => 'delete-pedido', 'method' => 'Delete','route' => ['PedidosLab.destroylab', $pedido->id],'style'=>'display:inline'
 			,'onclick'=>"return confirm('¿Estás seguro de querer confirmar el pedido para $pedido->nombre_material?')"]) !!}
-            {!! Form::submit('Confirmar', ['class' => 'btn btn-success']) !!}
+            {!! Form::submit('Confirmar', ['class' => 'btn btn-success btn-confirmar', 'data-id' => '{{ $pedido->id }}' ]) !!}
             {!! Form::close() !!}
 		<a class="btn btn-danger" href="{{ route('faltantes.faltanteLab', $pedido->id) }}">Pendiente</a>
 		</td>
@@ -50,9 +50,10 @@
 		<td>Otro</td>
 		<td>{{ $vario->extra }}</td>
 		<td>{{ $vario->created_at }}</td>
-		<td>
-			{!! Form::open(['method' => 'Delete','route' => ['PedidosLab.destroyvarios', $vario->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Confirmar', ['class' => 'btn btn-success']) !!}
+		<td id="actions-{{ $vario->id }}">
+			{!! Form::open(['id'=>"confirmar", 'class' => 'delete-pedido', 'method' => 'Delete','route' => ['PedidosLab.destroyvarios', $vario->id],'style'=>'display:inline'
+			,'onclick'=>"return confirm('¿Estás seguro de querer confirmar el pedido $vario->extra?')"]) !!}
+            {!! Form::submit('Confirmar', ['class' => 'btn btn-success btn-confirmar', 'data-id' => '{{ $vario->id }}']) !!}
             {!! Form::close() !!}
 		</td>
 
@@ -84,10 +85,11 @@
 		<td>{{ $faltantes->nombre_material }}</td>
 		<td>{{ $faltantes->faltante }}</td>
 		<td>{{ $faltantes->created_at }}</td>
-		<td>
+		<td id="actions-{{ $faltantes->id }}">
 		
-			{!! Form::open(['method' => 'Delete','route' => ['Pedidos.destroyfaltanteLab', $faltantes->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Confirmar', ['class' => 'btn btn-success']) !!}
+			{!! Form::open(['id'=>"confirmar", 'class' => 'delete-pedido', 'method' => 'Delete','route' => ['Pedidos.destroyfaltanteLab', $faltantes->id],'style'=>'display:inline'
+			,'onclick'=>"return confirm('¿Estás seguro de querer confirmar el pendiente?')"]) !!}
+            {!! Form::submit('Confirmar', ['class' => 'btn btn-success btn-confirmar', 'data-id' => '{{ $faltantes->id }}']) !!}
             {!! Form::close() !!}
 		</td>
 
@@ -121,9 +123,10 @@
 		<td>{{ $pedido->nombre_material }}</td>
 		<td>{{ $pedido->cantidad }}</td>
 		<td>{{ $pedido->created_at }}</td>
-		<td>
-			{!! Form::open(['method' => 'Delete','route' => ['PedidosLab.destroylab', $pedido->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Confirmar', ['class' => 'btn btn-success']) !!}
+		<td id="actions-{{ $pedido->id }}">
+			{!! Form::open(['id'=>"confirmar", 'class' => 'delete-pedido', 'method' => 'Delete','route' => ['PedidosLab.destroylab', $pedido->id],'style'=>'display:inline'
+			,'onclick'=>"return confirm('¿Estás seguro de querer confirmar el pedido para $pedido->nombre_material?')"]) !!}
+            {!! Form::submit('Confirmar', ['class' => 'btn btn-success btn-confirmar', 'data-id' => '{{ $pedido->id }}' ]) !!}
             {!! Form::close() !!}
 		<a class="btn btn-danger" href="{{ route('faltantes.faltanteLab', $pedido->id) }}">Pendiente</a>
 		</td>
@@ -141,9 +144,10 @@
 		<td>Otro</td>
 		<td>{{ $vario->extra }}</td>
 		<td>{{ $vario->created_at }}</td>
-		<td>
-			{!! Form::open(['method' => 'Delete','route' => ['PedidosLab.destroyvarios', $vario->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Confirmar', ['class' => 'btn btn-success']) !!}
+		<td id="actions-{{ $vario->id }}">
+			{!! Form::open(['id'=>"confirmar", 'class' => 'delete-pedido', 'method' => 'Delete','route' => ['PedidosLab.destroyvarios', $vario->id],'style'=>'display:inline'
+			,'onclick'=>"return confirm('¿Estás seguro de querer confirmar el pedido $vario->extra?')"]) !!}
+            {!! Form::submit('Confirmar', ['class' => 'btn btn-success btn-confirmar', 'data-id' => '{{ $vario->id }}']) !!}
             {!! Form::close() !!}
 		</td>
 
@@ -174,10 +178,11 @@
 		<td>{{ $faltantes->nombre_material }}</td>
 		<td>{{ $faltantes->faltante }}</td>
 		<td>{{ $faltantes->created_at }}</td>
-		<td>
+		<td id="actions-{{ $faltantes->id }}">
 		
-			{!! Form::open(['method' => 'Delete','route' => ['Pedidos.destroyfaltanteLab', $faltantes->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Confirmar', ['class' => 'btn btn-success']) !!}
+			{!! Form::open(['id'=>"confirmar", 'class' => 'delete-pedido', 'method' => 'Delete','route' => ['Pedidos.destroyfaltanteLab', $faltantes->id],'style'=>'display:inline'
+			,'onclick'=>"return confirm('¿Estás seguro de querer confirmar el pendiente?')"]) !!}
+            {!! Form::submit('Confirmar', ['class' => 'btn btn-success btn-confirmar', 'data-id' => '{{ $faltantes->id }}']) !!}
             {!! Form::close() !!}
 		</td>
 
@@ -214,9 +219,10 @@
 		<td>{{ $pedido->nombre_material }}</td>
 		<td>{{ $pedido->cantidad }}</td>
 		<td>{{ $pedido->created_at }}</td>
-		<td>
-			{!! Form::open(['method' => 'Delete','route' => ['PedidosLab.destroylab', $pedido->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Confirmar', ['class' => 'btn btn-success']) !!}
+		<td id="actions-{{ $pedido->id }}">
+			{!! Form::open(['id'=>"confirmar", 'class' => 'delete-pedido', 'method' => 'Delete','route' => ['PedidosLab.destroylab', $pedido->id],'style'=>'display:inline'
+			,'onclick'=>"return confirm('¿Estás seguro de querer confirmar el pedido para $pedido->nombre_material?')"]) !!}
+            {!! Form::submit('Confirmar', ['class' => 'btn btn-success btn-confirmar', 'data-id' => '{{ $pedido->id }}' ]) !!}
             {!! Form::close() !!}
 		<a class="btn btn-danger" href="{{ route('faltantes.faltanteLab', $pedido->id) }}">Pendiente</a>
 		</td>
@@ -234,9 +240,10 @@
 		<td>Otro</td>
 		<td>{{ $vario->extra }}</td>
 		<td>{{ $vario->created_at }}</td>
-		<td>
-			{!! Form::open(['method' => 'Delete','route' => ['PedidosLab.destroyvarios', $vario->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Confirmar', ['class' => 'btn btn-success']) !!}
+		<td id="actions-{{ $vario->id }}">
+			{!! Form::open(['id'=>"confirmar", 'class' => 'delete-pedido', 'method' => 'Delete','route' => ['PedidosLab.destroyvarios', $vario->id],'style'=>'display:inline'
+			,'onclick'=>"return confirm('¿Estás seguro de querer confirmar el pedido $vario->extra?')"]) !!}
+            {!! Form::submit('Confirmar', ['class' => 'btn btn-success btn-confirmar', 'data-id' => '{{ $vario->id }}']) !!}
             {!! Form::close() !!}
 		</td>
 
@@ -266,10 +273,11 @@
 		<td>{{ $faltantes->nombre_material }}</td>
 		<td>{{ $faltantes->faltante }}</td>
 		<td>{{ $faltantes->created_at }}</td>
-		<td>
+		<td id="actions-{{ $faltantes->id }}">
 		
-			{!! Form::open(['method' => 'Delete','route' => ['Pedidos.destroyfaltanteLab', $faltantes->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Confirmar', ['class' => 'btn btn-success']) !!}
+			{!! Form::open(['id'=>"confirmar", 'class' => 'delete-pedido', 'method' => 'Delete','route' => ['Pedidos.destroyfaltanteLab', $faltantes->id],'style'=>'display:inline'
+			,'onclick'=>"return confirm('¿Estás seguro de querer confirmar el pendiente?')"]) !!}
+            {!! Form::submit('Confirmar', ['class' => 'btn btn-success btn-confirmar', 'data-id' => '{{ $faltantes->id }}']) !!}
             {!! Form::close() !!}
 		</td>
 
@@ -304,9 +312,10 @@
 		<td>{{ $pedido->nombre_material }}</td>
 		<td>{{ $pedido->cantidad }}</td>
 		<td>{{ $pedido->created_at }}</td>
-		<td>
-			{!! Form::open(['method' => 'Delete','route' => ['PedidosLab.destroylab', $pedido->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Confirmar', ['class' => 'btn btn-success']) !!}
+		<td id="actions-{{ $pedido->id }}">
+			{!! Form::open(['id'=>"confirmar", 'class' => 'delete-pedido', 'method' => 'Delete','route' => ['PedidosLab.destroylab', $pedido->id],'style'=>'display:inline'
+			,'onclick'=>"return confirm('¿Estás seguro de querer confirmar el pedido para $pedido->nombre_material?')"]) !!}
+            {!! Form::submit('Confirmar', ['class' => 'btn btn-success btn-confirmar', 'data-id' => '{{ $pedido->id }}' ]) !!}
             {!! Form::close() !!}
 		<a class="btn btn-danger" href="{{ route('faltantes.faltanteLab', $pedido->id) }}">Pendiente</a>
 		</td>
@@ -325,9 +334,10 @@
 		<td>Otro</td>
 		<td>{{ $vario->extra }}</td>
 		<td>{{ $vario->created_at }}</td>
-		<td>
-			{!! Form::open(['method' => 'Delete','route' => ['PedidosLab.destroyvarios', $vario->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Confirmar', ['class' => 'btn btn-success']) !!}
+		<td id="actions-{{ $vario->id }}">
+			{!! Form::open(['id'=>"confirmar", 'class' => 'delete-pedido', 'method' => 'Delete','route' => ['PedidosLab.destroyvarios', $vario->id],'style'=>'display:inline'
+			,'onclick'=>"return confirm('¿Estás seguro de querer confirmar el pedido $vario->extra?')"]) !!}
+            {!! Form::submit('Confirmar', ['class' => 'btn btn-success btn-confirmar', 'data-id' => '{{ $vario->id }}']) !!}
             {!! Form::close() !!}
 		</td>
 
@@ -341,7 +351,7 @@
 
 
  <div class="pull-left">
-	            <h4>Faltantes Bacterilogía</h4>
+	            <h4>Faltantes Bacteriología</h4>
 	        </div>   
 	<table class="table table-bordered">
 		 <tr class="tabla1">
@@ -358,10 +368,11 @@
 		<td>{{ $faltantes->nombre_material }}</td>
 		<td>{{ $faltantes->faltante }}</td>
 		<td>{{ $faltantes->created_at }}</td>
-		<td>
+		<td id="actions-{{ $faltantes->id }}">
 		
-			{!! Form::open(['method' => 'Delete','route' => ['Pedidos.destroyfaltanteLab', $faltantes->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Confirmar', ['class' => 'btn btn-success']) !!}
+			{!! Form::open(['id'=>"confirmar", 'class' => 'delete-pedido', 'method' => 'Delete','route' => ['Pedidos.destroyfaltanteLab', $faltantes->id],'style'=>'display:inline'
+			,'onclick'=>"return confirm('¿Estás seguro de querer confirmar el pendiente?')"]) !!}
+            {!! Form::submit('Confirmar', ['class' => 'btn btn-success btn-confirmar', 'data-id' => '{{ $faltantes->id }}']) !!}
             {!! Form::close() !!}
 		</td>
 
@@ -394,9 +405,10 @@
 		<td>{{ $pedido->nombre_material }}</td>
 		<td>{{ $pedido->cantidad }}</td>
 		<td>{{ $pedido->created_at }}</td>
-		<td>
-			{!! Form::open(['method' => 'Delete','route' => ['PedidosLab.destroylab', $pedido->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Confirmar', ['class' => 'btn btn-success']) !!}
+		<td id="actions-{{ $pedido->id }}">
+			{!! Form::open(['id'=>"confirmar", 'class' => 'delete-pedido', 'method' => 'Delete','route' => ['PedidosLab.destroylab', $pedido->id],'style'=>'display:inline'
+			,'onclick'=>"return confirm('¿Estás seguro de querer confirmar el pedido para $pedido->nombre_material?')"]) !!}
+            {!! Form::submit('Confirmar', ['class' => 'btn btn-success btn-confirmar', 'data-id' => '{{ $pedido->id }}' ]) !!}
             {!! Form::close() !!}
 		<a class="btn btn-danger" href="{{ route('faltantes.faltanteLab', $pedido->id) }}">Pendiente</a>
 		</td>
@@ -415,9 +427,10 @@
 		<td>Otro</td>
 		<td>{{ $vario->extra }}</td>
 		<td>{{ $vario->created_at }}</td>
-		<td>
-			{!! Form::open(['method' => 'Delete','route' => ['PedidosLab.destroyvarios', $vario->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Confirmar', ['class' => 'btn btn-success']) !!}
+		<td id="actions-{{ $vario->id }}">
+			{!! Form::open(['id'=>"confirmar", 'class' => 'delete-pedido', 'method' => 'Delete','route' => ['PedidosLab.destroyvarios', $vario->id],'style'=>'display:inline'
+			,'onclick'=>"return confirm('¿Estás seguro de querer confirmar el pedido $vario->extra?')"]) !!}
+            {!! Form::submit('Confirmar', ['class' => 'btn btn-success btn-confirmar', 'data-id' => '{{ $vario->id }}']) !!}
             {!! Form::close() !!}
 		</td>
 
@@ -447,10 +460,11 @@
 		<td>{{ $faltantes->nombre_material }}</td>
 		<td>{{ $faltantes->faltante }}</td>
 		<td>{{ $faltantes->created_at }}</td>
-		<td>
+		<td id="actions-{{ $faltantes->id }}">
 		
-			{!! Form::open(['method' => 'Delete','route' => ['Pedidos.destroyfaltanteLab', $faltantes->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Confirmar', ['class' => 'btn btn-success']) !!}
+			{!! Form::open(['id'=>"confirmar", 'class' => 'delete-pedido', 'method' => 'Delete','route' => ['Pedidos.destroyfaltanteLab', $faltantes->id],'style'=>'display:inline'
+			,'onclick'=>"return confirm('¿Estás seguro de querer confirmar el pendiente?')"]) !!}
+            {!! Form::submit('Confirmar', ['class' => 'btn btn-success btn-confirmar', 'data-id' => '{{ $faltantes->id }}']) !!}
             {!! Form::close() !!}
 		</td>
 
@@ -484,9 +498,10 @@
 		<td>{{ $pedido->nombre_material }}</td>
 		<td>{{ $pedido->cantidad }}</td>
 		<td>{{ $pedido->created_at }}</td>
-		<td>
-			{!! Form::open(['method' => 'Delete','route' => ['PedidosLab.destroylab', $pedido->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Confirmar', ['class' => 'btn btn-success']) !!}
+		<td id="actions-{{ $pedido->id }}">
+			{!! Form::open(['id'=>"confirmar", 'class' => 'delete-pedido', 'method' => 'Delete','route' => ['PedidosLab.destroylab', $pedido->id],'style'=>'display:inline'
+			,'onclick'=>"return confirm('¿Estás seguro de querer confirmar el pedido para $pedido->nombre_material?')"]) !!}
+            {!! Form::submit('Confirmar', ['class' => 'btn btn-success btn-confirmar', 'data-id' => '{{ $pedido->id }}' ]) !!}
             {!! Form::close() !!}
 		<a class="btn btn-danger" href="{{ route('faltantes.faltanteLab', $pedido->id) }}">Pendiente</a>
 		</td>
@@ -504,9 +519,10 @@
 		<td>Otro</td>
 		<td>{{ $vario->extra }}</td>
 		<td>{{ $vario->created_at }}</td>
-		<td>
-			{!! Form::open(['method' => 'Delete','route' => ['PedidosLab.destroyvarios', $vario->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Confirmar', ['class' => 'btn btn-success']) !!}
+		<td id="actions-{{ $vario->id }}">
+			{!! Form::open(['id'=>"confirmar", 'class' => 'delete-pedido', 'method' => 'Delete','route' => ['PedidosLab.destroyvarios', $vario->id],'style'=>'display:inline'
+			,'onclick'=>"return confirm('¿Estás seguro de querer confirmar el pedido $vario->extra?')"]) !!}
+            {!! Form::submit('Confirmar', ['class' => 'btn btn-success btn-confirmar', 'data-id' => '{{ $vario->id }}']) !!}
             {!! Form::close() !!}
 		</td>
 
@@ -538,10 +554,11 @@
 		<td>{{ $faltantes->nombre_material }}</td>
 		<td>{{ $faltantes->faltante }}</td>
 		<td>{{ $faltantes->created_at }}</td>
-		<td>
+		<td id="actions-{{ $faltantes->id }}">
 		
-			{!! Form::open(['method' => 'Delete','route' => ['Pedidos.destroyfaltanteLab', $faltantes->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Confirmar', ['class' => 'btn btn-success']) !!}
+			{!! Form::open(['id'=>"confirmar", 'class' => 'delete-pedido', 'method' => 'Delete','route' => ['Pedidos.destroyfaltanteLab', $faltantes->id],'style'=>'display:inline'
+			,'onclick'=>"return confirm('¿Estás seguro de querer confirmar el pendiente?')"]) !!}
+            {!! Form::submit('Confirmar', ['class' => 'btn btn-success btn-confirmar', 'data-id' => '{{ $faltantes->id }}']) !!}
             {!! Form::close() !!}
 		</td>
 
@@ -554,7 +571,29 @@
 	</table>
 
 
+<script>
 
+
+$(document).ready(function(){
+    $(".delete-pedido").submit(function() {
+        var action = $(this).attr('action');
+
+        var token = $(this).find('input[name="_token"]').val();
+        
+		$.ajax({
+		    url: action,
+		    data: { _token: token },
+		    type: 'DELETE',
+		    success: function(result) {
+		        jQuery("#actions-" + result.id).parent().remove();
+		    }
+		});
+
+		return false;
+     });
+        //).parent().remove()
+});
+</script>
 
 
 

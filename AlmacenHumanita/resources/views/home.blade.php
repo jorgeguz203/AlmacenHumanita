@@ -10,7 +10,7 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-body">
-        <form id="form-existencia" class="form-horizontal" action="{{ route('home') }}" method="post">
+        <form id="form-existencia" class="form-horizontal" action="{{ route('modificaPedidos') }}" method="post">
             {{ csrf_field() }}
             <fieldset>
 
@@ -39,6 +39,50 @@
 
             </fieldset>
         </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal 2 -->
+<div id="modal-pedidos" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+
+<form id="form-pedidos" class="form-horizontal" action="{{ route('home') }}" method="post">
+{{ csrf_field() }}
+<fieldset>
+
+<!-- Form Name -->
+<legend>Solicitar Material</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Cantidad</label>  
+  <div class="col-md-4">
+
+    <input id="cantidad" name="cantidad" type="number" placeholder="0" class="form-control input-md" required="">
+
+    <input id="materia_id" name="materia_id" type="hidden" value="asg" class="form-control input-md" required="">
+
+  </div>
+</div>
+
+<!-- Button (Double) -->
+<div class="form-group">
+  <div class="col-md-8">
+    <button type="button" id="button1id" name="button1id" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+    <button type="submit" id="save" name="save" class="btn btn-success">Solicitar</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
       </div>
     </div>
   </div>
@@ -280,7 +324,7 @@
         <td>{{ $material->nombre }}</td>
         <td>{{ $material->descripcion }}</td>
         <td>
-            <a class="btn btn-success" href="{{ route('pedidos.pedidosinmunologia',$material->id) }}">Solicitar Material</a>
+            <a class="btn btn-success btn-pedidos" data-toggle="modal" data-target="#modal-pedidos" data-id="{{ $material->id }}" data-seccion="inmunologia">Solicitar Material</a>
             <a class="btn btn-info" href="{{ route('historialeslab.historialinmunologialab',$material->id) }}">Historial</a>
         
         </td>
@@ -314,7 +358,7 @@
         <td>{{ $material->nombre }}</td>
         <td>{{ $material->descripcion }}</td>
         <td>
-            <a class="btn btn-success" href="{{ route('pedidos.pedidosuroanalisis',$material->id) }}">Solicitar Material</a>
+            <a class="btn btn-success btn-pedidos" data-toggle="modal" data-target="#modal-pedidos" data-id="{{ $material->id }}" data-seccion="uroanalisis">Solicitar Material</a>
             <a class="btn btn-info" href="{{ route('historialeslab.historialuroanalisislab',$material->id) }}">Historial</a>
         
         </td>
@@ -344,7 +388,7 @@
         <td>{{ $material->nombre }}</td>
         <td>{{ $material->descripcion }}</td>
         <td>
-            <a class="btn btn-success" href="{{ route('pedidos.pedidoshematologia',$material->id) }}">Solicitar Material</a>
+            <a class="btn btn-success btn-pedidos" data-toggle="modal" data-target="#modal-pedidos" data-id="{{ $material->id }}" data-seccion="hematologia">Solicitar Material</a>
             <a class="btn btn-info" href="{{ route('historialeslab.historialhematologialab',$material->id) }}">Historial</a>
         
         </td>
@@ -373,7 +417,7 @@
         <td>{{ $material->nombre }}</td>
         <td>{{ $material->descripcion }}</td>
         <td>
-            <a class="btn btn-success" href="{{ route('pedidos.pedidosbacteriologia',$material->id) }}">Solicitar Material</a>
+            <a class="btn btn-success btn-pedidos" data-toggle="modal" data-target="#modal-pedidos" data-id="{{ $material->id }}" data-seccion="bacteriologia">Solicitar Material</a>
             <a class="btn btn-info" href="{{ route('historialeslab.historialbacteriologialab',$material->id) }}">Historial</a>
         
         </td>
@@ -402,7 +446,7 @@
         <td>{{ $material->nombre }}</td>
         <td>{{ $material->descripcion }}</td>
         <td>
-            <a class="btn btn-success" href="{{ route('pedidos.pedidosbioquimica',$material->id) }}">Solicitar Material</a>
+            <a class="btn btn-success btn-pedidos" data-toggle="modal" data-target="#modal-pedidos" data-id="{{ $material->id }}" data-seccion="bioquimica">Solicitar Material</a>
             <a class="btn btn-info" href="{{ route('historialeslab.historialbioquimicalab',$material->id) }}">Historial</a>
         
         </td>
@@ -432,7 +476,8 @@
         <td>{{ $material->nombre }}</td>
         <td>{{ $material->descripcion }}</td>
         <td>
-            <a class="btn btn-success" href="{{ route('pedidos.pedidoshormonas',$material->id) }}">Solicitar Material</a>
+            <a class="btn btn-success btn-pedidos" data-toggle="modal" data-target="#modal-pedidos" data-id="{{ $material->id }}" data-seccion="hormonas">Solicitar Material</a>  
+
             <a class="btn btn-info" href="{{ route('historialeslab.historialhormonaslab',$material->id) }}">Historial</a>
         
         </td>
@@ -446,6 +491,40 @@
     <hr>
 
 @endif
+
+<script>
+$(document).ready(function(){
+    $(".btn-pedidos").click(function() {
+        var id = $(this).data('id');
+        var seccion = $(this).data('seccion');
+
+        $('#cantidad').val($('#value-' + id).html());
+        $('#materia_id').val(id);
+        $('#seccion').val(seccion);
+    });
+
+    $("#form-pedidos").submit(function() {
+        var action = $("#form-pedidos").attr('action');
+
+        var token =  $("#form-pedidos").find('input[name="_token"]').val();
+        var cantidad = $("#cantidad").val();
+        var materia_id = $("#materia_id").val();
+        var seccion = $("#seccion").val();
+
+
+
+        $.post( action, { _token: token, cantidad: cantidad, materia_id: materia_id, seccion: seccion })
+          .done(function( data ) {
+            console.log(data);
+            $('#value-' + data.id).html(data.cantidad);
+            $('#modal-pedidos').modal('hide');
+          });
+
+        return false;
+    });
+});
+</script>
+
 
 <script>
 $(document).ready(function(){
