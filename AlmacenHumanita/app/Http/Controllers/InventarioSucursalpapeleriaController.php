@@ -20,7 +20,11 @@ class InventarioSucursalpapeleriaController extends Controller
         $user = Auth::User()->find('id');
         $materialpapeleria = InventarioSucursalpapeleria::name($request->get('name'))->orderBy('nombre_material','ASC')->paginate(10000);
         $materialpapelerias = MaterialPapelera::name($request->get('name'))->orderBy('nombre','ASC')->paginate(10000);
-        return view('inventarios.inventariopape', compact('materialpapeleria', 'user', 'materialpapelerias'));
+        return view('inventarios.inventariopape', compact('materialpapeleria', 'user', 'materialpapelerias'))->with('i')->with('a')
+        ->with('b')
+        ->with('c')
+        ->with('d')
+        ->with('e');
     }
 
 

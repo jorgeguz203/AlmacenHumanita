@@ -29,6 +29,7 @@
 	@endif
 	<table class="table table-bordered">
 		<tr class="tabla1">
+			<th>ID</th>
 			<th>Nombre</th>
 			<th>Descripción</th>
 			<th>Máximo</th>
@@ -41,6 +42,7 @@
 	@foreach ($materiales as $key => $material)
 	@if( $material->area  == 'papeleria')
 	<tr>
+		<th>{{ ++$i }}</th>
 		<td>{{ $material->nombre }}</td>
 		<td>{{ $material->descripcion }}</td>
 		<td>{{ $material->maximo }}</td>

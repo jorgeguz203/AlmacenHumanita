@@ -74,7 +74,7 @@
 
 	<table class="table table-bordered">
 		<tr class="tabla1">
-
+			<th>ID</th>
 			<th>Nombre</th>
 			<th>Máximo</th>
 			<th>Mínimo</th>
@@ -88,7 +88,8 @@
 	@if($material->user_id == Auth::user()->id)
 	@if($material->area == 'Toma_de_muestras')
 
-	<tr>
+	<tr>	
+		<td>{{ ++$i }}</td>
 		<td>{{ $material->nombre_material }}</td>
 		<td>{{ $material->maximo }}</td>
 		<td>{{ $material->minimo }}</td>

@@ -22,7 +22,7 @@ class InventarioSucursalController extends Controller
         $user = Auth::User()->find('id');
         $materialclinico = InventarioSucursal::name($request->get('name'))->orderBy('nombre_material','ASC')->paginate(10000);
         $materialclinicos = MaterialClinica::name($request->get('name'))->orderBy('nombre','ASC')->paginate(10000);
-        return view('inventarios.inventario', compact('materialclinico', 'user', 'materialclinicos'));
+        return view('inventarios.inventario', compact('materialclinico', 'user', 'materialclinicos'))->with('i');
     }
 
 

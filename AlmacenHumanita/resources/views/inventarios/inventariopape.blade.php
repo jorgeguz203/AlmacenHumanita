@@ -92,7 +92,7 @@
 
 	<table class="table table-bordered">
 		<tr class="tabla1">
-
+		<th>ID</th>
 			<th>Nombre</th>
 			<th>Máximo</th>
 			<th>Mínimo</th>
@@ -106,6 +106,7 @@
 	@if($material->user_id == Auth::user()->id)
 	@if ($material->area == 'papeleria')
 	<tr>
+		<td>{{ ++$i }}</td>
 		<td>{{ $material->nombre_material }}</td>
 		<td>{{ $material->maximo }}</td>
 		<td>{{ $material->minimo }}</td>
@@ -155,7 +156,7 @@
 
 	<table class="table table-bordered">
 		<tr class="tabla1">
-
+		<th>ID</th>
 			<th>Nombre</th>
 			<th>Máximo</th>
 			<th>Mínimo</th>
@@ -169,6 +170,7 @@
 	@if($material->user_id == Auth::user()->id)
 	@if ($material->area == 'limpieza')
 	<tr>
+		<td>{{ ++$a }}</td>
 		<td>{{ $material->nombre_material }}</td>
 		<td>{{ $material->maximo }}</td>
 		<td>{{ $material->minimo }}</td>
@@ -220,7 +222,7 @@
 
 	<table class="table table-bordered">
 		<tr class="tabla1">
-
+		<th>ID</th>
 			<th>Nombre</th>
 			<th>Máximo</th>
 			<th>Mínimo</th>
@@ -234,6 +236,7 @@
 	@if($material->user_id == Auth::user()->id)
 	@if ($material->area == 'cafeteria')
 	<tr>
+		<td>{{ ++$b }}</td>
 		<td>{{ $material->nombre_material }}</td>
 		<td>{{ $material->maximo }}</td>
 		<td>{{ $material->minimo }}</td>
@@ -286,7 +289,7 @@
 
 	<table class="table table-bordered">
 		<tr class="tabla1">
-
+		<th>ID</th>
 			<th>Nombre</th>
 			<th>Máximo</th>
 			<th>Mínimo</th>
@@ -300,6 +303,7 @@
 	@if($material->user_id == Auth::user()->id)
 	@if ($material->area == 'impresos')
 	<tr>
+	<td>{{ ++$c }}</td>
 		<td>{{ $material->nombre_material }}</td>
 		<td>{{ $material->maximo }}</td>
 		<td>{{ $material->minimo }}</td>
@@ -353,7 +357,7 @@
 
 	<table class="table table-bordered">
 		<tr class="tabla1">
-
+		<th>ID</th>
 			<th>Nombre</th>
 			<th>Máximo</th>
 			<th>Mínimo</th>
@@ -367,6 +371,7 @@
 	@if($material->user_id == Auth::user()->id)
 	@if ($material->area == 'rayos_x')
 	<tr>
+	<td>{{ ++$d }}</td>
 		<td>{{ $material->nombre_material }}</td>
 		<td>{{ $material->maximo }}</td>
 		<td>{{ $material->minimo }}</td>
@@ -417,7 +422,7 @@
 
 	<table class="table table-bordered">
 		<tr class="tabla1">
-
+		<th>ID</th>
 			<th>Nombre</th>
 			<th>Máximo</th>
 			<th>Mínimo</th>
@@ -431,6 +436,7 @@
 	@if($material->user_id == Auth::user()->id)
 	@if ($material->area == 'otros')
 	<tr>
+	<td>{{ ++$e }}</td>
 		<td>{{ $material->nombre_material }}</td>
 		<td>{{ $material->maximo }}</td>
 		<td>{{ $material->minimo }}</td>
